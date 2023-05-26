@@ -1,0 +1,31 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+//хедер и футер
+@import 'header';
+//хедер и футер
+//@import 'footer';
+// кнопка с заполнением(анимированная)
+@import 'wave-btn';
+
+/*-----общие-стили----*/
+
+h1 {
+    position: absolute;
+    z-index: -100;
+    opacity: 0;
+}
+
+
+/*------1-БЛОК----*/
+
+@import '1-service-block';
+
+/*------2-БЛОК----*/
+
+@import '2-advantages-block';
+
+/*------3-БЛОК----*/
+
+@import '3-work-block';

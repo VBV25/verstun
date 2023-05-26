@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--'Style'-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style-index.css">
+    <!--'Libs'-->
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script src="libs/jquery.maskedinput.min.js"></script>
+    <!--'Title'-->
+    <title>Студия Верстун</title>
+</head>
+
+<body>
+    <h1>Студия Верстун. Вестка сайтов.</h1>
+    <!-----------'header'---------------->
+    <!-- @import 'html/header.html' -->
+    <main>
+
+        <!--'1 БЛОК'-->
+        <section class="service-block">
+            <div class="service-block__container">
+                <h2 class="service-block__title">Профессиональная верстка сайтов</h2>
+                <h3 class="service-block__subtitle">Быстро, качественно и по доступной цене.</h3>
+                <div class="service-block__btn-group">
+                    <button class="service-block__btn" id="service-block__btn">
+                        <div class=" wave-btn ">
+                            <span class="wave-btn__text">Начать проект</span>
+                            <span class="wave-btn__waves"></span>
+                        </div>
+                    </button>
+                    <div class="service-block__social-group">
+                        <a href="#" class="service-block__link service-block__wp"></a>
+                        <a href="#" class="service-block__link service-block__tg"></a>
+                        <a href="#" class="service-block__link service-block__vk"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--''-->
+
+        <!--'2 БЛОК'-->
+        <section class="advantages-block">
+            <div class="advantages-block__container">
+                <h3 class="advantages-block__title">Почему стоит выбрать наши услуги?</h3>
+                <div class="advantages-block__people-img">
+                    <img src="img/man-pc-blue.svg" alt="people">
+                </div>
+                <div class="advantages-block__card card-advantages card-advantages-1">
+                    <img class="card-advantages__img" src="img/quality.svg" alt="quality">
+                    <h4 class="card-advantages__title">Качество:</h4>
+                    <p class="card-advantages__text">Каждый пиксель, каждый отступ, каждый цвет - все будет соответствовать оригинальному дизайну. Гарантируем, что ваш сайт будет выглядеть идеально на любом устройстве и в любом браузере.</p>
+                </div>
+                <div class="advantages-block__card card-advantages card-advantages-2">
+                    <img class="card-advantages__img" src="img/money.svg" alt="money">
+                    <h4 class="card-advantages__title">Доступная цена:</h4>
+                    <p class="card-advantages__text">Работаем, чтобы удовлетворить ваши потребности в рамках вашего бюджета. Предлагаем самые конкурентные цены на рынке, не жертвуя при этом качеством работы..</p>
+                </div>
+                <div class="advantages-block__card card-advantages card-advantages-3">
+                    <img class="card-advantages__img" src="img/speed.svg" alt="speed">
+                    <h4 class="card-advantages__title">Быстрота:</h4>
+                    <p class="card-advantages__text">Уважаем ваше время. Все проекты выполняются точно в срок, без задержек и уважением к дедлайнам.
+                    </p>
+                </div>
+                <div class="advantages-block__card card-advantages card-advantages-4">
+                    <img class="card-advantages__img" src="img/computer.svg" alt="computer">
+                    <h4 class="card-advantages__title">Поддержка:</h4>
+                    <p class="card-advantages__text">Ваш успех - наша цель. Обеспечиваем круглосуточную поддержку и готовы ответить на любые ваши вопросы в процессе работы и после ее завершения.</p>
+                </div>
+            </div>
+        </section>
+        <!--''-->
+
+
+        <!--'3 БЛОК'-->
+        <section class="work-block">
+
+            <div class="work-block__head">
+                <div class="work-block__content-text">
+                    <h2 class="work-block__title">Примеры наших работ:</h2>
+                    <p class="work-block__text">Взгляните на некоторые из наших последних проектов и увидите, как мы превращаем идеи в реальность. Каждый проект - это результат тщательной работы, отталкивающийся от индивидуальных потребностей каждого клиента.</p>
+                </div>
+                <!--'Стрелки для галереи'-->
+                <div class="work-block__nav ">
+                    <div class="work-block__arrow swiper-button-prev"></div>
+                    <div class="work-block__arrow swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="work-block__row swiper-container">
+                <div class="work-block__wrapper swiper-wrapper">
+                    <!--'Галерея'-->
+                    <a href="#" class="work-block__photo swiper-slide" id="work-block__photo-1">
+                        <img src="img/1.jpg" alt="photo-1">
+                    </a>
+                    <a href="#" class="work-block__photo swiper-slide" id="work-block__photo-2">
+                        <img src="img/2.jpg" alt="photo-2">
+                    </a>
+                    <a href="#" class="work-block__photo swiper-slide" id="work-block__photo-3">
+                        <img src="img/3.jpg" alt="photo-3">
+                    </a>
+                </div>
+
+                <!--'пагинация'-->
+                <div class="swiper-pagination"></div>
+        </section>
+        <!--''-->
+
+    </main>
+    <!-----------'footer'---------------->
+    <!-- @import 'html/footer.html' -->
+
+</body>
+<!--'Script'-->
+<script src="js/index.js"></script>
+<script src="js/validation.js"></script>
+<!--'SWIPER'-->
+<script src="libs/swiper-bundle.min.js"></script>
+<script src="js/swiper.js"></script>
+
+</html>

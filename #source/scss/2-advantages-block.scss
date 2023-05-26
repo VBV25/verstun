@@ -1,0 +1,73 @@
+.advantages-block {
+    width: 100%;
+    &__container {
+        position: relative;
+        @include wiHe(75%, max-content);
+        margin: auto;
+        padding: 100px 0 50px;
+        display: grid;
+        grid-template-areas: 'card-1 img card-2' 'card-3 img card-4';
+        grid-template-columns: 35% 1fr 35%;
+        grid-template-rows: max-content max-content;
+        row-gap: 20px;
+    }
+    /*--заголовок*/
+    &__title {
+        width: 26%;
+        position: absolute;
+        @include leTo(40px, 50%);
+        margin-left: -13%;
+        text-align: center;
+        @include fontSize(48px, 56px, 900);
+    }
+    /*--изображение--*/
+    &__people-img {
+        grid-area: img;
+        @include gridCent;
+        margin-top: 50px;
+    }
+    /*--карточки--*/
+    &__card {
+        @include wiHe(100%, 280px);
+        border: 2px dashed $goldColor;
+    }
+}
+
+.card-advantages {
+    @include gridCent($alCo: space-around);
+    padding: 10px;
+    transition: all 3s ease 0s;
+    &__img {
+        display: block;
+        margin: auto;
+    }
+    &__title {
+        text-align: center;
+        @include fontSize(34px, 34px, 700);
+    }
+    &__text {
+        text-align: center;
+        @include fontSize(20px, 22px, 700);
+    }
+}
+
+.advantages-block__card:hover .card-advantages__img {
+    transform: rotateY(360deg);
+    transition: all 3s ease 0s;
+}
+
+.card-advantages-1 {
+    grid-area: card-1;
+}
+
+.card-advantages-2 {
+    grid-area: card-2;
+}
+
+.card-advantages-3 {
+    grid-area: card-3;
+}
+
+.card-advantages-4 {
+    grid-area: card-4;
+}

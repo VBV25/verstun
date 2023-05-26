@@ -1,0 +1,108 @@
+.service-block {
+    position: relative;
+    @include wiHe($he: max-content);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include bgImg(100% auto);
+    background-image: url('../img/bg.jpg');
+    &::before {
+        content: '';
+        @include wiHe;
+        position: absolute;
+        @include leTo;
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+    /*--контейнер с контентом--*/
+    &__container {
+        position: relative;
+        z-index: 5;
+        @include wiHe(75%,
+        max-content);
+        padding: 200px 0 120px;
+        color: $whiteColor;
+    }
+    /*--заголовок--*/
+    &__title {
+        margin-top: 50px;
+        @include fontSize(84px,
+        94px,
+        900);
+    }
+    /*--подзаголовок--*/
+    &__subtitle {
+        margin: 70px 0px 110px;
+        @include fontSize(66px,
+        80px,
+        500);
+    }
+    //обертка кнопок
+    &__btn-group {
+        @include flexSpBeCent;
+    }
+    /*----КНОПКА---*/
+    &__btn {
+        @include wiHe(400px,
+        130px);
+        background-color: $blueColor;
+        .wave-btn {
+            @include wiHe;
+            &:hover {
+                box-shadow: 0 0 10px 1px $goldColor;
+            }
+            &:hover .wave-btn__text {
+                color: $blueColor;
+                @include textShadowWhite;
+            }
+            /*------ТЕКСТ КНОПКИ--------*/
+            &__text {
+                @include fontSize(30px,
+                30px,
+                700);
+                color: $whiteColor;
+                text-transform: uppercase;
+            }
+            /*---------ВОЛНЫ-------*/
+            &__waves {
+                @include wiHe(280px,
+                280px);
+                /**/
+                transition: all 4.3s ease 0s;
+                &:after {
+                    background-color: $goldColor;
+                    animation: waves 4s infinite linear;
+                }
+                &::before {
+                    background-color: $goldColorOpacity;
+                    animation: waves 6s infinite linear;
+                }
+            }
+        }
+    }
+    //група ссылок на соц сети
+    &__social-group {
+        display: flex;
+        gap: 60px;
+    }
+    //ссылки на соц сети
+    &__link {
+        @include bgImg;
+        @include wiHe(70px,
+        70px);
+        border-radius: 50%;
+        color: $whiteColor;
+        &:hover {
+            box-shadow: 0 0 15px 5px $goldColorOpacity;
+            background-color: $goldColorOpacity;
+        }
+    }
+    &__wp {
+        background-image: url('../img/wp.svg');
+    }
+    &__tg {
+        background-image: url('../img/tg.svg');
+    }
+    &__vk {
+        background-image: url('../img/vk.svg');
+    }
+}
