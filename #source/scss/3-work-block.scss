@@ -1,5 +1,5 @@
 .work-block {
-    @include wiHe($he: max-content);
+    @include wiHe(100%, max-content);
     z-index: 30;
     display: flex;
     flex-direction: column;
@@ -80,6 +80,7 @@
     .swiper-pagination {
         position: static;
         margin: 30px auto;
+        transform: translateX(0%) !important;
         @include flCent;
         .swiper-pagination-bullet {
             @include wiHe(20px, 20px);

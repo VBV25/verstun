@@ -1,0 +1,51 @@
+.reviews-block {
+    width: 100%;
+    &__container {
+        position: relative;
+        @include wiHe(75%, max-content);
+        margin: auto;
+        padding: 50px 0 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    /*--заголовок*/
+    &__title {
+        width: 100%;
+        text-align: center;
+        @include fontSize(48px, 56px, 900);
+    }
+    &__subtitle {
+        @include fontSize(28px, 36px, 700);
+    }
+    &__review {
+        @include wiHe(100%, max-content);
+        display: grid;
+        grid-auto-flow: column;
+    }
+}
+
+.review {
+    position: relative;
+    padding: 10px 0px 20px;
+    gap: 20px;
+    &__img {
+        @include wiHe(70px, 70px);
+        @include flCent;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            @include wiHe;
+        }
+    }
+    &__text {
+        @include fontSize(20px, 24px, 500);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        @include leBo(0%, 3%);
+        @include wiHe(40%, 4px);
+        background-color: $goldColor;
+    }
+}
