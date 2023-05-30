@@ -312,7 +312,8 @@ h1 {
   .service-block__btn {
     width: 400px;
     height: 130px;
-    background-color: #3a4574; }
+    background-color: #3a4574;
+    border: 2px solid #3a4574; }
     .service-block__btn .wave-btn {
       width: 100%;
       height: 100%;
@@ -452,7 +453,10 @@ h1 {
     font-weight: 700;
     line-height: 22px;
     font-style: normal;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
 
 .advantages-block__card:hover .card-advantages__img {
   -webkit-transform: rotateY(360deg);
@@ -546,7 +550,10 @@ h1 {
     line-height: 36px;
     font-style: normal;
     font-family: "Open Sans", sans-serif;
-    color: white; }
+    color: white;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   .work-block__nav {
     width: 20%;
     height: -webkit-max-content;
@@ -586,7 +593,7 @@ h1 {
     height: -webkit-max-content !important;
     height: -moz-max-content !important;
     height: max-content !important;
-    font-size: 84px;
+    font-size: 74px;
     color: #b4977b;
     padding: 5px; }
   .work-block .work-block__nav .swiper-button-prev:hover::after,
@@ -635,14 +642,22 @@ h1 {
     .work-block .swiper-pagination .swiper-pagination-bullet {
       width: 20px;
       height: 20px;
-      background-color: #3a4574;
       margin: 0 10px !important;
       line-height: 30px; }
+
+.swiper-pagination-bullet {
+  background-color: #b4977b !important;
+  opacity: 0.5 !important; }
+
+.swiper-pagination-bullet-active {
+  background-color: #3a4574 !important;
+  opacity: 1 !important; }
 
 /*------4-БЛОК----*/
 .reviews-block {
   width: 100%;
-  /*--заголовок*/ }
+  /*--заголовок*/
+  /*----КНОПКА---*/ }
   .reviews-block__container {
     position: relative;
     width: 75%;
@@ -672,7 +687,10 @@ h1 {
     font-weight: 700;
     line-height: 36px;
     font-style: normal;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   .reviews-block__review {
     width: 100%;
     height: -webkit-max-content;
@@ -681,6 +699,46 @@ h1 {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: column; }
+  .reviews-block__btn {
+    width: 380px;
+    height: 100px;
+    margin: 25px auto 0px;
+    background-color: #3a4574;
+    border: 2px solid #3a4574; }
+    .reviews-block__btn .wave-btn {
+      width: 100%;
+      height: 100%;
+      /*------ТЕКСТ КНОПКИ--------*/
+      /*---------ВОЛНЫ-------*/ }
+      .reviews-block__btn .wave-btn:hover {
+        -webkit-box-shadow: 0 0 10px 1px #b4977b;
+        box-shadow: 0 0 10px 1px #b4977b; }
+      .reviews-block__btn .wave-btn:hover .wave-btn__text {
+        color: #3a4574;
+        text-shadow: 0 -1px 0 white, 0 -1px 0 white, 0 1px 0 white, 0 1px 0 white, -1px 0 0 white, 1px 0 0 white, -1px 0 0 white, 1px 0 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; }
+      .reviews-block__btn .wave-btn__text {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        font-style: normal;
+        font-family: "Open Sans", sans-serif;
+        color: white;
+        text-transform: uppercase; }
+      .reviews-block__btn .wave-btn__waves {
+        width: 280px;
+        height: 280px;
+        /**/
+        -webkit-transition: all 4.3s ease 0s;
+        -o-transition: all 4.3s ease 0s;
+        transition: all 4.3s ease 0s; }
+        .reviews-block__btn .wave-btn__waves:after {
+          background-color: #b4977b;
+          -webkit-animation: waves 4s infinite linear;
+          animation: waves 4s infinite linear; }
+        .reviews-block__btn .wave-btn__waves::before {
+          background-color: rgba(211, 180, 127, 0.566);
+          -webkit-animation: waves 6s infinite linear;
+          animation: waves 6s infinite linear; }
 
 .review {
   position: relative;
@@ -698,6 +756,7 @@ h1 {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    border: 2px solid #3a4574;
     border-radius: 50%;
     overflow: hidden; }
     .review__img img {
@@ -708,12 +767,180 @@ h1 {
     font-weight: 500;
     line-height: 24px;
     font-style: normal;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   .review::after {
     content: '';
     position: absolute;
     bottom: 0%;
     left: 3%;
-    width: 40%;
+    width: 35%;
     height: 4px;
     background-color: #b4977b; }
+
+/*------5-БЛОК----*/
+.form-block {
+  width: 100%;
+  background-color: #cccccc;
+  /*----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----*/
+  /*----КНОПКА---*/
+  /*---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---*/
+  /*----------------------------*/
+  /*----ТЕКСТОВЫЙ-БЛОК----*/ }
+  .form-block__container {
+    position: relative;
+    width: 75%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: auto;
+    padding: 50px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 4%; }
+  .form-block__form {
+    width: 48%;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: 'name phone' 'comment-form comment-form' 'btn-form btn-form';
+    -ms-grid-columns: 1fr 19px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: max-content 10px max-content 10px max-content;
+    grid-template-rows: repeat(3, -webkit-max-content);
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 10px;
+    -webkit-column-gap: 19px;
+    column-gap: 19px; }
+    .form-block__form label {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 24px;
+      font-style: normal;
+      font-family: "Open Sans", sans-serif;
+      display: -ms-grid;
+      display: grid; }
+      .form-block__form label input {
+        width: 100%;
+        height: 80px;
+        margin-top: 4px;
+        border: 1px solid #cccccc;
+        padding: 28px 16px; }
+        .form-block__form label input:hover {
+          border-color: #b4977b; }
+        .form-block__form label input:focus {
+          border-color: #3a4574; }
+      .form-block__form label textarea {
+        width: 100%;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        margin-top: 4px;
+        border: 1px solid #cccccc;
+        padding: 28px 16px;
+        resize: none; }
+        .form-block__form label textarea:hover {
+          border-color: #b4977b; }
+        .form-block__form label textarea:focus {
+          border-color: #3a4574; }
+  .form-block__btn {
+    width: 330px;
+    height: 80px;
+    margin: 10px auto 0px;
+    background-color: #3a4574;
+    border: 2px solid #3a4574; }
+    .form-block__btn .wave-btn {
+      width: 100%;
+      height: 100%;
+      /*------ТЕКСТ КНОПКИ--------*/
+      /*---------ВОЛНЫ-------*/ }
+      .form-block__btn .wave-btn:hover {
+        -webkit-box-shadow: 0 0 10px 1px #b4977b;
+        box-shadow: 0 0 10px 1px #b4977b; }
+      .form-block__btn .wave-btn:hover .wave-btn__text {
+        color: #3a4574;
+        text-shadow: 0 -1px 0 white, 0 -1px 0 white, 0 1px 0 white, 0 1px 0 white, -1px 0 0 white, 1px 0 0 white, -1px 0 0 white, 1px 0 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; }
+      .form-block__btn .wave-btn__text {
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 30px;
+        font-style: normal;
+        font-family: "Open Sans", sans-serif;
+        color: white;
+        text-transform: uppercase; }
+      .form-block__btn .wave-btn__waves {
+        width: 280px;
+        height: 280px;
+        /**/
+        -webkit-transition: all 4.3s ease 0s;
+        -o-transition: all 4.3s ease 0s;
+        transition: all 4.3s ease 0s; }
+        .form-block__btn .wave-btn__waves:after {
+          background-color: #b4977b;
+          -webkit-animation: waves 4s infinite linear;
+          animation: waves 4s infinite linear; }
+        .form-block__btn .wave-btn__waves::before {
+          background-color: rgba(211, 180, 127, 0.566);
+          -webkit-animation: waves 6s infinite linear;
+          animation: waves 6s infinite linear; }
+  .form-block__massage-err {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    font-style: normal;
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    height: 24px;
+    margin-top: 10px;
+    text-align: center; }
+  .form-block__text-block {
+    width: 48%;
+    display: -ms-grid;
+    display: grid;
+    padding: 20px 0px 0px;
+    gap: 40px;
+    -ms-grid-rows: (-webkit-max-content)[2];
+    -ms-grid-rows: (max-content)[2];
+    grid-template-rows: repeat(2, -webkit-max-content);
+    grid-template-rows: repeat(2, max-content); }
+  .form-block__title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 56px;
+    font-style: normal;
+    font-family: "Open Sans", sans-serif; }
+  .form-block__subtitle {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    font-style: normal;
+    font-family: "Open Sans", sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+
+.form-block__name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name; }
+
+.form-block__phone {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: phone; }
+
+.form-block__comment {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: comment-form; }
+
+.form-block__btn {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: btn-form;
+  background-color: #3a4574; }

@@ -32,6 +32,7 @@
         margin-top: 25px;
         @include fontSize(28px, 36px, 700);
         color: $whiteColor;
+        hyphens: auto;
     }
     /*--обертка стрелок глереи--*/
     &__nav {
@@ -51,7 +52,7 @@
     .swiper-button-prev::after,
     .work-block__nav .swiper-button-next::after {
         height: max-content !important;
-        font-size: 84px;
+        font-size: 74px;
         color: $goldColor;
         padding: 5px;
     }
@@ -84,9 +85,18 @@
         @include flCent;
         .swiper-pagination-bullet {
             @include wiHe(20px, 20px);
-            background-color: $blueColor;
             margin: 0 10px !important;
             line-height: 30px;
         }
     }
+}
+
+.swiper-pagination-bullet {
+    background-color: $goldColor !important;
+    opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $blueColor !important;
+    opacity: 1 !important;
 }

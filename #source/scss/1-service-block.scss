@@ -45,6 +45,7 @@
         @include wiHe(400px,
         130px);
         background-color: $blueColor;
+        border: 2px solid $blueColor;
         .wave-btn {
             @include wiHe;
             &:hover {

@@ -48,6 +48,7 @@
     &__text {
         text-align: center;
         @include fontSize(20px, 22px, 700);
+        hyphens: auto;
     }
 }
 

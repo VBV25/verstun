@@ -17,11 +17,49 @@
     }
     &__subtitle {
         @include fontSize(28px, 36px, 700);
+        hyphens: auto;
     }
     &__review {
         @include wiHe(100%, max-content);
         display: grid;
         grid-auto-flow: column;
+    }
+    /*----КНОПКА---*/
+    &__btn {
+        @include wiHe(380px, 100px);
+        margin: 25px auto 0px;
+        background-color: $blueColor;
+        border: 2px solid $blueColor;
+        .wave-btn {
+            @include wiHe;
+            &:hover {
+                box-shadow: 0 0 10px 1px $goldColor;
+            }
+            &:hover .wave-btn__text {
+                color: $blueColor;
+                @include textShadowWhite;
+            }
+            /*------ТЕКСТ КНОПКИ--------*/
+            &__text {
+                @include fontSize(30px, 30px, 700);
+                color: $whiteColor;
+                text-transform: uppercase;
+            }
+            /*---------ВОЛНЫ-------*/
+            &__waves {
+                @include wiHe(280px, 280px);
+                /**/
+                transition: all 4.3s ease 0s;
+                &:after {
+                    background-color: $goldColor;
+                    animation: waves 4s infinite linear;
+                }
+                &::before {
+                    background-color: $goldColorOpacity;
+                    animation: waves 6s infinite linear;
+                }
+            }
+        }
     }
 }
 
@@ -32,6 +70,7 @@
     &__img {
         @include wiHe(70px, 70px);
         @include flCent;
+        border: 2px solid $blueColor;
         border-radius: 50%;
         overflow: hidden;
         img {
@@ -40,12 +79,13 @@
     }
     &__text {
         @include fontSize(20px, 24px, 500);
+        hyphens: auto;
     }
     &::after {
         content: '';
         position: absolute;
         @include leBo(0%, 3%);
-        @include wiHe(40%, 4px);
+        @include wiHe(35%, 4px);
         background-color: $goldColor;
     }
 }
