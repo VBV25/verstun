@@ -1,102 +1,103 @@
 .work-block {
-    @include wiHe(100%, max-content);
-    z-index: 30;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  @include wiHe(100%, max-content);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 68px;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @include leTo;
+    @include wiHe($he: 70%);
+    background-color: $blueColor;
+  }
+  /*--заголовок и текст--*/
+  &__head {
+    @include wiHe(75%, max-content);
+    @include flCent;
     position: relative;
-    padding-top: 68px;
-    &::before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        @include leTo;
-        @include wiHe($he: 70%);
-        background-color: $blueColor;
+    margin: auto;
+  }
+  &__content-text {
+    width: 80%;
+  }
+  &__title {
+    @include fontSize(48px, 56px, 900);
+    color: $whiteColor;
+  }
+  &__text {
+    margin-top: 25px;
+    @include fontSize(28px, 36px, 700);
+    color: $whiteColor;
+    hyphens: auto;
+  }
+  /*--обертка стрелок глереи--*/
+  &__nav {
+    @include wiHe(20%, max-content);
+    @include flCent;
+    gap: 40px;
+  }
+  /*-----стрелки-галереи-----*/
+  &__arrow {
+    position: static !important;
+    @include flCent;
+    width: max-content;
+    height: max-content !important;
+    margin-top: 0 !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .swiper-button-prev::after,
+  .work-block__nav .swiper-button-next::after {
+    height: max-content !important;
+    font-size: 74px;
+    color: $goldColor;
+    padding: 5px;
+  }
+  .work-block__nav .swiper-button-prev:hover::after,
+  .work-block__nav .swiper-button-next:hover::after {
+    @include textShadowWhite;
+  }
+  /*------контейнер-с-галереей------*/
+  &__row {
+    @include wiHe(100%, max-content);
+    margin-top: 50px;
+    padding-top: 50px;
+    display: block;
+    z-index: 30;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+  }
+  &__photo {
+    @include flCent;
+    border: 1px solid $goldColor;
+    img {
+      @include wiHe;
     }
-    /*--заголовок и текст--*/
-    &__head {
-        @include wiHe(75%, max-content);
-        @include flCent;
-        position: relative;
-        margin: auto;
+  }
+  /*--ПАГИНАЦИЯ--*/
+  .swiper-pagination {
+    position: static;
+    margin: 30px auto;
+    transform: translateX(0%) !important;
+    @include flCent;
+    .swiper-pagination-bullet {
+      @include wiHe(20px, 20px);
+      margin: 0 10px !important;
+      line-height: 30px;
     }
-    &__content-text {
-        width: 80%;
-    }
-    &__title {
-        @include fontSize(48px, 56px, 900);
-        color: $whiteColor;
-    }
-    &__text {
-        margin-top: 25px;
-        @include fontSize(28px, 36px, 700);
-        color: $whiteColor;
-        hyphens: auto;
-    }
-    /*--обертка стрелок глереи--*/
-    &__nav {
-        @include wiHe(20%, max-content);
-        @include flCent;
-        gap: 40px;
-    }
-    /*-----стрелки-галереи-----*/
-    &__arrow {
-        position: static !important;
-        @include flCent;
-        width: max-content;
-        height: max-content !important;
-        margin-top: 0 !important;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-    .swiper-button-prev::after,
-    .work-block__nav .swiper-button-next::after {
-        height: max-content !important;
-        font-size: 74px;
-        color: $goldColor;
-        padding: 5px;
-    }
-    .work-block__nav .swiper-button-prev:hover::after,
-    .work-block__nav .swiper-button-next:hover::after {
-        @include textShadowWhite;
-    }
-    /*------контейнер-с-галереей------*/
-    &__row {
-        @include wiHe(100%, max-content);
-        margin-top: 50px;
-        padding-top: 50px;
-        display: block;
-        z-index: 30;
-        position: relative;
-        overflow: hidden;
-        min-width: 0;
-    }
-    &__photo {
-        @include flCent;
-        img {
-            @include wiHe;
-        }
-    }
-    /*--ПАГИНАЦИЯ--*/
-    .swiper-pagination {
-        position: static;
-        margin: 30px auto;
-        transform: translateX(0%) !important;
-        @include flCent;
-        .swiper-pagination-bullet {
-            @include wiHe(20px, 20px);
-            margin: 0 10px !important;
-            line-height: 30px;
-        }
-    }
+  }
 }
 
 .swiper-pagination-bullet {
-    background-color: $goldColor !important;
-    opacity: 0.5 !important;
+  background-color: $goldColor !important;
+  opacity: 0.5 !important;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: $blueColor !important;
-    opacity: 1 !important;
+  background-color: $blueColor !important;
+  opacity: 1 !important;
 }

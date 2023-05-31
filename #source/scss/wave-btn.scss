@@ -1,81 +1,77 @@
 .wave-btn {
-    //width,height
-    @include flCent;
+  //width,height
+  @include flCent;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.8s ease 0s;
+  &:hover {
+    box-shadow: 0 0 40px $goldColor;
+    /**/
+    transition: all 0.8s ease 0.2s;
+  }
+  /*------ТЕКСТ КНОПКИ--------*/
+  &__text {
+    //fonts param
     position: relative;
-    overflow: hidden;
-    transition: all 0.8s ease 0s;
-    &:hover {
-        box-shadow: 0 0 40px $goldColor;
-        /**/
-        transition: all 0.8s ease 0.2s;
+    z-index: 1;
+    text-align: center;
+    /**/
+    transition: all 5s ease 0s;
+  }
+  /*---------ВОЛНЫ-------*/
+  &__waves {
+    //width,height,background-color,box-shadow
+    position: absolute;
+    left: 18%;
+    top: 0;
+    /**/
+    transition: all 6s ease 0s;
+    &:after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      @include wiHe(260%, 260%);
+      /**/
+      // transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
     }
-    /*------ТЕКСТ КНОПКИ--------*/
-    &__text {
-        //fonts param
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        /**/
-        transition: all 5s ease 0s;
+    &:after {
+      //background-color
+      left: 38%;
+      border-radius: 44%;
+      /**/
+      //animation: waves 4s infinite linear;
     }
-    /*---------ВОЛНЫ-------*/
-    &__waves {
-        //width,height,background-color,box-shadow
-        position: absolute;
-        left: 18%;
-        top: 0;
-        /**/
-        transition: all 6s ease 0s;
-        &:after,
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            @include wiHe(260%, 260%);
-            /**/
-            // transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
-        }
-        &:after {
-            //background-color
-            left: 38%;
-            border-radius: 44%;
-            /**/
-            //animation: waves 4s infinite linear;
-        }
-        &::before {
-            //background-color
-            left: 62%;
-            border-radius: 42%;
-            /**/
-            // animation: waves 6s infinite linear;
-        }
+    &::before {
+      //background-color
+      left: 62%;
+      border-radius: 42%;
+      /**/
+      // animation: waves 6s infinite linear;
     }
+  }
 }
 
 .wave-btn:hover .wave-btn__waves {
-    top: -300px;
+  top: -300px;
 }
-
-//.wave-btn:hover .wave-btn__text {
-// color
-//}
 
 /*----keyframes HEADER btn-----*/
 
 @keyframes wavesHeader {
-    0% {
-        transform: translate3d(-50%, 13%, 0) rotate(0deg) scale(1);
-    }
-    100% {
-        transform: translate3d(-50%, 13%, 0) rotate(360deg) scale(1);
-    }
+  0% {
+    transform: translate3d(-50%, 13%, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate3d(-50%, 13%, 0) rotate(360deg) scale(1);
+  }
 }
 
 @keyframes waves {
-    0% {
-        transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
-    }
-    100% {
-        transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1);
-    }
+  0% {
+    transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1);
+  }
 }

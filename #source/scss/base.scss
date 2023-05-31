@@ -17,96 +17,119 @@ $smokeColor: rgb(204, 204, 204);
 //
 //----------
 //-шрифты-
-$fontFamilyBarlow: 'Open Sans',
-sans-serif;
+$fontFamilyBarlow: 'Open Sans', sans-serif;
 //-------------------миксины-------------------------------
 //ширина и высота элемента
 @mixin wiHe($wi: 100%, $he: 100%) {
-    width: $wi;
-    height: $he;
+  width: $wi;
+  height: $he;
 }
 
 //позиционирование
 @mixin leTo($top: 0, $left: 0) {
-    top: $top;
-    left: $left;
+  top: $top;
+  left: $left;
 }
 
 @mixin riTo($top: 0, $right: 0) {
-    top: $top;
-    right: $right;
+  top: $top;
+  right: $right;
 }
 
 @mixin riBo($bottom: 0, $right: 0) {
-    bottom: $bottom;
-    right: $right;
+  bottom: $bottom;
+  right: $right;
 }
 
 @mixin leBo($bottom: 0, $left: 0) {
-    bottom: $bottom;
-    left: $left;
+  bottom: $bottom;
+  left: $left;
 }
 
 //вставка изображения как фона(без ссылки на изображение)
 @mixin bgImg($bgImSize: 100% 100%, $bgPosition: center, $bgRepeat: no-repeat) {
-    background-size: $bgImSize;
-    background-position: $bgPosition;
-    background-repeat: $bgRepeat;
+  background-size: $bgImSize;
+  background-position: $bgPosition;
+  background-repeat: $bgRepeat;
 }
 
 //флекс элемент по центру
 @mixin flCent($juCo: center, $alIt: center) {
-    display: flex;
-    justify-content: $juCo;
-    align-items: $alIt;
+  display: flex;
+  justify-content: $juCo;
+  align-items: $alIt;
 }
 
 //флекс элемент слева снизу
 @mixin flStartCen($juCo: start, $alIt: center) {
-    display: flex;
-    justify-content: $juCo;
-    align-items: $alIt;
+  display: flex;
+  justify-content: $juCo;
+  align-items: $alIt;
 }
 
 //флекс элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin flexSpBeCent($juCo: space-between, $alIt: center) {
-    display: flex;
-    justify-content: $juCo;
-    align-items: $alIt;
+  display: flex;
+  justify-content: $juCo;
+  align-items: $alIt;
+}
+
+@mixin flexSpArCent($juCo: space-around, $alIt: center) {
+  display: flex;
+  justify-content: $juCo;
+  align-items: $alIt;
 }
 
 //грид элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin gridSpBeCent($juCo: space-between, $alIt: center) {
-    display: grid;
-    justify-content: $juCo;
-    align-items: $alIt;
+  display: grid;
+  justify-content: $juCo;
+  align-items: $alIt;
 }
 
 //грид центр
 @mixin gridCent($juCo: center, $alCo: center) {
-    display: grid;
-    justify-content: $juCo;
-    align-content: $alCo;
+  display: grid;
+  justify-content: $juCo;
+  align-content: $alCo;
 }
 
 //параметры шрифтов
-@mixin fontSize( $fs: 16px, $liHe: 24px, $fWe: 400, $fontFamily: $fontFamilyBarlow) {
-    font-size: $fs;
-    font-weight: $fWe;
-    line-height: $liHe;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSize(
+  $fs: 16px,
+  $liHe: 24px,
+  $fWe: 400,
+  $fontFamily: $fontFamilyBarlow
+) {
+  font-size: $fs;
+  font-weight: $fWe;
+  line-height: $liHe;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
 //обводка текста
 @mixin textShadowGold {
-    text-shadow: -0 -2px 0 $goldColor, 0 -2px 0 $goldColor, -0 2px 0 $goldColor, 0 2px 0 $goldColor, -2px -0 0 $goldColor, 2px -0 0 $goldColor, -2px 0 0 $goldColor, 2px 0 0 $goldColor, -1px -2px 0 $goldColor, 1px -2px 0 $goldColor, -1px 2px 0 $goldColor, 1px 2px 0 $goldColor, -2px -1px 0 $goldColor, 2px -1px 0 $goldColor, -2px 1px 0 $goldColor, 2px 1px 0 $goldColor, -2px -2px 0 $goldColor, 2px -2px 0 $goldColor, -2px 2px 0 $goldColor, 2px 2px 0 $goldColor, -2px -2px 0 $goldColor, 2px -2px 0 $goldColor, -2px 2px 0 $goldColor, 2px 2px 0 $goldColor;
+  text-shadow: -0 -2px 0 $goldColor, 0 -2px 0 $goldColor, -0 2px 0 $goldColor,
+    0 2px 0 $goldColor, -2px -0 0 $goldColor, 2px -0 0 $goldColor,
+    -2px 0 0 $goldColor, 2px 0 0 $goldColor, -1px -2px 0 $goldColor,
+    1px -2px 0 $goldColor, -1px 2px 0 $goldColor, 1px 2px 0 $goldColor,
+    -2px -1px 0 $goldColor, 2px -1px 0 $goldColor, -2px 1px 0 $goldColor,
+    2px 1px 0 $goldColor, -2px -2px 0 $goldColor, 2px -2px 0 $goldColor,
+    -2px 2px 0 $goldColor, 2px 2px 0 $goldColor, -2px -2px 0 $goldColor,
+    2px -2px 0 $goldColor, -2px 2px 0 $goldColor, 2px 2px 0 $goldColor;
 }
 
 @mixin textShadowWhite {
-    text-shadow: -0 -1px 0 $whiteColor, 0 -1px 0 $whiteColor, -0 1px 0 $whiteColor, 0 1px 0 $whiteColor, -1px -0 0 $whiteColor, 1px -0 0 $whiteColor, -1px 0 0 $whiteColor, 1px 0 0 $whiteColor, -1px -1px 0 $whiteColor, 1px -1px 0 $whiteColor, -1px 1px 0 $whiteColor, 1px 1px 0 $whiteColor;
+  text-shadow: -0 -1px 0 $whiteColor, 0 -1px 0 $whiteColor, -0 1px 0 $whiteColor,
+    0 1px 0 $whiteColor, -1px -0 0 $whiteColor, 1px -0 0 $whiteColor,
+    -1px 0 0 $whiteColor, 1px 0 0 $whiteColor, -1px -1px 0 $whiteColor,
+    1px -1px 0 $whiteColor, -1px 1px 0 $whiteColor, 1px 1px 0 $whiteColor;
 }
 
 @mixin textShadowBlack {
-    text-shadow: -0 -1px 0 $blackColor, 0 -1px 0 $blackColor, -0 1px 0 $blackColor, 0 1px 0 $blackColor, -1px -0 0 $blackColor, 1px -0 0 $blackColor, -1px 0 0 $blackColor, 1px 0 0 $blackColor, -1px -1px 0 $blackColor, 1px -1px 0 $blackColor, -1px 1px 0 $blackColor, 1px 1px 0 $blackColor;
+  text-shadow: -0 -1px 0 $blackColor, 0 -1px 0 $blackColor, -0 1px 0 $blackColor,
+    0 1px 0 $blackColor, -1px -0 0 $blackColor, 1px -0 0 $blackColor,
+    -1px 0 0 $blackColor, 1px 0 0 $blackColor, -1px -1px 0 $blackColor,
+    1px -1px 0 $blackColor, -1px 1px 0 $blackColor, 1px 1px 0 $blackColor;
 }
