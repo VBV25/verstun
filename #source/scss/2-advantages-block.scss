@@ -1,74 +1,251 @@
 .advantages-block {
-    width: 100%;
-    &__container {
-        position: relative;
-        @include wiHe(75%, max-content);
-        margin: auto;
-        padding: 100px 0 50px;
-        display: grid;
-        grid-template-areas: 'card-1 img card-2' 'card-3 img card-4';
-        grid-template-columns: 35% 1fr 35%;
-        grid-template-rows: max-content max-content;
-        row-gap: 20px;
-    }
-    /*--заголовок*/
-    &__title {
-        width: 26%;
-        position: absolute;
-        @include leTo(40px, 50%);
-        margin-left: -13%;
-        text-align: center;
-        @include fontSize(48px, 56px, 900);
-    }
-    /*--изображение--*/
-    &__people-img {
-        grid-area: img;
-        @include gridCent;
-        margin-top: 50px;
-    }
-    /*--карточки--*/
-    &__card {
-        @include wiHe(100%, 280px);
-        border: 2px dashed $goldColor;
-    }
+  width: 100%;
+  &__container {
+    position: relative;
+    @include wiHe(75%, max-content);
+    margin: auto;
+    padding: 100px 0 50px;
+    display: grid;
+    grid-template-areas: 'card-1 img card-2' 'card-3 img card-4';
+    grid-template-columns: 30% 1fr 30%;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+  /*--заголовок*/
+  &__title {
+    width: 36%;
+    position: absolute;
+    @include leTo(40px, 50%);
+    margin-left: -18%;
+    text-align: center;
+    @include fontSize(48px, 76px, 900);
+  }
+  /*--изображение--*/
+  &__people-img {
+    grid-area: img;
+    @include gridCent;
+    margin-top: 50px;
+  }
+  /*--карточки--*/
+  &__card {
+    @include wiHe;
+    min-height: 350px;
+    border: 2px dashed $goldColor;
+  }
 }
+
+/*---КАРТОЧКИ ПРИЕМУЩЕСТВ--*/
 
 .card-advantages {
-    @include gridCent($alCo: space-around);
-    padding: 10px;
-    transition: all 3s ease 0s;
-    &__img {
-        display: block;
-        margin: auto;
-    }
-    &__title {
-        text-align: center;
-        @include fontSize(34px, 34px, 700);
-    }
-    &__text {
-        text-align: center;
-        @include fontSize(20px, 22px, 700);
-        hyphens: auto;
-    }
-}
-
-.advantages-block__card:hover .card-advantages__img {
-    transform: rotateY(360deg);
-    transition: all 3s ease 0s;
+  @include gridCent($alCo: space-around);
+  padding: 20px 10px;
+  overflow: hidden;
+  transition: all 3s ease 0s;
+  &__img {
+    @include wiHe(100%, 150px);
+    position: relative;
+    @include gridCent;
+  }
+  &__title {
+    text-align: center;
+    @include fontSize(34px, 34px, 700);
+  }
+  &__text {
+    text-align: center;
+    @include fontSize(20px, 22px, 700);
+    hyphens: auto;
+  }
 }
 
 .card-advantages-1 {
-    grid-area: card-1;
+  grid-area: card-1;
 }
 
 .card-advantages-2 {
-    grid-area: card-2;
+  grid-area: card-2;
 }
 
 .card-advantages-3 {
-    grid-area: card-3;
+  grid-area: card-3;
 }
 
 .card-advantages-4 {
-    grid-area: card-4;
+  grid-area: card-4;
+}
+
+/*----Изображения в карточках--*/
+
+//-------1-------
+.quality {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 110px;
+  margin-left: -55px;
+  animation-duration: 5s;
+  animation-name: quality;
+  animation-iteration-count: infinite;
+}
+
+@keyframes quality {
+  0% {
+    width: 150px;
+    top: -150%;
+    left: -150%;
+    opacity: 0.3;
+  }
+  40% {
+    width: 130px;
+    top: 50px;
+    left: 30%;
+    opacity: 0.3;
+  }
+  60% {
+    width: 140px;
+    margin-left: -70px;
+    left: 50%;
+    top: 10px;
+    opacity: 0.3;
+  }
+  100% {
+    width: 110px;
+    left: 50%;
+    top: 20px;
+    margin-left: -55px;
+    opacity: 1;
+  }
+}
+
+//-------2-------
+.money {
+  position: absolute;
+  z-index: 1;
+  @include wiHe(70px, auto);
+  left: 50%;
+  top: -100px;
+  margin-left: -50px;
+  animation-duration: 3s;
+  animation-name: money;
+  animation-iteration-count: infinite;
+}
+
+.wallet {
+  position: relative;
+  z-index: 5;
+  height: 110px;
+  background-color: $whiteColor;
+}
+
+@keyframes money {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  1% {
+    top: -100px;
+    opacity: 1;
+  }
+  99% {
+    top: 80px;
+    opacity: 1;
+  }
+  100% {
+    top: 80px;
+    opacity: 0;
+  }
+}
+
+//------3-------
+.fast {
+  position: absolute;
+  @include wiHe(270px, 90px);
+  left: 50%;
+  top: 50%;
+  margin: -45px 0px 0px -135px;
+}
+
+.wheel {
+  height: 40px;
+  font-size: 100px;
+  @include gridCent;
+  color: $blueColor;
+  position: absolute;
+  bottom: 37.8px;
+  left: 50%;
+  animation: wheel 0.4s infinite linear;
+}
+
+.wheel-1 {
+  margin-left: -126.3px;
+}
+
+.wheel-2 {
+  margin-left: 48.5px;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.line-fast {
+  position: absolute;
+  height: 3px;
+  background-color: $goldColor;
+}
+
+.line-fast-1 {
+  width: 30px;
+  top: 30px;
+  animation: lineFast 1.2s infinite linear;
+}
+
+.line-fast-2 {
+  top: 60px;
+  width: 40px;
+  animation: lineFast 1.5s infinite linear;
+}
+
+@keyframes lineFast {
+  0% {
+    left: 150%;
+  }
+  100% {
+    left: -150%;
+  }
+}
+
+//-------4-------
+.computer {
+  position: relative;
+  @include wiHe(180px, auto);
+}
+
+.disp {
+  content: '';
+  z-index: 10;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  margin-left: -80px;
+  @include wiHe(160px, 100px);
+  background-color: $whiteColor;
+  animation-duration: 6s;
+  animation-name: pc;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pc {
+  0% {
+    top: 6px;
+    height: 100px;
+  }
+  100% {
+    top: 106px;
+    height: 0px;
+  }
 }

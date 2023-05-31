@@ -1,132 +1,157 @@
 .form-block {
-    width: 100%;
-    background-color: $smokeColor;
-    &__container {
-        position: relative;
-        @include wiHe(75%, max-content);
-        margin: auto;
-        padding: 50px 0;
-        display: flex;
-        gap: 4%;
-    }
-    /*----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----*/
-    &__form {
-        width: 48%;
-        display: grid;
-        grid-template-areas: 'name phone' 'comment-form comment-form' 'btn-form btn-form';
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, max-content);
-        row-gap: 10px;
-        column-gap: 19px;
-        //подпись
-        label {
-            @include fontSize(24px, 24px, 300);
-            display: grid;
-            //инпуты
-            input {
-                @include wiHe(100%, 80px);
-                margin-top: 4px;
-                border: 1px solid $smokeColor;
-                padding: 28px 16px;
-                &:hover {
-                    border-color: $goldColor;
-                }
-                &:focus {
-                    border-color: $blueColor;
-                }
-            }
-            //текстовое окно
-            textarea {
-                @include wiHe(100%, max-content);
-                margin-top: 4px;
-                border: 1px solid $smokeColor;
-                padding: 28px 16px;
-                resize: none;
-                &:hover {
-                    border-color: $goldColor;
-                }
-                &:focus {
-                    border-color: $blueColor;
-                }
-            }
+  width: 100%;
+  background-color: $smokeColor;
+  &__container {
+    position: relative;
+    @include wiHe(75%, max-content);
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    gap: 4%;
+  }
+  /*----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----*/
+  &__form {
+    width: 48%;
+    display: grid;
+    grid-template-areas: 'name phone' 'comment-form comment-form' 'btn-form btn-form';
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 10px;
+    column-gap: 19px;
+    //подпись
+    label {
+      @include fontSize(24px, 24px, 300);
+      display: grid;
+      //инпуты
+      input {
+        @include wiHe(100%, 80px);
+        margin-top: 4px;
+        border: 1px solid $smokeColor;
+        padding: 28px 16px;
+        &:hover {
+          border-color: $goldColor;
         }
-    }
-    /*----КНОПКА---*/
-    &__btn {
-        @include wiHe(330px, 80px);
-        margin: 10px auto 0px;
-        background-color: $blueColor;
-        border: 2px solid $blueColor;
-        .wave-btn {
-            @include wiHe;
-            &:hover {
-                box-shadow: 0 0 10px 1px $goldColor;
-            }
-            &:hover .wave-btn__text {
-                color: $blueColor;
-                @include textShadowWhite;
-            }
-            /*------ТЕКСТ КНОПКИ--------*/
-            &__text {
-                @include fontSize(27px, 30px, 700);
-                color: $whiteColor;
-                text-transform: uppercase;
-            }
-            /*---------ВОЛНЫ-------*/
-            &__waves {
-                @include wiHe(280px, 280px);
-                /**/
-                transition: all 4.3s ease 0s;
-                &:after {
-                    background-color: $goldColor;
-                    animation: waves 4s infinite linear;
-                }
-                &::before {
-                    background-color: $goldColorOpacity;
-                    animation: waves 6s infinite linear;
-                }
-            }
+        &:focus {
+          border-color: $blueColor;
         }
+      }
+      //текстовое окно
+      textarea {
+        @include wiHe(100%, max-content);
+        margin-top: 4px;
+        border: 1px solid $smokeColor;
+        padding: 28px 16px;
+        resize: none;
+        &:hover {
+          border-color: $goldColor;
+        }
+        &:focus {
+          border-color: $blueColor;
+        }
+      }
     }
-    /*---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---*/
-    &__massage-err {
-        @include fontSize(20px, 20px, 700);
-        @include wiHe($he: 24px);
-        margin-top: 10px;
-        text-align: center;
+  }
+  /*----КНОПКА---*/
+  &__btn {
+    @include wiHe(330px, 80px);
+    margin: 10px auto 0px;
+    background-color: $blueColor;
+    border: 2px solid $blueColor;
+    .wave-btn {
+      @include wiHe;
+      &:hover {
+        box-shadow: 0 0 10px 1px $goldColor;
+      }
+      &:hover .wave-btn__text {
+        color: $blueColor;
+        @include textShadowWhite;
+      }
+      /*------ТЕКСТ КНОПКИ--------*/
+      &__text {
+        @include fontSize(27px, 30px, 700);
+        color: $whiteColor;
+        text-transform: uppercase;
+      }
+      /*---------ВОЛНЫ-------*/
+      &__waves {
+        @include wiHe(280px, 280px);
+        /**/
+        transition: all 4.3s ease 0s;
+        &:after {
+          background-color: $goldColor;
+          animation: waves 4s infinite linear;
+        }
+        &::before {
+          background-color: $goldColorOpacity;
+          animation: waves 6s infinite linear;
+        }
+      }
     }
-    /*----------------------------*/
-    /*----ТЕКСТОВЫЙ-БЛОК----*/
-    &__text-block {
-        width: 48%;
-        display: grid;
-        padding: 20px 0px 0px;
-        gap: 40px;
-        grid-template-rows: repeat(2, max-content);
+  }
+  /*---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---*/
+  &__massage-err {
+    @include fontSize(20px, 20px, 700);
+    @include wiHe($he: 24px);
+    margin-top: 10px;
+    text-align: center;
+  }
+  /*----------------------------*/
+  /*----ТЕКСТОВЫЙ-БЛОК----*/
+  &__text-block {
+    width: 48%;
+    display: grid;
+    padding: 30px 0px;
+    gap: 40px;
+    grid-template-rows: max-content max-content 250px;
+  }
+  &__title {
+    text-align: center;
+    @include fontSize(48px, 56px, 900);
+  }
+  &__subtitle {
+    @include fontSize(28px, 36px, 700);
+    hyphens: auto;
+  }
+  &__string {
+    border: 2px solid red;
+    @include wiHe;
+    overflow: hidden;
+  }
+  &__marquee {
+    height: 100%;
+    width: max-content;
+    display: flex;
+    border: 2px solid rgb(11, 136, 46);
+    animation: string 6s infinite linear;
+    img {
+      width: 250px;
+      height: 100%;
     }
-    &__title {
-        text-align: center;
-        @include fontSize(48px, 56px, 900);
-    }
-    &__subtitle {
-        @include fontSize(28px, 36px, 700);
-        hyphens: auto;
-    }
+  }
+}
+
+@keyframes string {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: -110%;
+  }
 }
 
 .form-block__name {
-    grid-area: name;
+  grid-area: name;
 }
 
 .form-block__phone {
-    grid-area: phone;
+  grid-area: phone;
 }
 
 .form-block__comment {
-    grid-area: comment-form;
+  grid-area: comment-form;
 }
 
 .form-block__btn {
-    grid-area: btn-form;
-    background-color: $blueColor;
+  grid-area: btn-form;
+  background-color: $blueColor;
 }

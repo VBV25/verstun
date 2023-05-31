@@ -391,22 +391,21 @@ h1 {
     display: -ms-grid;
     display: grid;
     grid-template-areas: 'card-1 img card-2' 'card-3 img card-4';
-    -ms-grid-columns: 35% 1fr 35%;
-    grid-template-columns: 35% 1fr 35%;
-    -ms-grid-rows: max-content 20px max-content;
-    grid-template-rows: -webkit-max-content -webkit-max-content;
-    grid-template-rows: max-content max-content;
+    -ms-grid-columns: 30% 1fr 30%;
+    grid-template-columns: 30% 1fr 30%;
+    -ms-grid-rows: 1fr 20px 1fr;
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 20px; }
   .advantages-block__title {
-    width: 26%;
+    width: 36%;
     position: absolute;
     top: 40px;
     left: 50%;
-    margin-left: -13%;
+    margin-left: -18%;
     text-align: center;
     font-size: 48px;
     font-weight: 900;
-    line-height: 56px;
+    line-height: 76px;
     font-style: normal;
     font-family: "Open Sans", sans-serif; }
   .advantages-block__people-img {
@@ -424,9 +423,11 @@ h1 {
     margin-top: 50px; }
   .advantages-block__card {
     width: 100%;
-    height: 280px;
+    height: 100%;
+    min-height: 350px;
     border: 2px dashed #b4977b; }
 
+/*---КАРТОЧКИ ПРИЕМУЩЕСТВ--*/
 .card-advantages {
   display: -ms-grid;
   display: grid;
@@ -435,13 +436,22 @@ h1 {
   justify-content: center;
   -ms-flex-line-pack: distribute;
   align-content: space-around;
-  padding: 10px;
+  padding: 20px 10px;
+  overflow: hidden;
   -webkit-transition: all 3s ease 0s;
   -o-transition: all 3s ease 0s;
   transition: all 3s ease 0s; }
   .card-advantages__img {
-    display: block;
-    margin: auto; }
+    width: 100%;
+    height: 150px;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center; }
   .card-advantages__title {
     text-align: center;
     font-size: 34px;
@@ -459,13 +469,6 @@ h1 {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; }
-
-.advantages-block__card:hover .card-advantages__img {
-  -webkit-transform: rotateY(360deg);
-  transform: rotateY(360deg);
-  -webkit-transition: all 3s ease 0s;
-  -o-transition: all 3s ease 0s;
-  transition: all 3s ease 0s; }
 
 .card-advantages-1 {
   -ms-grid-row: 1;
@@ -486,6 +489,231 @@ h1 {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: card-4; }
+
+/*----Изображения в карточках--*/
+.quality {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 110px;
+  margin-left: -55px;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-name: quality;
+  animation-name: quality;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+@-webkit-keyframes quality {
+  0% {
+    width: 150px;
+    top: -150%;
+    left: -150%;
+    opacity: 0.3; }
+  40% {
+    width: 130px;
+    top: 50px;
+    left: 30%;
+    opacity: 0.3; }
+  60% {
+    width: 140px;
+    margin-left: -70px;
+    left: 50%;
+    top: 10px;
+    opacity: 0.3; }
+  100% {
+    width: 110px;
+    left: 50%;
+    top: 20px;
+    margin-left: -55px;
+    opacity: 1; } }
+
+@keyframes quality {
+  0% {
+    width: 150px;
+    top: -150%;
+    left: -150%;
+    opacity: 0.3; }
+  40% {
+    width: 130px;
+    top: 50px;
+    left: 30%;
+    opacity: 0.3; }
+  60% {
+    width: 140px;
+    margin-left: -70px;
+    left: 50%;
+    top: 10px;
+    opacity: 0.3; }
+  100% {
+    width: 110px;
+    left: 50%;
+    top: 20px;
+    margin-left: -55px;
+    opacity: 1; } }
+
+.money {
+  position: absolute;
+  z-index: 1;
+  width: 70px;
+  height: auto;
+  left: 50%;
+  top: -100px;
+  margin-left: -50px;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-name: money;
+  animation-name: money;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+.wallet {
+  position: relative;
+  z-index: 5;
+  height: 110px;
+  background-color: white; }
+
+@-webkit-keyframes money {
+  0% {
+    top: -100px;
+    opacity: 0; }
+  1% {
+    top: -100px;
+    opacity: 1; }
+  99% {
+    top: 80px;
+    opacity: 1; }
+  100% {
+    top: 80px;
+    opacity: 0; } }
+
+@keyframes money {
+  0% {
+    top: -100px;
+    opacity: 0; }
+  1% {
+    top: -100px;
+    opacity: 1; }
+  99% {
+    top: 80px;
+    opacity: 1; }
+  100% {
+    top: 80px;
+    opacity: 0; } }
+
+.fast {
+  position: absolute;
+  width: 270px;
+  height: 90px;
+  left: 50%;
+  top: 50%;
+  margin: -45px 0px 0px -135px; }
+
+.wheel {
+  height: 40px;
+  font-size: 100px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  color: #3a4574;
+  position: absolute;
+  bottom: 37.8px;
+  left: 50%;
+  -webkit-animation: wheel 0.4s infinite linear;
+  animation: wheel 0.4s infinite linear; }
+
+.wheel-1 {
+  margin-left: -126.3px; }
+
+.wheel-2 {
+  margin-left: 48.5px; }
+
+@-webkit-keyframes wheel {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+
+@keyframes wheel {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+
+.line-fast {
+  position: absolute;
+  height: 3px;
+  background-color: #b4977b; }
+
+.line-fast-1 {
+  width: 30px;
+  top: 30px;
+  -webkit-animation: lineFast 1.2s infinite linear;
+  animation: lineFast 1.2s infinite linear; }
+
+.line-fast-2 {
+  top: 60px;
+  width: 40px;
+  -webkit-animation: lineFast 1.5s infinite linear;
+  animation: lineFast 1.5s infinite linear; }
+
+@-webkit-keyframes lineFast {
+  0% {
+    left: 150%; }
+  100% {
+    left: -150%; } }
+
+@keyframes lineFast {
+  0% {
+    left: 150%; }
+  100% {
+    left: -150%; } }
+
+.computer {
+  position: relative;
+  width: 180px;
+  height: auto; }
+
+.disp {
+  content: '';
+  z-index: 10;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  margin-left: -80px;
+  width: 160px;
+  height: 100px;
+  background-color: white;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-name: pc;
+  animation-name: pc;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+@-webkit-keyframes pc {
+  0% {
+    top: 6px;
+    height: 100px; }
+  100% {
+    top: 106px;
+    height: 0px; } }
+
+@keyframes pc {
+  0% {
+    top: 6px;
+    height: 100px; }
+  100% {
+    top: 106px;
+    height: 0px; } }
 
 /*------3-БЛОК----*/
 .work-block {
@@ -902,12 +1130,12 @@ h1 {
     width: 48%;
     display: -ms-grid;
     display: grid;
-    padding: 20px 0px 0px;
+    padding: 30px 0px;
     gap: 40px;
-    -ms-grid-rows: (-webkit-max-content)[2];
-    -ms-grid-rows: (max-content)[2];
-    grid-template-rows: repeat(2, -webkit-max-content);
-    grid-template-rows: repeat(2, max-content); }
+    -ms-grid-rows: -webkit-max-content -webkit-max-content 250px;
+    -ms-grid-rows: max-content max-content 250px;
+    grid-template-rows: -webkit-max-content -webkit-max-content 250px;
+    grid-template-rows: max-content max-content 250px; }
   .form-block__title {
     text-align: center;
     font-size: 48px;
@@ -924,6 +1152,37 @@ h1 {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; }
+  .form-block__string {
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  .form-block__marquee {
+    height: 100%;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: 2px solid #0b882e;
+    -webkit-animation: string 6s infinite linear;
+    animation: string 6s infinite linear; }
+    .form-block__marquee img {
+      width: 250px;
+      height: 100%; }
+
+@-webkit-keyframes string {
+  0% {
+    margin-left: 0%; }
+  100% {
+    margin-left: -110%; } }
+
+@keyframes string {
+  0% {
+    margin-left: 0%; }
+  100% {
+    margin-left: -110%; } }
 
 .form-block__name {
   -ms-grid-row: 1;
