@@ -1,6 +1,7 @@
 .wave-btn {
   //width,height
   @include flCent;
+  z-index: 15;
   position: relative;
   overflow: hidden;
   transition: all 0.8s ease 0s;
@@ -73,5 +74,158 @@
   }
   100% {
     transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1);
+  }
+}
+
+/*--Анимация-выделения-кнопки(напоминалка)--*/
+
+.line-btn {
+  z-index: -1;
+  background-color: $goldColor;
+  position: absolute;
+}
+
+.line-btn-top {
+  top: 0;
+  left: 0%;
+  width: 0%;
+  height: 1%;
+  box-shadow: 0 0 20px 7px $goldColor;
+  opacity: 0;
+}
+
+.line-btn-top.active {
+  animation: line-top 1s 1;
+}
+
+.line-btn-right {
+  top: 0%;
+  right: 0%;
+  width: 0.5%;
+  height: 0%;
+  box-shadow: 0 0 20px 7px $goldColor;
+  opacity: 0;
+}
+
+.line-btn-right.active {
+  animation: line-right 1s 0.2s 1;
+}
+
+.line-btn-bottom {
+  bottom: 0%;
+  right: 0%;
+  width: 0%;
+  height: 1%;
+  box-shadow: 0 0 20px 7px $goldColor;
+  opacity: 0;
+}
+
+.line-btn-bottom.active {
+  animation: line-bottom 1s 0.4s 1;
+}
+
+.line-btn-left {
+  bottom: 0%;
+  left: 0%;
+  width: 0.5%;
+  height: 0%;
+  box-shadow: 0 0 20px 7px $goldColor;
+  opacity: 0;
+}
+
+.line-btn-left.active {
+  animation: line-left 1s 0.7s 1;
+}
+
+//steps(30, end)
+@keyframes line-top {
+  0% {
+    width: 0%;
+    opacity: 1;
+  }
+  40% {
+    width: 100%;
+    opacity: 1;
+  }
+  80% {
+    width: 100%;
+    left: unset;
+    right: 0%;
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    left: unset;
+    right: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes line-bottom {
+  0% {
+    width: 0%;
+    opacity: 1;
+  }
+  40% {
+    width: 100%;
+    opacity: 1;
+  }
+  80% {
+    width: 100%;
+    right: unset;
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    right: unset;
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes line-right {
+  0% {
+    height: 0%;
+    opacity: 1;
+  }
+  40% {
+    height: 100%;
+    opacity: 1;
+  }
+  80% {
+    height: 100%;
+    top: unset;
+    bottom: 0%;
+    opacity: 1;
+  }
+  100% {
+    height: 0%;
+    top: unset;
+    bottom: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes line-left {
+  0% {
+    height: 0%;
+    opacity: 1;
+  }
+  40% {
+    height: 100%;
+    opacity: 1;
+  }
+  80% {
+    height: 100%;
+    bottom: unset;
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    height: 0%;
+    bottom: unset;
+    top: 0%;
+    opacity: 1;
   }
 }

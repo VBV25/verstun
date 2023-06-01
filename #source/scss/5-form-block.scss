@@ -11,6 +11,8 @@
   }
   /*----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----*/
   &__form {
+    position: relative;
+    z-index: 1;
     width: 48%;
     display: grid;
     grid-template-areas: 'name phone' 'comment-form comment-form' 'btn-form btn-form';
@@ -112,28 +114,29 @@
     @include fontSize(28px, 36px, 700);
     hyphens: auto;
   }
+  /*---БЕГУЩАЯ-СТРОКА--*/
   &__string {
     @include wiHe;
+    margin-top: 50px;
     overflow: hidden;
   }
   &__marquee {
-    height: 100%;
+    height: 50%;
     width: max-content;
     display: flex;
-    animation: string 6s infinite linear;
+    animation: string 8s infinite linear;
+    @keyframes string {
+      0% {
+        margin-left: 0%;
+      }
+      100% {
+        margin-left: -75%;
+      }
+    }
     img {
       width: 250px;
       height: 100%;
     }
-  }
-}
-
-@keyframes string {
-  0% {
-    margin-left: 0%;
-  }
-  100% {
-    margin-left: -75%;
   }
 }
 

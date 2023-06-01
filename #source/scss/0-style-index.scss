@@ -5,12 +5,33 @@
 // кнопка с заполнением(анимированная)
 @import 'wave-btn';
 
+/*---------------------*/
+
+/*---скролл-бар---*/
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $smokeColorOpacity;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $goldColor;
+  border-radius: 10px;
+}
+
 /*-----общие-стили----*/
 
 h1 {
   position: absolute;
   z-index: -100;
   opacity: 0;
+}
+
+.btn-blue {
+  position: relative;
 }
 
 /*-----ИМПОРТИРУЕМЫЕ-СТИЛИ----*/

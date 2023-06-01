@@ -20,18 +20,20 @@
     p {
       display: grid;
       align-content: center;
-      text-align: center;
       @include fontSize(160%, 100%, 300);
     }
   }
   &__contacts {
     grid-area: contact;
+    text-align: start;
   }
   &__title {
     display: grid;
     align-content: center;
-    text-align: center;
     @include fontSize(200%, 100%, 700);
+  }
+  &__title-info {
+    text-align: end;
   }
   /*---social-block--*/
   &__social-block {
@@ -69,6 +71,7 @@
   /*--info-block--*/
   &__info {
     grid-area: info;
+    text-align: end;
   }
   /*--agreement--*/
   &__agreement {

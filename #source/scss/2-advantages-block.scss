@@ -49,6 +49,7 @@
   &__title {
     text-align: center;
     @include fontSize(34px, 34px, 700);
+    margin: 5px 0 10px;
   }
   &__text {
     text-align: center;
@@ -216,6 +217,39 @@
   }
   100% {
     left: -150%;
+  }
+}
+
+/*----ДОРОГА В АНИМАЦИИ--*/
+
+.card-advantages {
+  &__string {
+    position: absolute;
+    bottom: 15px;
+    @include wiHe($he: max-content);
+    overflow: hidden;
+  }
+  &__marquee {
+    height: 50%;
+    width: max-content;
+    display: flex;
+    animation: string 1s infinite linear;
+    background-color: $blueColor;
+    @keyframes string {
+      0% {
+        margin-left: 0%;
+      }
+      100% {
+        margin-left: -75%;
+      }
+    }
+    .road {
+      width: 100px;
+      height: 15px;
+      transform: skew(30deg);
+      background: $smokeColor;
+      margin: 0px 0.1px;
+    }
   }
 }
 
