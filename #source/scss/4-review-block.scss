@@ -1,10 +1,7 @@
 .reviews-block {
   width: 100%;
   &__container {
-    position: relative;
-    @include wiHe(75%, max-content);
-    margin: auto;
-    padding: 50px 0 50px;
+    @include content-container;
     display: flex;
     flex-direction: column;
     gap: 25px;

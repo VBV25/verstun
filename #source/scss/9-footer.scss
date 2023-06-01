@@ -2,10 +2,7 @@
   background-color: $blueColor;
   color: $whiteColor;
   &__container {
-    position: relative;
-    @include wiHe(75%, max-content);
-    margin: auto;
-    padding: 50px 0;
+    @include content-container;
     display: grid;
     grid-template-areas: 'contact nav info' 'agreement agreement agreement';
     grid-template-columns: 1fr 1.5fr 1fr;

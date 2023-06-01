@@ -24,6 +24,13 @@ body::-webkit-scrollbar-thumb {
 
 /*-----общие-стили----*/
 
+@mixin content-container {
+  position: relative;
+  @include wiHe(75%, max-content);
+  margin: auto;
+  padding: 50px 0;
+}
+
 h1 {
   position: absolute;
   z-index: -100;

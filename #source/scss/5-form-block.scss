@@ -2,10 +2,7 @@
   width: 100%;
   background-color: $smokeColor;
   &__container {
-    position: relative;
-    @include wiHe(75%, max-content);
-    margin: auto;
-    padding: 50px 0;
+    @include content-container;
     display: flex;
     gap: 4%;
   }
