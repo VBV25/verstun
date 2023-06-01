@@ -73,10 +73,18 @@
     grid-area: info;
     text-align: end;
   }
+  #footerPolicy,
+  #footerСonditions {
+    &:hover {
+      cursor: pointer;
+      color: $goldColor;
+    }
+  }
   /*--agreement--*/
   &__agreement {
     grid-area: agreement;
-    @include fontSize(10px, 12px, 200);
+    margin-top: 10px;
+    @include fontSize(12px, 14px, 200);
     color: $grayColor;
     text-align: center;
   }
