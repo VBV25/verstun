@@ -75,5 +75,6 @@
     grid-area: agreement;
     @include fontSize(10px, 12px, 200);
     color: $grayColor;
+    text-align: center;
   }
 }

@@ -64,7 +64,7 @@
   &__row {
     @include wiHe(100%, max-content);
     margin-top: 50px;
-    padding-top: 50px;
+    padding-top: 70px;
     display: block;
     z-index: 30;
     position: relative;
@@ -74,6 +74,7 @@
   &__photo {
     @include flCent;
     border: 1px solid $goldColor;
+    overflow: hidden;
     img {
       @include wiHe;
     }
@@ -81,7 +82,7 @@
   /*--ПАГИНАЦИЯ--*/
   .swiper-pagination {
     position: static;
-    margin: 30px auto;
+    margin: 60px auto 30px;
     transform: translateX(0%) !important;
     @include flCent;
     .swiper-pagination-bullet {
