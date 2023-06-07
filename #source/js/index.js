@@ -3,10 +3,49 @@ $(document).ready(function () {
   setInterval(function () {
     $('.line-btn').toggleClass('active');
   }, 15000);
+  /*-------------------------------*/
 
-  /*-----------------------------------*/
+  /*---popup-policy---*/
+  $('.btn-popup-policy').click(function () {
+    $('body').addClass('hidden');
+    $('.policy-popup').addClass('active-popup');
+    var btnPopupName = $(this).text();
+    /*--ПОЛИТИКА-КОНФИДЕНЦИАЛЬНОСТИ--*/
+    console.log(btnPopupName);
 
-  /*---появление-элементов-в-зоне-видимости-при скроле---*/
+    if (
+      btnPopupName == 'Политика конфиденциальности' ||
+      btnPopupName == 'Политикoй конфиденциальности'
+    ) {
+      $('.policy-popup__title').text(btnPopupName);
+      $('.policy-popup__text').text(btnPopupName);
+    } else if (
+      btnPopupName == 'Условия использования' ||
+      btnPopupName == 'Условиями использования'
+    ) {
+      /*--------*/
+
+      /*--Условия использования--*/
+      $('.policy-popup__title').text(btnPopupName);
+      $('.policy-popup__text').text(btnPopupName);
+    }
+  });
+  /*----*/
+
+  /*---ЗАКРЫТИЕ-popup--*/
+  $('#policyPopupBtnClose').click(function () {
+    $('body').removeClass('hidden');
+    $('.policy-popup').removeClass('active-popup');
+  });
+  $(document).on('keyup', function (e) {
+    if (e.keyCode == 27) {
+      $('body').removeClass('hidden');
+      $('.policy-popup').removeClass('active-popup');
+    }
+  });
+  /*-------------------------------*/
+
+  /*--появление-элементов-в-зоне-видимости-при скроле--*/
   $(document).scroll(function () {
     var wt = $(window).scrollTop();
     var wh = $(window).height();
@@ -81,5 +120,14 @@ $(document).ready(function () {
         $('#review-5').css({ opacity: '0' });
       }, 600);
     }
+  });
+
+  /*---скрол-к-форме-отправки---*/
+
+  var formBlockTop = $('.form-block').offset().top + 50;
+  var btnClickToForm = $('.btn-click-to-form');
+  btnClickToForm.click(function () {
+    $('body,html').animate({ scrollTop: formBlockTop }, 1000);
+    return false;
   });
 });

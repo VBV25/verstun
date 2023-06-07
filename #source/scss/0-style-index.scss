@@ -9,24 +9,27 @@
 
 /*---скролл-бар---*/
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.policy-popup__container::-webkit-scrollbar {
   width: 8px;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.policy-popup__container::-webkit-scrollbar-track {
   background: $smokeColorOpacity;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.policy-popup__container::-webkit-scrollbar-thumb {
   background-color: $goldColor;
   border-radius: 10px;
 }
 
 /*-----общие-стили----*/
 
-@mixin content-container {
+@mixin content-container($wiCoBl: 85%) {
   position: relative;
-  @include wiHe(75%, max-content);
+  @include wiHe($wiCoBl, max-content);
   margin: auto;
   padding: 50px 0;
 }
@@ -39,6 +42,16 @@ h1 {
 
 .btn-blue {
   position: relative;
+}
+
+.active-popup {
+  z-index: 150 !important;
+  opacity: 1 !important;
+  transition: all 0.5s ease 0s;
+}
+
+.hidden {
+  overflow: hidden;
 }
 
 /*-----ИМПОРТИРУЕМЫЕ-СТИЛИ----*/
@@ -69,4 +82,18 @@ h1 {
 
 /*------FOOTER----*/
 
-@import '9-footer';
+@import '8-footer';
+
+/*------popups----*/
+
+@import '9-policy-popup';
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+/*----MEDIA----*/

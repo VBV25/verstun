@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include bgImg(100% auto);
+  background-repeat: no-repeat;
+  background-size: 110% 110%;
+  background-position: center;
   background-image: url('../img/bg.jpg');
   &::before {
     content: '';
@@ -17,21 +19,21 @@
   &__container {
     position: relative;
     z-index: 5;
-    @include wiHe(75%, max-content);
-    padding: 200px 0 120px;
+    @include wiHe(85%, max-content);
+    padding: 150px 0 50px;
     color: $whiteColor;
   }
   /*--заголовок--*/
   &__title {
-    margin-top: 50px;
-    @include fontSize(84px, 94px, 900);
+    margin-top: 10px;
+    @include fontSize(4vw, 300%, 900);
   }
   /*--подзаголовок--*/
   &__subtitle {
     width: max-content;
     max-width: max-content;
-    margin: 70px 0px 110px;
-    @include fontSize(66px, 80px, 500);
+    margin: 0px 0px 90px;
+    @include fontSize(3.4vw, 170%, 500);
     letter-spacing: 3px;
     overflow: hidden;
     border-right: 4px solid $goldColor;
@@ -127,3 +129,133 @@
     background-image: url('../img/vk.svg');
   }
 }
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+/*----MEDIA----*/
+
+//--------1600-----
+@media (max-width: 1600px) {
+  .service-block {
+    @include wiHe($he: max-content);
+    /*----КНОПКА---*/
+    &__btn {
+      @include wiHe(300px, 80px);
+      .wave-btn {
+        /*------ТЕКСТ КНОПКИ--------*/
+        &__text {
+          @include fontSize(24px, 24px, 700);
+        }
+      }
+    }
+    //група ссылок на соц сети
+    &__social-group {
+      gap: 40px;
+    }
+    //ссылки на соц сети
+    &__link {
+      @include wiHe(60px, 60px);
+    }
+  }
+}
+
+//--------1024-----
+@media (max-width: 1024px) {
+  .service-block {
+    /*--контейнер с контентом--*/
+    &__container {
+      @include wiHe(95%, max-content);
+      padding: 100px 0 50px;
+    }
+    /*--заголовок--*/
+    &__title {
+      margin-top: 0px;
+      @include fontSize(4vw, 300%, 900);
+    }
+    /*--подзаголовок--*/
+    &__subtitle {
+      margin: 10px 0px 70px;
+      @include fontSize(3.4vw, 170%, 500);
+    }
+    /*----КНОПКА---*/
+    &__btn {
+      @include wiHe(280px, 70px);
+      .wave-btn {
+        /*------ТЕКСТ КНОПКИ--------*/
+        &__text {
+          @include fontSize(22px, 22px, 700);
+        }
+        /*---------ВОЛНЫ-------*/
+        &__waves {
+          transition: all 3s ease 0s;
+        }
+      }
+    }
+    //ссылки на соц сети
+    &__link {
+      @include wiHe(50px, 50px);
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//
+
+/*
+ .service-block {
+    //--контейнер с контентом--
+    &__container {
+      @include wiHe(85%, max-content);
+      padding: 150px 0 50px;
+    }
+    //--заголовок--
+    &__title {
+      margin-top: 50px;
+      @include fontSize(84px, 94px, 900);
+    }
+    //--подзаголовок--
+    &__subtitle {
+      margin: 70px 0px 110px;
+      @include fontSize(66px, 80px, 500);
+    }
+    //обертка кнопок
+    &__btn-group {
+      @include flexSpBeCent;
+    }
+    //----КНОПКА---
+    &__btn {
+      @include wiHe(400px, 130px);
+      .wave-btn {
+        //------ТЕКСТ КНОПКИ------
+        &__text {
+          @include fontSize(30px, 30px, 700);
+        }
+        //---------ВОЛНЫ---
+        &__waves {
+          @include wiHe(280px, 280px);
+          transition: all 4.3s ease 0s;
+        }
+      }
+    }
+    //група ссылок на соц сети
+    &__social-group {
+      gap: 60px;
+    }
+    //ссылки на соц сети
+    &__link {
+      @include wiHe(70px, 70px);
+    }
+  }
+  */

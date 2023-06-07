@@ -1,5 +1,6 @@
 .reviews-block {
   width: 100%;
+  background-color: $whiteColor;
   &__container {
     @include content-container;
     display: flex;
@@ -86,5 +87,40 @@
     @include leBo(0%, 2.5%);
     @include wiHe(30%, 4px);
     background-color: $goldColor;
+  }
+}
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+/*----MEDIA----*/
+
+@media (max-width: 1600px) {
+  .reviews-block {
+    /*--заголовок*/
+    &__subtitle {
+      @include fontSize(24px, 36px, 700);
+    }
+    /*----КНОПКА---*/
+    &__btn {
+      @include wiHe(300px, 80px);
+      margin: 20px auto 0px;
+      .wave-btn {
+        /*------ТЕКСТ КНОПКИ--------*/
+        &__text {
+          @include fontSize(26px, 30px, 700);
+        }
+        /*---------ВОЛНЫ-------*/
+        &__waves {
+          @include wiHe(280px, 280px);
+        }
+      }
+    }
   }
 }

@@ -3,28 +3,41 @@
         <!--'form'-->
         <form class="form-block__form">
             <!--'name'-->
-            <label for="name" class="form-block__name">Имя
+            <label for="name" class="form-block__name">Имя*:
                 <input type="text" placeholder="Введите имя" id="name" required>
                 <div class="form-block__massage-err"></div>
             </label>
             <!--'phone'-->
-            <label for="phone" class="form-block__phone">Телефон
+            <label for="phone" class="form-block__phone">Телефон*:
                 <input type="phone" placeholder="Введите номер телефона" id="phone" required>
                 <div class="form-block__massage-err"></div>
             </label>
             <!--'comment'-->
-            <label for="comment" class="form-block__comment">Комментарии
+            <label for="comment" class="form-block__comment">Комментарии*:
                 <textarea name="comment" id="comment" cols="30" rows="10" placeholder="
      Введите комметарии
       " required></textarea>
                 <div class="form-block__massage-err"></div>
             </label>
+            <!--'чекбокс'-->
+            <div class="form-block__checkbox">
+
+                <input id="formAgreement" checked type="checkbox" name="agreement" class="form-block__checkbox-input">
+                <label for="formAgreement" class="form-block__checkbox-label">
+                    <span>Я даю свое согласие на обработку персональных данных в соответствии с <span
+                            class="btn-popup-policy">Политикoй конфиденциальности</span>* и <span
+                            class="btn-popup-policy">Условиями использования</span>*
+                    </span>
+                </label>
+
+            </div>
             <!--'button'-->
             <button class="form-block__btn btn-blue" id="form-block__btn" type="submit">
                 <div class=" wave-btn ">
                     <span class="wave-btn__text">Отправить заявку</span>
                     <span class="wave-btn__waves"></span>
                 </div>
+                <!--'анимация енапоминания о кнопке'-->
                 <div class="line-btn line-btn-top"></div>
                 <div class="line-btn line-btn-right"></div>
                 <div class="line-btn line-btn-bottom"></div>

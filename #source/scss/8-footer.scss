@@ -40,8 +40,10 @@
   }
   &__logo {
     @include wiHe($he: max-content);
+    display: grid;
+    justify-content: center;
     img {
-      @include wiHe(100%, auto);
+      @include wiHe(auto, 140px);
     }
   }
   &__social {
@@ -70,8 +72,7 @@
     grid-area: info;
     text-align: end;
   }
-  #footerPolicy,
-  #footerСonditions {
+  &__btn-popup {
     &:hover {
       cursor: pointer;
       color: $goldColor;
@@ -84,5 +85,58 @@
     @include fontSize(12px, 14px, 200);
     color: $grayColor;
     text-align: center;
+  }
+}
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+/*----MEDIA----*/
+
+@media (max-width: 1600px) {
+  .footer {
+    &__container {
+      grid-template-columns: 1fr 2fr 1fr;
+      column-gap: 10px;
+      row-gap: 10px;
+      padding: 50px 0px 25px;
+    }
+    &__contacts,
+    &__info {
+      gap: 10px;
+      p {
+        @include fontSize(20px, 20px, 300);
+      }
+    }
+    &__title {
+      @include fontSize(34px, 34px, 700);
+    }
+    /*---social-block--*/
+    &__social-block {
+      gap: 15px;
+    }
+    &__logo {
+      img {
+        @include wiHe(auto, 100px);
+      }
+    }
+    &__link {
+      @include wiHe(40px, 40px);
+    }
+    &__copyright {
+      @include fontSize(16px, 18px, 500);
+    }
+    /*--info-block--*/
+    /*--agreement--*/
+    &__agreement {
+      margin-top: 0px;
+      @include fontSize(10px, 12px, 200);
+    }
   }
 }

@@ -6,6 +6,7 @@
   align-items: center;
   position: relative;
   padding-top: 68px;
+  background-color: $whiteColor;
   &::before {
     content: '';
     position: absolute;
@@ -16,7 +17,7 @@
   }
   /*--заголовок и текст--*/
   &__head {
-    @include wiHe(75%, max-content);
+    @include wiHe(85%, max-content);
     @include flCent;
     position: relative;
     margin: auto;
@@ -101,4 +102,45 @@
 .swiper-pagination-bullet-active {
   background-color: $blueColor !important;
   opacity: 1 !important;
+}
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+/*----MEDIA----*/
+
+@media (max-width: 1600px) {
+  .work-block {
+    padding-top: 50px;
+    /*--заголовок и текст--*/
+    &__text {
+      @include fontSize(24px, 36px, 700);
+    }
+    /*--обертка стрелок глереи--*/
+    /*-----стрелки-галереи-----*/
+    .swiper-button-prev::after,
+    .work-block__nav .swiper-button-next::after {
+      font-size: 54px;
+    }
+    /*------контейнер-с-галереей------*/
+    &__row {
+      margin-top: 0px;
+      padding-top: 50px;
+    }
+    /*--ПАГИНАЦИЯ--*/
+    .swiper-pagination {
+      margin: 30px auto;
+      .swiper-pagination-bullet {
+        @include wiHe(15px, 15px);
+        margin: 0 10px !important;
+        line-height: 30px;
+      }
+    }
+  }
 }
