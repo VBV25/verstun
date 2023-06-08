@@ -1,91 +1,92 @@
 .footer {
-  background-color: $blueColor;
-  color: $whiteColor;
-  &__container {
-    @include content-container;
-    display: grid;
-    grid-template-areas: 'contact nav info' 'agreement agreement agreement';
-    grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: repeat(2, max-content);
-    column-gap: 15px;
-    row-gap: 20px;
-  }
-  &__contacts,
-  &__info {
-    display: grid;
-    gap: 20px;
-    p {
-      display: grid;
-      align-content: center;
-      @include fontSize(160%, 100%, 300);
+    background-color: $blueColor;
+    color: $whiteColor;
+    &__container {
+        @include content-container;
+        display: grid;
+        grid-template-areas: 'contact nav info' 'agreement agreement agreement';
+        grid-template-columns: 1fr 1.5fr 1fr;
+        grid-template-rows: repeat(2, max-content);
+        column-gap: 15px;
+        row-gap: 20px;
     }
-  }
-  &__contacts {
-    grid-area: contact;
-    text-align: start;
-  }
-  &__title {
-    display: grid;
-    align-content: center;
-    @include fontSize(200%, 100%, 700);
-  }
-  &__title-info {
-    text-align: end;
-  }
-  /*---social-block--*/
-  &__social-block {
-    grid-area: nav;
-    display: grid;
-    gap: 30px;
-  }
-  &__logo {
-    @include wiHe($he: max-content);
-    display: grid;
-    justify-content: center;
-    img {
-      @include wiHe(auto, 140px);
+    &__contacts,
+    &__info {
+        display: grid;
+        gap: 20px;
+        p {
+            display: grid;
+            align-content: center;
+            @include fontSize(1.4vw, 120%, 400);
+        }
     }
-  }
-  &__social {
-    @include flexSpArCent;
-  }
-  &__link {
-    @include wiHe(50px, 50px);
-    border-radius: 50%;
-    filter: invert(38%) sepia(3.5%) saturate(3125%) hue-rotate(349deg)
-      brightness(110%) contrast(86%);
-    img {
-      @include wiHe;
+    &__contacts {
+        grid-area: contact;
+        text-align: start;
     }
-    &:hover {
-      filter: unset;
-      box-shadow: 0 0 30px 2px $goldColor, 0 0 15px 2px $goldColor inset;
+    &__title {
+        display: grid;
+        align-content: center;
+        @include fontSize(1.8vw, 120%, 700);
     }
-  }
-  &__copyright {
-    @include fontSize(18px, 20px, 500);
-    text-align: center;
-    color: $goldColor;
-  }
-  /*--info-block--*/
-  &__info {
-    grid-area: info;
-    text-align: end;
-  }
-  &__btn-popup {
-    &:hover {
-      cursor: pointer;
-      color: $goldColor;
+    &__title-info {
+        text-align: end;
     }
-  }
-  /*--agreement--*/
-  &__agreement {
-    grid-area: agreement;
-    margin-top: 10px;
-    @include fontSize(12px, 14px, 200);
-    color: $grayColor;
-    text-align: center;
-  }
+    /*---social-block--*/
+    &__social-block {
+        grid-area: nav;
+        display: grid;
+        gap: 30px;
+    }
+    &__logo {
+        @include wiHe($he: max-content);
+        display: grid;
+        justify-content: center;
+        img {
+            @include wiHe(auto, 140px);
+        }
+    }
+    &__social {
+        @include flexSpArCent;
+    }
+    &__link {
+        @include wiHe(3vw, 3vw);
+        min-width: 50px;
+        min-height: 50px;
+        border-radius: 50%;
+        filter: invert(38%) sepia(3.5%) saturate(3125%) hue-rotate(349deg) brightness(110%) contrast(86%);
+        img {
+            @include wiHe;
+        }
+        &:hover {
+            filter: unset;
+            box-shadow: 0 0 30px 2px $goldColor, 0 0 15px 2px $goldColor inset;
+        }
+    }
+    &__copyright {
+        @include fontSize(1.2vw, 120%, 500);
+        text-align: center;
+        color: $goldColor;
+    }
+    /*--info-block--*/
+    &__info {
+        grid-area: info;
+        text-align: end;
+    }
+    &__btn-popup {
+        &:hover {
+            cursor: pointer;
+            color: $goldColor;
+        }
+    }
+    /*--agreement--*/
+    &__agreement {
+        grid-area: agreement;
+        margin-top: 10px;
+        @include fontSize(0.6vw, 120%, 300);
+        color: $grayColor;
+        text-align: center;
+    }
 }
 
 //-------------------------------
@@ -100,43 +101,55 @@
 /*----MEDIA----*/
 
 @media (max-width: 1600px) {
-  .footer {
-    &__container {
-      grid-template-columns: 1fr 2fr 1fr;
-      column-gap: 10px;
-      row-gap: 10px;
-      padding: 50px 0px 25px;
+    .footer {
+        &__container {
+            grid-template-columns: 1fr 2fr 1fr;
+            column-gap: 10px;
+            row-gap: 10px;
+            padding: 50px 0px 25px;
+        }
+        &__contacts,
+        &__info {
+            gap: 10px;
+            p {
+                @include fontSize(20px, 20px, 300);
+            }
+        }
+        &__title {
+            @include fontSize(34px, 34px, 700);
+        }
+        /*---social-block--*/
+        &__social-block {
+            gap: 15px;
+        }
+        &__logo {
+            img {
+                @include wiHe(auto, 100px);
+            }
+        }
+        &__link {
+            @include wiHe(40px, 40px);
+        }
+        &__copyright {
+            @include fontSize(16px, 18px, 500);
+        }
+        /*--info-block--*/
+        /*--agreement--*/
+        &__agreement {
+            margin-top: 0px;
+            @include fontSize(10px, 12px, 200);
+        }
     }
-    &__contacts,
-    &__info {
-      gap: 10px;
-      p {
-        @include fontSize(20px, 20px, 300);
-      }
-    }
-    &__title {
-      @include fontSize(34px, 34px, 700);
-    }
-    /*---social-block--*/
-    &__social-block {
-      gap: 15px;
-    }
-    &__logo {
-      img {
-        @include wiHe(auto, 100px);
-      }
-    }
-    &__link {
-      @include wiHe(40px, 40px);
-    }
-    &__copyright {
-      @include fontSize(16px, 18px, 500);
-    }
-    /*--info-block--*/
-    /*--agreement--*/
-    &__agreement {
-      margin-top: 0px;
-      @include fontSize(10px, 12px, 200);
-    }
-  }
 }
+
+@media (max-width: 1366px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {
+    .footer {
+        overflow: hidden;
+    }
+}@media (max-width: 480px) {}
+
+@media (max-width: 320px) {}

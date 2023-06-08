@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  /*----отступ в первой секции относительно высоты хедера----*/
+  function paddingTopBot() {
+    var headerHeight = $('header').outerHeight(true);
+    var firstBlockHtml = $('.service-block__container');
+    firstBlockHtml
+      .css('padding-top', headerHeight)
+      .css('padding-bottom', headerHeight / 1.5);
+  }
+  paddingTopBot();
   /*---подсветка-кнопки-напоминалка---*/
   setInterval(function () {
     $('.line-btn').toggleClass('active');
@@ -129,5 +138,36 @@ $(document).ready(function () {
   btnClickToForm.click(function () {
     $('body,html').animate({ scrollTop: formBlockTop }, 1000);
     return false;
+  });
+
+  /*----бегущая строка----*/
+
+  function stringRun() {
+    var marquee = $('#marquee');
+    marquee.wrapInner('<span>');
+    marquee.find('span').css({ width: 'max-content', display: 'inline-flex' });
+    var widthString = marquee.find('span').width();
+    marquee.append(marquee.find('span').clone());
+    marquee.wrapInner('<div>');
+
+    var widthString2 = widthString * 2;
+    marquee.find('div').css('width', widthString2);
+
+    var reset = function () {
+      $(this).css('margin-left', '0%');
+      $(this).animate(
+        { 'margin-left': -1 * widthString },
+        16000,
+        'linear',
+        reset
+      );
+    };
+    reset.call(marquee.find('div'));
+  }
+  stringRun();
+
+  //
+  $(window).resize(function () {
+    paddingTopBot();
   });
 });

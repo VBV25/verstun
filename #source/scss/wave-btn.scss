@@ -21,40 +21,39 @@
   }
   /*---------ВОЛНЫ-------*/
   &__waves {
-    //width,height,background-color,box-shadow
+    //background-color,box-shadow,transition
+    width: 100% !important;
+    height: 100% !important;
     position: absolute;
-    left: 18%;
+    left: 0;
     top: 0;
     /**/
-    transition: all 6s ease 0s;
+    //transition: all 6s ease 0s;
     &:after,
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      @include wiHe(260%, 260%);
-      /**/
-      // transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
+      top: 0%;
+      @include wiHe(40vw, 40vw);
+      transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
     }
     &:after {
       //background-color
-      left: 38%;
+      left: 42%;
       border-radius: 44%;
-      /**/
-      //animation: waves 4s infinite linear;
+      animation: waves 4s infinite linear;
     }
     &::before {
       //background-color
-      left: 62%;
+      left: 58%;
       border-radius: 42%;
-      /**/
-      // animation: waves 6s infinite linear;
+      animation: waves 6s infinite linear;
     }
   }
 }
 
 .wave-btn:hover .wave-btn__waves {
-  top: -300px;
+  top: -20vw;
 }
 
 /*----keyframes HEADER btn-----*/

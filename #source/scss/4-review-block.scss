@@ -1,5 +1,6 @@
 .reviews-block {
   width: 100%;
+  margin-top: -2px;
   background-color: $whiteColor;
   &__container {
     @include content-container;
@@ -11,10 +12,10 @@
   &__title {
     width: 100%;
     text-align: center;
-    @include fontSize(48px, 56px, 900);
+    @include fontSize(3.6vw, 120%, 900);
   }
   &__subtitle {
-    @include fontSize(28px, 36px, 700);
+    @include fontSize(1.6vw, 120%, 600);
     hyphens: auto;
   }
   &__review {
@@ -26,7 +27,7 @@
   }
   /*----КНОПКА---*/
   &__btn {
-    @include wiHe(380px, 100px);
+    @include wiHe(20vw, 5vw);
     margin: 25px auto 0px;
     background-color: $blueColor;
     border: 2px solid $blueColor;
@@ -41,7 +42,7 @@
       }
       /*------ТЕКСТ КНОПКИ--------*/
       &__text {
-        @include fontSize(30px, 30px, 700);
+        @include fontSize(1.6vw, 120%, 700);
         color: $whiteColor;
         text-transform: uppercase;
       }
@@ -78,7 +79,7 @@
     }
   }
   &__text {
-    @include fontSize(20px, 24px, 500);
+    @include fontSize(1.2vw, 120%, 500);
     hyphens: auto;
   }
   &::after {
@@ -101,26 +102,59 @@
 
 /*----MEDIA----*/
 
+//---1600---
 @media (max-width: 1600px) {
   .reviews-block {
     /*--заголовок*/
     &__subtitle {
-      @include fontSize(24px, 36px, 700);
+      @include fontSize(1.8vw, 120%, 600);
+      hyphens: auto;
     }
     /*----КНОПКА---*/
     &__btn {
-      @include wiHe(300px, 80px);
-      margin: 20px auto 0px;
+      // @include wiHe(300px, 80px);
+      // margin: 20px auto 0px;
       .wave-btn {
         /*------ТЕКСТ КНОПКИ--------*/
         &__text {
-          @include fontSize(26px, 30px, 700);
-        }
-        /*---------ВОЛНЫ-------*/
-        &__waves {
-          @include wiHe(280px, 280px);
+          //@include fontSize(26px, 30px, 700);
         }
       }
     }
   }
+  .review {
+    &__img {
+      @include wiHe(70px, 70px);
+    }
+    &__text {
+      @include fontSize(120%, 120%, 500);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      @include leBo(0%, 2.5%);
+      @include wiHe(30%, 4px);
+      background-color: $goldColor;
+    }
+  }
+}
+
+//---1366---
+@media (max-width: 1366px) {
+}
+
+//------1024---
+@media (max-width: 1024px) {
+}
+
+//---768---
+@media (max-width: 768px) {
+}
+
+//---480---
+@media (max-width: 480px) {
+}
+
+//---320---
+@media (max-width: 320px) {
 }

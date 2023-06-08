@@ -20,7 +20,7 @@
     position: relative;
     z-index: 5;
     @include wiHe(85%, max-content);
-    padding: 150px 0 50px;
+    padding: 150px 0 150px;
     color: $whiteColor;
   }
   /*--заголовок--*/
@@ -69,7 +69,7 @@
   }
   /*----КНОПКА---*/
   &__btn {
-    @include wiHe(400px, 130px);
+    @include wiHe(22vw, 7vw);
     background-color: $blueColor;
     border: 2px solid $blueColor;
     .wave-btn {
@@ -83,7 +83,7 @@
       }
       /*------ТЕКСТ КНОПКИ--------*/
       &__text {
-        @include fontSize(30px, 30px, 700);
+        @include fontSize(1.8vw, 120%, 700);
         color: $whiteColor;
         text-transform: uppercase;
       }
@@ -111,7 +111,9 @@
   //ссылки на соц сети
   &__link {
     @include bgImg;
-    @include wiHe(70px, 70px);
+    @include wiHe(4vw, 4vw);
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 50%;
     color: $whiteColor;
     &:hover {
@@ -166,6 +168,10 @@
   }
 }
 
+//---1366---
+@media (max-width: 1366px) {
+}
+
 //--------1024-----
 @media (max-width: 1024px) {
   .service-block {
@@ -203,6 +209,18 @@
       @include wiHe(50px, 50px);
     }
   }
+}
+
+//---768---
+@media (max-width: 768px) {
+}
+
+//---480---
+@media (max-width: 480px) {
+}
+
+//---320---
+@media (max-width: 320px) {
 }
 
 //

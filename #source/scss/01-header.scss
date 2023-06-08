@@ -11,26 +11,27 @@
     @include flexSpBeCent;
   }
   &__phone-container {
-    @include wiHe(280px, 60px);
+    max-width: 30vw;
+    padding: 10px 30px;
     @include flexSpBeCent;
   }
   &__phone-img {
     @include wiHe(auto, 100%);
   }
   &__phone {
-    @include fontSize(22px, 24px, 700);
+    @include fontSize(1.6vw, 120%, 600);
     color: $whiteColor;
     letter-spacing: 2px;
   }
   &__logo {
     @include wiHe(max-content, max-content);
     img {
-      @include wiHe(auto, 120px);
+      @include wiHe(15vw, auto);
     }
   }
   /*----КНОПКА---*/
   &__btn {
-    @include wiHe(280px, 60px);
+    max-width: 30vw;
     .wave-btn {
       @include wiHe;
       border: 5px solid $whiteColor;
@@ -43,14 +44,14 @@
       }
       /*------ТЕКСТ КНОПКИ--------*/
       &__text {
-        @include fontSize(18px, 20px, 700);
+        padding: 10px 30px;
+        @include fontSize(1.6vw, 120%, 600);
         color: $whiteColor;
         text-transform: uppercase;
       }
       /*---------ВОЛНЫ-------*/
       &__waves {
-        @include wiHe(280px, 280px);
-        transition: all 8s ease 0s;
+        transition: all 5s ease 0s;
         &:after {
           background-color: $whiteColor;
           animation: wavesHeader 4s infinite linear;
@@ -106,6 +107,10 @@
   }
 }
 
+//---1366---
+@media (max-width: 1366px) {
+}
+
 //------1024---
 @media (max-width: 1024px) {
   .header {
@@ -119,7 +124,7 @@
     }
     &__logo {
       img {
-        @include wiHe(auto, 80px);
+        @include wiHe(auto, 90px);
       }
     }
     /*----КНОПКА---*/
@@ -140,4 +145,49 @@
       }
     }
   }
+}
+
+//---768---
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 0px;
+    &__phone-img {
+      @include wiHe(auto, 20px);
+    }
+    &__phone {
+      @include fontSize(11px, 11px, 700);
+    }
+    &__logo {
+      img {
+        @include wiHe(auto, 50px);
+      }
+    }
+    /*----КНОПКА---*/
+    &__btn {
+      .wave-btn {
+        border: 2px solid $whiteColor;
+        &:hover {
+          border: 2px solid $goldColor;
+        }
+        /*------ТЕКСТ КНОПКИ--------*/
+        &__text {
+          padding: 7px 10px 6px;
+          @include fontSize(10px, 10px, 600);
+        }
+        /*---------ВОЛНЫ-------*/
+        &__waves {
+          @include wiHe(180px, 180px);
+          transition: all 5s ease 0s;
+        }
+      }
+    }
+  }
+}
+
+//---480---
+@media (max-width: 480px) {
+}
+
+//---320---
+@media (max-width: 320px) {
 }

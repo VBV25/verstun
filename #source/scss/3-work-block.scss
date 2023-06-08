@@ -26,12 +26,12 @@
     width: 80%;
   }
   &__title {
-    @include fontSize(48px, 56px, 900);
+    @include fontSize(3.6vw, 120%, 900);
     color: $whiteColor;
   }
   &__text {
-    margin-top: 25px;
-    @include fontSize(28px, 36px, 700);
+    margin-top: 40px;
+    @include fontSize(1.6vw, 120%, 600);
     color: $whiteColor;
     hyphens: auto;
   }
@@ -39,7 +39,7 @@
   &__nav {
     @include wiHe(20%, max-content);
     @include flCent;
-    gap: 40px;
+    gap: 3vw;
   }
   /*-----стрелки-галереи-----*/
   &__arrow {
@@ -53,7 +53,7 @@
   .swiper-button-prev::after,
   .work-block__nav .swiper-button-next::after {
     height: max-content !important;
-    font-size: 74px;
+    font-size: 4.5vw;
     color: $goldColor;
     padding: 5px;
   }
@@ -143,4 +143,24 @@
       }
     }
   }
+}
+
+//---1366---
+@media (max-width: 1366px) {
+}
+
+//------1024---
+@media (max-width: 1024px) {
+}
+
+//---768---
+@media (max-width: 768px) {
+}
+
+//---480---
+@media (max-width: 480px) {
+}
+
+//---320---
+@media (max-width: 320px) {
 }

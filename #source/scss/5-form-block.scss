@@ -23,15 +23,15 @@
         column-gap: 19px;
         //подпись
         label {
-            @include fontSize(24px, 24px, 300);
+            @include fontSize(1.4vw, 120%, 500);
             display: grid;
             //инпуты
             input {
-                @include wiHe(100%, 80px);
+                @include wiHe(100%, max-content);
                 margin-top: 4px;
                 border: 1px solid $smokeColor;
-                padding: 28px 16px;
-                @include fontSize(16px, 22px, 400);
+                padding: 15px 10px;
+                @include fontSize(1.2vw, 120%, 400);
                 &:hover {
                     border-color: $goldColor;
                 }
@@ -44,8 +44,8 @@
                 @include wiHe(100%, 200px);
                 margin-top: 4px;
                 border: 1px solid $smokeColor;
-                padding: 28px 16px;
-                @include fontSize(16px, 22px, 400);
+                padding: 15px 10px;
+                @include fontSize(1.2vw, 120%, 400);
                 resize: none;
                 &:hover {
                     border-color: $goldColor;
@@ -65,16 +65,17 @@
     }
     &__checkbox-label {
         position: relative;
+        margin-bottom: 25px;
         display: grid;
         grid-auto-flow: column;
-        font-size: 18px !important;
+        font-size: 1.1vw !important;
         align-items: center;
         cursor: pointer;
         hyphens: auto;
         &::before {
             content: '';
             align-self: flex-start;
-            @include wiHe(24px, 24px);
+            @include wiHe(32px, 32px);
             background-color: $blueColor;
             border-radius: 4px;
             margin: 0px 10px 0px 0px;
@@ -82,8 +83,8 @@
         &::after {
             content: '';
             position: absolute;
-            @include leTo(4px, 4px);
-            @include wiHe(16px, 16px);
+            @include leTo(6px, 6px);
+            @include wiHe(20px, 20px);
             background-color: $goldColor;
             border-radius: 4px;
             transform: scale(0);
@@ -98,7 +99,7 @@
     }
     /*----КНОПКА---*/
     &__btn {
-        @include wiHe(330px, 80px);
+        @include wiHe(20vw, 5vw);
         margin: 10px auto 0px;
         background-color: $blueColor;
         border: 2px solid $blueColor;
@@ -113,7 +114,7 @@
             }
             /*------ТЕКСТ КНОПКИ--------*/
             &__text {
-                @include fontSize(27px, 30px, 700);
+                @include fontSize(1.6vw, 120%, 700);
                 color: $whiteColor;
                 text-transform: uppercase;
             }
@@ -135,10 +136,11 @@
     }
     /*---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---*/
     &__massage-err {
-        @include fontSize(20px, 20px, 700);
-        @include wiHe($he: 24px);
-        margin-top: 10px;
+        @include fontSize(20px, 22px, 500);
+        @include wiHe($he: 22px);
+        margin-top: 5px;
         text-align: center;
+        color: $closeColor;
     }
     /*----------------------------*/
     /*----ТЕКСТОВЫЙ-БЛОК----*/
@@ -152,10 +154,10 @@
     }
     &__title {
         text-align: center;
-        @include fontSize(48px, 56px, 900);
+        @include fontSize(3.1vw, 120%, 900);
     }
     &__subtitle {
-        @include fontSize(28px, 36px, 700);
+        @include fontSize(2vw, 120%, 600);
         hyphens: auto;
     }
     /*---БЕГУЩАЯ-СТРОКА--*/
@@ -164,21 +166,11 @@
         overflow: hidden;
     }
     &__marquee {
-        height: 70%;
         width: max-content;
-        display: flex;
-        animation: string 8s infinite linear;
-        @keyframes string {
-            0% {
-                margin-left: 0%;
-            }
-            100% {
-                margin-left: -75%;
-            }
-        }
         img {
-            width: 250px;
-            height: 130px;
+            margin: 0px 10px;
+            width: 300px;
+            height: 150px;
         }
     }
 }
@@ -213,30 +205,63 @@
 
 @media (max-width: 1600px) {
     .form-block {
-        /*----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----*/
+        //----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----
         &__form {
             row-gap: 5px;
         }
-        /*----КНОПКА---*/
+        &__checkbox-label {
+            &::before {
+                @include wiHe(24px, 24px);
+            }
+            &::after {
+                @include leTo(4px, 4px);
+                @include wiHe(16px, 16px);
+            }
+        }
+        //----КНОПКА---
         &__btn {
             @include wiHe(300px, 80px);
             margin: 20px auto 0px;
-            /*------ТЕКСТ КНОПКИ--------*/
+            //------ТЕКСТ КНОПКИ--------
             &__text {
                 @include fontSize(22px, 30px, 700);
             }
-            /*---------ВОЛНЫ-------*/
+            //---------ВОЛНЫ-------
+        }
+        //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
+        &__massage-err {
+            @include fontSize(18px, 20px, 500);
+            @include wiHe($he: 20px);
+            margin-top: 5px;
         }
     }
-    /*---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---*/
-    &__massage-err {
-        @include fontSize(16px, 18px, 700);
-        @include wiHe($he: 18px);
-        margin-top: 5px;
-    }
-    /*----------------------------*/
-    /*----ТЕКСТОВЫЙ-БЛОК----*/
-    &__subtitle {
-        @include fontSize(24px, 36px, 700);
+}
+
+@media (max-width: 1366px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {
+    .form-block {
+        overflow: hidden;
+        //----ТЕКСТОВЫЙ-БЛОК----
+        &__title {
+            @include fontSize(3.1vw, 120%, 900);
+        }
+        &__subtitle {
+            @include fontSize(1.7vw, 120%, 600);
+        }
+        //строка
+        &__marquee {
+            img {
+                margin: 0px 10px;
+                width: 200px;
+                height: 100px;
+            }
+        }
     }
 }
+
+@media (max-width: 480px) {}
+
+@media (max-width: 320px) {}
