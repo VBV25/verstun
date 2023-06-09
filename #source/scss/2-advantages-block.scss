@@ -2,7 +2,6 @@
   width: 100%;
   background-color: $whiteColor;
   &__container {
-    @include content-container;
     padding-top: 100px;
     display: grid;
     grid-template-areas: 'card-1 title card-2' 'card-3 img card-4';
@@ -18,7 +17,6 @@
     position: relative;
     @include leTo(-60px, 2%);
     text-align: center;
-    @include fontSize(3.6vw, 120%, 900);
   }
   /*--изображение--*/
   &__people-img {
@@ -176,14 +174,14 @@
 //------3-------
 .fast {
   position: relative;
-  @include wiHe($he: max-content);
+  @include wiHe($he: 100%);
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: end;
   img {
     position: relative;
     z-index: 5;
-    @include wiHe(auto, 60%);
+    @include wiHe(auto, 75%);
   }
   &::after,
   &::before {
@@ -193,15 +191,15 @@
     font-size: 550%;
     @include gridCent;
     color: $blueColor;
-    bottom: 17.8%;
+    bottom: 10.4%;
     left: 50%;
     animation: wheel 0.6s infinite linear;
   }
   &::before {
-    margin-left: -102.25px;
+    margin-left: -108.5px;
   }
   &::after {
-    margin-left: 38.4px;
+    margin-left: 42.6px;
   }
 }
 
@@ -247,8 +245,8 @@
     position: absolute;
     z-index: 1;
     left: -100%;
-    bottom: -25%;
-    @include wiHe(500%, 25%);
+    bottom: -15%;
+    @include wiHe(500%, 15%);
     overflow: hidden;
   }
   &__marquee {
@@ -332,7 +330,6 @@
     &__title {
       width: 100%;
       @include leTo(unset, unset);
-      @include fontSize(3.6vw, 120%, 900);
     }
     //--изображение--
     &__people-img {
@@ -345,16 +342,120 @@
   }
 }
 
-//---1366---
-@media (max-width: 1366px) {
-}
-
 //------1024---
 @media (max-width: 1024px) {
+  .advantages-block {
+    &__container {
+      grid-template-areas: 'title title ' 'card-1 card-2' 'img img' 'card-3 card-4';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: max-content 1fr max-content 1fr;
+      row-gap: 10px;
+      column-gap: 5%;
+    }
+    &__title {
+      margin-bottom: 20px;
+    }
+    //--изображение--
+    &__people-img {
+      margin-top: 0px;
+      img {
+        width: 30%;
+        margin: auto;
+      }
+    }
+  }
+  .card-advantages {
+    padding: 10px 5px;
+    gap: 10px;
+    &__img {
+      height: 70px;
+    }
+    &__title {
+      @include fontSize(3vw, 120%, 700);
+    }
+    &__text {
+      @include fontSize(2vw, 120%, 700);
+    }
+  }
+  //----Изображения в карточках--
+  //-------2-------
+  .money {
+    margin-left: -28px;
+  }
+  //------3-------
+  .fast {
+    &::after,
+    &::before {
+      font-size: 400%;
+      bottom: 6;
+      left: 50%;
+    }
+    &::before {
+      margin-left: -76.4px;
+    }
+    &::after {
+      margin-left: 29.1px;
+    }
+  }
+  .line-fast {
+    height: 2px;
+    width: 20px;
+  }
+  //-------4-------
+  .computer {
+    &::after {
+      bottom: 31%;
+      margin-left: -35px;
+      @include wiHe(70px, 60%);
+    }
+  }
 }
 
 //---768---
 @media (max-width: 768px) {
+  .card-advantages {
+    gap: 5px;
+    &__img {
+      height: 50px;
+    }
+    &__title {
+      @include fontSize(3.5vw, 120%, 700);
+    }
+    &__text {
+      @include fontSize(2.5vw, 120%, 700);
+    }
+  }
+  //----Изображения в карточках--
+  //-------2-------
+  .money {
+    margin-left: -18px;
+  }
+  //------3-------
+  .fast {
+    &::after,
+    &::before {
+      font-size: 250%;
+      bottom: 9%;
+    }
+    &::before {
+      margin-left: -52.8px;
+    }
+    &::after {
+      margin-left: 22px;
+    }
+  }
+  .line-fast {
+    height: 2px;
+    width: 20px;
+  }
+  //-------4-------
+  .computer {
+    &::after {
+      bottom: 31%;
+      margin-left: -25px;
+      @include wiHe(50px, 60%);
+    }
+  }
 }
 
 //---480---

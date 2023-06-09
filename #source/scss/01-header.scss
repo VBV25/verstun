@@ -1,68 +1,67 @@
 .header {
-  position: absolute;
-  @include leTo;
-  z-index: 20;
-  @include wiHe(100%, max-content);
-  padding: 30px 0px;
-  @include flCent;
-  /*---*/
-  &__container {
-    @include wiHe(85%, max-content);
-    @include flexSpBeCent;
-  }
-  &__phone-container {
-    max-width: 30vw;
-    padding: 10px 30px;
-    @include flexSpBeCent;
-  }
-  &__phone-img {
-    @include wiHe(auto, 100%);
-  }
-  &__phone {
-    @include fontSize(1.6vw, 120%, 600);
-    color: $whiteColor;
-    letter-spacing: 2px;
-  }
-  &__logo {
-    @include wiHe(max-content, max-content);
-    img {
-      @include wiHe(15vw, auto);
+    position: absolute;
+    @include leTo;
+    z-index: 20;
+    @include wiHe(100%, max-content);
+    padding: 30px 0px;
+    @include flCent;
+    /*---*/
+    &__container {
+        @include wiHe(85%, max-content);
+        @include flexSpBeCent;
     }
-  }
-  /*----КНОПКА---*/
-  &__btn {
-    max-width: 30vw;
-    .wave-btn {
-      @include wiHe;
-      border: 5px solid $whiteColor;
-      border-radius: 5px;
-      &:hover {
-        border: 5px solid $goldColor;
-      }
-      &:hover .wave-btn__text {
-        color: $blackColor;
-      }
-      /*------ТЕКСТ КНОПКИ--------*/
-      &__text {
+    &__phone-container {
+        max-width: 30vw;
         padding: 10px 30px;
+        @include flexSpBeCent;
+    }
+    &__phone-img {
+        @include wiHe(auto, 3.3vw);
+    }
+    &__phone {
         @include fontSize(1.6vw, 120%, 600);
         color: $whiteColor;
-        text-transform: uppercase;
-      }
-      /*---------ВОЛНЫ-------*/
-      &__waves {
-        transition: all 5s ease 0s;
-        &:after {
-          background-color: $whiteColor;
-          animation: wavesHeader 4s infinite linear;
-        }
-        &::before {
-          background-color: $whiteColorOpacity;
-          animation: wavesHeader 6s infinite linear;
-        }
-      }
+        letter-spacing: 2px;
     }
-  }
+    &__logo {
+        @include wiHe(max-content, max-content);
+        img {
+            @include wiHe(15vw, auto);
+        }
+    }
+    /*----КНОПКА---*/
+    &__btn {
+        max-width: 30vw;
+        .wave-btn {
+            @include wiHe;
+            border: 5px solid $whiteColor;
+            border-radius: 5px;
+            &:hover {
+                border: 5px solid $goldColor;
+            }
+            &:hover .wave-btn__text {
+                color: $blackColor;
+            }
+            /*------ТЕКСТ КНОПКИ--------*/
+            &__text {
+                padding: 10px 30px;
+                @include fontSize(1.6vw, 120%, 600);
+                color: $whiteColor;
+                text-transform: uppercase;
+            }
+            /*---------ВОЛНЫ-------*/
+            &__waves {
+                &:after {
+                    background-color: $whiteColor;
+                    animation: wavesHeader 4s infinite linear;
+                }
+                &::before {
+                    background-color: $whiteColorOpacity;
+                    animation: wavesHeader 6s infinite linear;
+                }
+            }
+        }
+    }
 }
 
 //-------------------------------
@@ -78,116 +77,155 @@
 
 //---1600---
 @media (max-width: 1600px) {
-  .header {
-    &__phone-container {
-      @include wiHe(max-content, max-content);
-    }
-    &__phone-img {
-      @include wiHe(auto, 50px);
-    }
-    &__phone {
-      @include fontSize(22px, 22px, 700);
-    }
-    &__logo {
-      img {
-        @include wiHe(auto, 100px);
-      }
-    }
-    /*----КНОПКА---*/
-    &__btn {
-      @include wiHe(max-content, max-content);
-      .wave-btn {
-        /*------ТЕКСТ КНОПКИ--------*/
-        &__text {
-          padding: 10px 15px;
-          @include fontSize(20px, 22px, 700);
+    .header {
+        &__phone-container {
+            padding: 0;
         }
-      }
+        &__phone {
+            @include fontSize(22px, 22px, 700);
+        }
+        &__logo {
+            img {
+                @include wiHe(auto, 100px);
+            }
+        }
+        /*----КНОПКА---*/
+        &__btn {
+            @include wiHe(max-content, max-content);
+            .wave-btn {
+                /*------ТЕКСТ КНОПКИ--------*/
+                &__text {
+                    padding: 10px 15px;
+                    @include fontSize(20px, 22px, 700);
+                }
+            }
+        }
     }
-  }
 }
 
 //---1366---
 @media (max-width: 1366px) {
+    .header {
+        &__phone {
+            @include fontSize(20px, 20px, 700);
+        }
+        &__logo {
+            img {
+                @include wiHe(auto, 90px);
+            }
+        }
+        /*----КНОПКА---*/
+        &__btn {
+            @include wiHe(max-content, max-content);
+            .wave-btn {
+                /*------ТЕКСТ КНОПКИ--------*/
+                &__text {
+                    @include fontSize(18px, 20px, 700);
+                }
+            }
+        }
+    }
 }
 
 //------1024---
 @media (max-width: 1024px) {
-  .header {
-    padding: 10px 0px;
-    /*---*/
-    &__container {
-      @include wiHe(95%, max-content);
-    }
-    &__phone {
-      @include fontSize(18px, 20px, 700);
-    }
-    &__logo {
-      img {
-        @include wiHe(auto, 90px);
-      }
-    }
-    /*----КНОПКА---*/
-    &__btn {
-      .wave-btn {
-        border: 3px solid $whiteColor;
-        &:hover {
-          border: 3px solid $goldColor;
+    .header {
+        padding: 15px 0px;
+        /*---*/
+        &__container {
+            @include wiHe(95%, max-content);
         }
-        /*------ТЕКСТ КНОПКИ--------*/
-        &__text {
-          @include fontSize(16px, 18px, 700);
+        &__phone {
+            @include fontSize(1.7vw, 120%, 600);
         }
-        /*---------ВОЛНЫ-------*/
-        &__waves {
-          transition: all 4s ease 0s;
+        &__logo {
+            img {
+                @include wiHe(auto, 70px);
+            }
         }
-      }
+        /*----КНОПКА---*/
+        &__btn {
+            .wave-btn {
+                border: 2px solid $whiteColor;
+                &:hover {
+                    border: 2px solid $goldColor;
+                }
+                /*------ТЕКСТ КНОПКИ--------*/
+                &__text {
+                    padding: 7px 10px;
+                    @include fontSize(1.65vw, 120%, 600);
+                }
+            }
+        }
     }
-  }
 }
 
 //---768---
 @media (max-width: 768px) {
-  .header {
-    padding: 10px 0px;
-    &__phone-img {
-      @include wiHe(auto, 20px);
-    }
-    &__phone {
-      @include fontSize(11px, 11px, 700);
-    }
-    &__logo {
-      img {
-        @include wiHe(auto, 50px);
-      }
-    }
-    /*----КНОПКА---*/
-    &__btn {
-      .wave-btn {
-        border: 2px solid $whiteColor;
-        &:hover {
-          border: 2px solid $goldColor;
+    .header {
+        &__phone-img {
+            display: none;
         }
-        /*------ТЕКСТ КНОПКИ--------*/
-        &__text {
-          padding: 7px 10px 6px;
-          @include fontSize(10px, 10px, 600);
+        &__phone {
+            @include fontSize(2vw, 120%, 800);
         }
-        /*---------ВОЛНЫ-------*/
-        &__waves {
-          @include wiHe(180px, 180px);
-          transition: all 5s ease 0s;
+        &__logo {
+            img {
+                @include wiHe(auto, 45px);
+            }
         }
-      }
+        /*----КНОПКА---*/
+        &__btn {
+            .wave-btn {
+                border: 2px solid $whiteColor;
+                &:hover {
+                    border: 2px solid $goldColor;
+                }
+                /*------ТЕКСТ КНОПКИ--------*/
+                &__text {
+                    padding: 7px 8px 6px;
+                    @include fontSize(2vw, 120%, 600);
+                }
+            }
+        }
     }
-  }
 }
 
 //---480---
 @media (max-width: 480px) {
+    .header {
+        &__phone-img {
+            display: none;
+        }
+        &__phone {
+            @include fontSize(10px, 12px, 800);
+        }
+        &__logo {
+            img {
+                @include wiHe(auto, 50px);
+            }
+        }
+        /*----КНОПКА---*/
+        &__btn {
+            .wave-btn {
+                border: 2px solid $whiteColor;
+                &:hover {
+                    border: 2px solid $goldColor;
+                }
+                /*------ТЕКСТ КНОПКИ--------*/
+                &__text {
+                    padding: 7px 10px 6px;
+                    @include fontSize(10px, 10px, 600);
+                }
+                /*---------ВОЛНЫ-------*/
+                &__waves {
+                    @include wiHe(180px, 180px);
+                    transition: all 5s ease 0s;
+                }
+            }
+        }
+    }
 }
 
 //---320---
-@media (max-width: 320px) {
-}
+@media (max-width: 320px) {}

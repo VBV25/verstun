@@ -69,7 +69,6 @@
   }
   /*----КНОПКА---*/
   &__btn {
-    @include wiHe(22vw, 7vw);
     background-color: $blueColor;
     border: 2px solid $blueColor;
     .wave-btn {
@@ -83,6 +82,7 @@
       }
       /*------ТЕКСТ КНОПКИ--------*/
       &__text {
+        padding: 2.5vw 5vw;
         @include fontSize(1.8vw, 120%, 700);
         color: $whiteColor;
         text-transform: uppercase;
@@ -147,72 +147,87 @@
 @media (max-width: 1600px) {
   .service-block {
     @include wiHe($he: max-content);
-    /*----КНОПКА---*/
-    &__btn {
-      @include wiHe(300px, 80px);
-      .wave-btn {
-        /*------ТЕКСТ КНОПКИ--------*/
-        &__text {
-          @include fontSize(24px, 24px, 700);
-        }
-      }
-    }
+    //----КНОПКА---
     //група ссылок на соц сети
     &__social-group {
       gap: 40px;
     }
     //ссылки на соц сети
     &__link {
-      @include wiHe(60px, 60px);
+      @include wiHe(50px, 50px);
+      min-width: unset;
+      min-height: unset;
     }
   }
-}
-
-//---1366---
-@media (max-width: 1366px) {
 }
 
 //--------1024-----
 @media (max-width: 1024px) {
   .service-block {
-    /*--контейнер с контентом--*/
+    //--контейнер с контентом--
     &__container {
       @include wiHe(95%, max-content);
-      padding: 100px 0 50px;
     }
-    /*--заголовок--*/
+    //--заголовок--
     &__title {
       margin-top: 0px;
-      @include fontSize(4vw, 300%, 900);
+      @include fontSize(4.4vw, 300%, 900);
     }
-    /*--подзаголовок--*/
+    //--подзаголовок--
     &__subtitle {
       margin: 10px 0px 70px;
-      @include fontSize(3.4vw, 170%, 500);
+      @include fontSize(3.5vw, 170%, 600);
     }
-    /*----КНОПКА---*/
+    //----КНОПКА---
     &__btn {
-      @include wiHe(280px, 70px);
       .wave-btn {
-        /*------ТЕКСТ КНОПКИ--------*/
+        //------ТЕКСТ КНОПКИ--------
         &__text {
-          @include fontSize(22px, 22px, 700);
-        }
-        /*---------ВОЛНЫ-------*/
-        &__waves {
-          transition: all 3s ease 0s;
+          padding: 2.3vw 4.6vw;
+          @include fontSize(2.2vw, 120%, 700);
         }
       }
     }
     //ссылки на соц сети
     &__link {
-      @include wiHe(50px, 50px);
+      @include wiHe(40px, 40px);
     }
   }
 }
 
 //---768---
 @media (max-width: 768px) {
+  .service-block {
+    &__container {
+      padding-top: 80px;
+      padding-bottom: 50px !important;
+    }
+    //--заголовок--
+    &__title {
+      @include fontSize(4.6vw, 300%, 900);
+    }
+    //--подзаголовок--
+    &__subtitle {
+      letter-spacing: 1px;
+      margin: 10px 0px 40px;
+      @include fontSize(3.7vw, 170%, 600);
+      border-right: 2px solid $goldColor;
+    }
+    //----КНОПКА---
+    &__btn {
+      .wave-btn {
+        //------ТЕКСТ КНОПКИ--------
+        &__text {
+          padding: 2.3vw 4.6vw;
+          @include fontSize(2.8vw, 120%, 700);
+        }
+      }
+    }
+    //ссылки на соц сети
+    &__link {
+      @include wiHe(35px, 35px);
+    }
+  }
 }
 
 //---480---

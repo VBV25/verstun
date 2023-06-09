@@ -1,195 +1,147 @@
 .form-block {
-    width: 100%;
-    background-color: $smokeColor;
-    &__container {
-        @include content-container;
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: max-content;
-        gap: 4%;
+  width: 100%;
+  background-color: $smokeColor;
+  &__container {
+    position: relative;
+    z-index: 1;
+    height: max-content;
+    display: grid;
+    grid-template-areas: 'name phone title' 'comment-form comment-form subtitle' 'form-item form-item string' 'btn-form btn-form string';
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+    grid-template-rows: repeat(4, max-content);
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  //----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----
+  //подпись
+  label {
+    @include fontSize(1.4vw, 120%, 500);
+    display: grid;
+    //инпуты
+    input {
+      @include wiHe(100%, max-content);
+      margin-top: 4px;
+      border: 1px solid $smokeColor;
+      padding: 15px 10px;
+      @include fontSize(1.2vw, 120%, 400);
+      &:hover {
+        border-color: $goldColor;
+      }
+      &:focus {
+        border-color: $blueColor;
+      }
     }
-    /*----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----*/
-    &__form {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: max-content;
-        display: grid;
-        grid-template-areas: 'name phone' 'comment-form comment-form' 'form-item form-item' 'btn-form btn-form';
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, max-content);
-        row-gap: 10px;
-        column-gap: 19px;
-        //подпись
-        label {
-            @include fontSize(1.4vw, 120%, 500);
-            display: grid;
-            //инпуты
-            input {
-                @include wiHe(100%, max-content);
-                margin-top: 4px;
-                border: 1px solid $smokeColor;
-                padding: 15px 10px;
-                @include fontSize(1.2vw, 120%, 400);
-                &:hover {
-                    border-color: $goldColor;
-                }
-                &:focus {
-                    border-color: $blueColor;
-                }
-            }
-            //текстовое окно
-            textarea {
-                @include wiHe(100%, 200px);
-                margin-top: 4px;
-                border: 1px solid $smokeColor;
-                padding: 15px 10px;
-                @include fontSize(1.2vw, 120%, 400);
-                resize: none;
-                &:hover {
-                    border-color: $goldColor;
-                }
-                &:focus {
-                    border-color: $blueColor;
-                }
-            }
-        }
+    //текстовое окно
+    textarea {
+      @include wiHe(100%, 200px);
+      margin-top: 4px;
+      border: 1px solid $smokeColor;
+      padding: 15px 10px;
+      @include fontSize(1.2vw, 120%, 400);
+      resize: none;
+      &:hover {
+        border-color: $goldColor;
+      }
+      &:focus {
+        border-color: $blueColor;
+      }
     }
-    /*----чекбокс--*/
-    &__checkbox {
-        grid-area: form-item;
+  }
+  //---чекбокс--
+  &__checkbox {
+    grid-area: form-item;
+  }
+  &__checkbox-input {
+    display: none;
+  }
+  &__checkbox-label {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    font-size: 1.1vw !important;
+    align-items: center;
+    cursor: pointer;
+    hyphens: auto;
+    &::before {
+      content: '';
+      align-self: flex-start;
+      @include wiHe(32px, 32px);
+      background-color: $blueColor;
+      border-radius: 4px;
+      margin: 0px 10px 0px 0px;
     }
-    &__checkbox-input {
-        display: none;
+    &::after {
+      content: '';
+      position: absolute;
+      @include leTo(6px, 6px);
+      @include wiHe(20px, 20px);
+      background-color: $goldColor;
+      border-radius: 4px;
+      transform: scale(0);
+      transition: transform 0.3s ease 0s;
     }
-    &__checkbox-label {
-        position: relative;
-        margin-bottom: 25px;
-        display: grid;
-        grid-auto-flow: column;
-        font-size: 1.1vw !important;
-        align-items: center;
-        cursor: pointer;
-        hyphens: auto;
-        &::before {
-            content: '';
-            align-self: flex-start;
-            @include wiHe(32px, 32px);
-            background-color: $blueColor;
-            border-radius: 4px;
-            margin: 0px 10px 0px 0px;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            @include leTo(6px, 6px);
-            @include wiHe(20px, 20px);
-            background-color: $goldColor;
-            border-radius: 4px;
-            transform: scale(0);
-            transition: transform 0.3s ease 0s;
-        }
-        .btn-popup-policy {
-            color: $blueColor;
-        }
+    .btn-popup-policy {
+      color: $blueColor;
     }
-    &__checkbox-input:checked+&__checkbox-label::after {
-        transform: scale(1);
+  }
+  &__checkbox-input:checked + &__checkbox-label::after {
+    transform: scale(1);
+  }
+  //----КНОПКА---
+  //&__btn {}
+  //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
+  &__massage-err {
+    @include fontSize(20px, 22px, 500);
+    @include wiHe($he: 22px);
+    margin-top: 5px;
+    text-align: center;
+    color: $closeColor;
+  }
+  //----------------------------
+  //----ТЕКСТОВЫЙ-БЛОК----
+  &__title {
+    grid-area: title;
+    text-align: center;
+  }
+  &__subtitle {
+    grid-area: subtitle;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    hyphens: none !important;
+  }
+  //---БЕГУЩАЯ-СТРОКА--
+  &__string {
+    grid-area: string;
+    align-self: center;
+    @include wiHe($he: max-content);
+    overflow: hidden;
+  }
+  &__marquee {
+    width: max-content;
+    img {
+      margin: 0px 10px;
+      width: 300px;
+      height: 150px;
     }
-    /*----КНОПКА---*/
-    &__btn {
-        @include wiHe(20vw, 5vw);
-        margin: 10px auto 0px;
-        background-color: $blueColor;
-        border: 2px solid $blueColor;
-        .wave-btn {
-            @include wiHe;
-            &:hover {
-                box-shadow: 0 0 10px 1px $goldColor;
-            }
-            &:hover .wave-btn__text {
-                color: $blueColor;
-                @include textShadowWhite;
-            }
-            /*------ТЕКСТ КНОПКИ--------*/
-            &__text {
-                @include fontSize(1.6vw, 120%, 700);
-                color: $whiteColor;
-                text-transform: uppercase;
-            }
-            /*---------ВОЛНЫ-------*/
-            &__waves {
-                @include wiHe(280px, 280px);
-                /**/
-                transition: all 4.3s ease 0s;
-                &:after {
-                    background-color: $goldColor;
-                    animation: waves 4s infinite linear;
-                }
-                &::before {
-                    background-color: $goldColorOpacity;
-                    animation: waves 6s infinite linear;
-                }
-            }
-        }
-    }
-    /*---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---*/
-    &__massage-err {
-        @include fontSize(20px, 22px, 500);
-        @include wiHe($he: 22px);
-        margin-top: 5px;
-        text-align: center;
-        color: $closeColor;
-    }
-    /*----------------------------*/
-    /*----ТЕКСТОВЫЙ-БЛОК----*/
-    &__text-block {
-        width: 100%;
-        height: 100% !important;
-        display: grid;
-        padding: 30px 0px;
-        align-content: space-around;
-        grid-template-rows: repeat(3, max-content);
-    }
-    &__title {
-        text-align: center;
-        @include fontSize(3.1vw, 120%, 900);
-    }
-    &__subtitle {
-        @include fontSize(2vw, 120%, 600);
-        hyphens: auto;
-    }
-    /*---БЕГУЩАЯ-СТРОКА--*/
-    &__string {
-        @include wiHe($he: max-content);
-        overflow: hidden;
-    }
-    &__marquee {
-        width: max-content;
-        img {
-            margin: 0px 10px;
-            width: 300px;
-            height: 150px;
-        }
-    }
+  }
 }
 
 .form-block__name {
-    grid-area: name;
+  grid-area: name;
 }
 
 .form-block__phone {
-    grid-area: phone;
+  grid-area: phone;
 }
 
 .form-block__comment {
-    grid-area: comment-form;
+  grid-area: comment-form;
 }
 
 .form-block__btn {
-    grid-area: btn-form;
-    background-color: $blueColor;
+  grid-area: btn-form;
+  background-color: $blueColor;
 }
 
 //-------------------------------
@@ -204,64 +156,154 @@
 /*----MEDIA----*/
 
 @media (max-width: 1600px) {
-    .form-block {
-        //----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----
-        &__form {
-            row-gap: 5px;
-        }
-        &__checkbox-label {
-            &::before {
-                @include wiHe(24px, 24px);
-            }
-            &::after {
-                @include leTo(4px, 4px);
-                @include wiHe(16px, 16px);
-            }
-        }
-        //----КНОПКА---
-        &__btn {
-            @include wiHe(300px, 80px);
-            margin: 20px auto 0px;
-            //------ТЕКСТ КНОПКИ--------
-            &__text {
-                @include fontSize(22px, 30px, 700);
-            }
-            //---------ВОЛНЫ-------
-        }
-        //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
-        &__massage-err {
-            @include fontSize(18px, 20px, 500);
-            @include wiHe($he: 20px);
-            margin-top: 5px;
-        }
+  .form-block {
+    //----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----
+    label {
+      @include fontSize(1.8vw, 120%, 500);
+      //инпуты
+      input {
+        @include wiHe(100%, max-content);
+        padding: 10px;
+        @include fontSize(1.4vw, 120%, 400);
+      }
+      //текстовое окно
+      textarea {
+        @include wiHe(100%, 150px);
+        padding: 10px;
+        @include fontSize(1.4vw, 120%, 400);
+      }
     }
+    &__checkbox-label {
+      font-size: 1.4vw !important;
+      &::before {
+        @include wiHe(24px, 24px);
+      }
+      &::after {
+        @include leTo(4px, 4px);
+        @include wiHe(16px, 16px);
+      }
+    }
+    //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
+    &__massage-err {
+      @include fontSize(18px, 20px, 500);
+      @include wiHe($he: 20px);
+      margin-top: 5px;
+    }
+    //бегущая строка
+    &__marquee {
+      width: max-content;
+      img {
+        margin: 0px 10px;
+        width: 200px;
+        height: 100px;
+      }
+    }
+  }
 }
 
-@media (max-width: 1366px) {}
-
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+  .form-block {
+    &__container {
+      width: 93%;
+    }
+    //----ФОРМА-ОТПРАВКИ-НА СТРАНИЦЕ----
+    label {
+      @include fontSize(2.2vw, 120%, 500);
+      //инпуты
+      input {
+        padding: 10px 5px;
+        @include fontSize(1.6vw, 120%, 400);
+      }
+      //текстовое окно
+      textarea {
+        @include wiHe(100%, 100px);
+        padding: 10px 5px;
+        @include fontSize(1.6vw, 120%, 400);
+      }
+    }
+    &__checkbox-label {
+      font-size: 1.8vw !important;
+      &::before {
+        @include wiHe(18px, 18px);
+      }
+      &::after {
+        @include leTo(3px, 3px);
+        @include wiHe(12px, 12px);
+      }
+    }
+    //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
+    &__massage-err {
+      @include fontSize(1.8vw, 120%, 400);
+    }
+    //бегущая строка
+    &__marquee {
+      width: max-content;
+      img {
+        margin: 0px 10px;
+        width: 200px;
+        height: 100px;
+      }
+    }
+  }
+}
 
 @media (max-width: 768px) {
-    .form-block {
-        overflow: hidden;
-        //----ТЕКСТОВЫЙ-БЛОК----
-        &__title {
-            @include fontSize(3.1vw, 120%, 900);
-        }
-        &__subtitle {
-            @include fontSize(1.7vw, 120%, 600);
-        }
-        //строка
-        &__marquee {
-            img {
-                margin: 0px 10px;
-                width: 200px;
-                height: 100px;
-            }
-        }
+  .form-block {
+    width: 100%;
+    background-color: $smokeColor;
+    &__container {
+      grid-template-areas: 'title title' 'subtitle subtitle' 'name phone ' 'comment-form comment-form ' 'form-item form-item ' 'btn-form btn-form ' 'string string';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(7, max-content);
+      row-gap: 0px;
+      column-gap: 10px;
     }
+    &__title {
+      margin-bottom: 5px;
+    }
+    &__subtitle {
+      margin-bottom: 10px;
+      text-align: start;
+    }
+    label {
+      @include fontSize(3vw, 120%, 600);
+      //инпуты
+      input {
+        padding: 10px 5px;
+        @include fontSize(3vw, 120%, 400);
+      }
+      //текстовое окно
+      textarea {
+        @include wiHe(100%, 100px);
+        padding: 10px 5px;
+        @include fontSize(3vw, 120%, 400);
+      }
+    }
+    //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
+    &__massage-err {
+      @include fontSize(2.5vw, 120%, 400);
+    }
+    &__checkbox-label {
+      font-size: 3vw !important;
+      font-weight: 400 !important;
+    }
+    //---БЕГУЩАЯ-СТРОКА--
+    &__string {
+      margin-top: 20px;
+    }
+    &__marquee {
+      width: max-content;
+      img {
+        margin: 0px 20px;
+        width: 170px;
+        height: 80px;
+      }
+    }
+  }
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
-@media (max-width: 320px) {}
+@media (max-width: 320px) {
+}

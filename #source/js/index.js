@@ -1,3 +1,9 @@
+var windowWidth = document.documentElement.clientWidth;
+if (windowWidth <= 768) {
+  var inf = document.getElementById('inf');
+  inf.innerHTML = 'Условия <br> использования';
+}
+
 $(document).ready(function () {
   /*----отступ в первой секции относительно высоты хедера----*/
   function paddingTopBot() {
@@ -142,29 +148,25 @@ $(document).ready(function () {
 
   /*----бегущая строка----*/
 
-  function stringRun() {
-    var marquee = $('#marquee');
-    marquee.wrapInner('<span>');
-    marquee.find('span').css({ width: 'max-content', display: 'inline-flex' });
-    var widthString = marquee.find('span').width();
-    marquee.append(marquee.find('span').clone());
-    marquee.wrapInner('<div>');
-
-    var widthString2 = widthString * 2;
-    marquee.find('div').css('width', widthString2);
-
-    var reset = function () {
-      $(this).css('margin-left', '0%');
-      $(this).animate(
-        { 'margin-left': -1 * widthString },
-        16000,
-        'linear',
-        reset
-      );
-    };
-    reset.call(marquee.find('div'));
-  }
-  stringRun();
+  var marquee = $('#marquee');
+  marquee.wrapInner('<span>');
+  marquee.find('span').css({ width: 'max-content', display: 'inline-flex' });
+  var widthString = marquee.find('span').width();
+  marquee.append(marquee.find('span').clone());
+  marquee.wrapInner('<div>');
+  var widthString2 = widthString * 2;
+  marquee.find('div').css('width', widthString2);
+  var reset = function () {
+    $(this).css('margin-left', '0%');
+    $(this).animate(
+      { 'margin-left': -1 * widthString },
+      16000,
+      'linear',
+      reset
+    );
+  };
+  reset.call(marquee.find('div'));
+  //
 
   //
   $(window).resize(function () {

@@ -26,14 +26,11 @@
     width: 80%;
   }
   &__title {
-    @include fontSize(3.6vw, 120%, 900);
     color: $whiteColor;
   }
-  &__text {
+  &__subtitle {
     margin-top: 40px;
-    @include fontSize(1.6vw, 120%, 600);
     color: $whiteColor;
-    hyphens: auto;
   }
   /*--обертка стрелок глереи--*/
   &__nav {
@@ -118,22 +115,12 @@
 @media (max-width: 1600px) {
   .work-block {
     padding-top: 50px;
-    /*--заголовок и текст--*/
-    &__text {
-      @include fontSize(24px, 36px, 700);
-    }
-    /*--обертка стрелок глереи--*/
-    /*-----стрелки-галереи-----*/
-    .swiper-button-prev::after,
-    .work-block__nav .swiper-button-next::after {
-      font-size: 54px;
-    }
-    /*------контейнер-с-галереей------*/
+    //------контейнер-с-галереей------
     &__row {
       margin-top: 0px;
       padding-top: 50px;
     }
-    /*--ПАГИНАЦИЯ--*/
+    //--ПАГИНАЦИЯ--
     .swiper-pagination {
       margin: 30px auto;
       .swiper-pagination-bullet {
@@ -145,16 +132,60 @@
   }
 }
 
-//---1366---
-@media (max-width: 1366px) {
-}
-
 //------1024---
 @media (max-width: 1024px) {
+  .work-block {
+    padding-top: 30px;
+    overflow: hidden;
+    &::before {
+      @include wiHe($he: 65%);
+    }
+    &__head {
+      @include wiHe(95%, max-content);
+    }
+    &__subtitle {
+      margin-top: 15px;
+    }
+    //-----стрелки-галереи-----
+    .swiper-button-prev::after,
+    .work-block__nav .swiper-button-next::after {
+      font-size: 5vw;
+    }
+    &__row {
+      @include wiHe(150%, max-content);
+      margin-left: -25%;
+    }
+    &__photo {
+      img {
+        @include wiHe(100%, auto);
+      }
+    }
+    //--ПАГИНАЦИЯ--
+    .swiper-pagination {
+      margin: 30px auto;
+      .swiper-pagination-bullet {
+        @include wiHe(15px, 15px);
+        margin: 0 10px !important;
+        line-height: 30px;
+      }
+    }
+  }
 }
 
 //---768---
 @media (max-width: 768px) {
+  .work-block {
+    //-----стрелки-галереи-----
+    .swiper-button-prev::after,
+    .work-block__nav .swiper-button-next::after {
+      font-size: 7vw;
+    }
+    &__row {
+      padding-top: 25px;
+      @include wiHe(150%, max-content);
+      margin-left: -25%;
+    }
+  }
 }
 
 //---480---

@@ -1,8 +1,8 @@
 .wave-btn {
   //width,height
   @include flCent;
-  z-index: 15;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   transition: all 0.8s ease 0s;
   &:hover {
@@ -25,16 +25,16 @@
     width: 100% !important;
     height: 100% !important;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 2vw;
+    top: 10vw;
     /**/
-    //transition: all 6s ease 0s;
+    transition: all 5s ease 0s;
     &:after,
     &::before {
       content: '';
       position: absolute;
-      top: 0%;
-      @include wiHe(40vw, 40vw);
+      top: 0px;
+      @include wiHe(44vw, 44vw);
       transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
     }
     &:after {
@@ -53,7 +53,7 @@
 }
 
 .wave-btn:hover .wave-btn__waves {
-  top: -20vw;
+  top: -25vw;
 }
 
 /*----keyframes HEADER btn-----*/

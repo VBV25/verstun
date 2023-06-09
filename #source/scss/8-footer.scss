@@ -1,92 +1,90 @@
 .footer {
-    background-color: $blueColor;
-    color: $whiteColor;
-    &__container {
-        @include content-container;
-        display: grid;
-        grid-template-areas: 'contact nav info' 'agreement agreement agreement';
-        grid-template-columns: 1fr 1.5fr 1fr;
-        grid-template-rows: repeat(2, max-content);
-        column-gap: 15px;
-        row-gap: 20px;
+  background-color: $blueColor;
+  color: $whiteColor;
+  &__container {
+    padding-bottom: 25px !important;
+    display: grid;
+    grid-template-areas: 'contact logo info' 'contact social info' 'contact copyright info' 'agreement agreement agreement';
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: repeat(4, max-content);
+    column-gap: 15px;
+    row-gap: 20px;
+  }
+  &__contacts,
+  &__info {
+    display: grid;
+    gap: 20px;
+    p {
+      display: grid;
+      align-content: center;
+      @include fontSize(1.4vw, 120%, 400);
     }
-    &__contacts,
-    &__info {
-        display: grid;
-        gap: 20px;
-        p {
-            display: grid;
-            align-content: center;
-            @include fontSize(1.4vw, 120%, 400);
-        }
+  }
+  &__contacts {
+    grid-area: contact;
+    text-align: start;
+  }
+  &__title {
+    display: grid;
+    align-content: center;
+    @include fontSize(1.8vw, 120%, 700);
+  }
+  &__title-info {
+    text-align: end;
+  }
+  &__logo {
+    grid-area: logo;
+    @include wiHe($he: max-content);
+    display: grid;
+    justify-content: center;
+    img {
+      @include wiHe(auto, 140px);
     }
-    &__contacts {
-        grid-area: contact;
-        text-align: start;
+  }
+  &__social {
+    grid-area: social;
+    @include flexSpArCent;
+  }
+  &__link {
+    @include wiHe(3vw, 3vw);
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    filter: invert(38%) sepia(3.5%) saturate(3125%) hue-rotate(349deg)
+      brightness(110%) contrast(86%);
+    img {
+      @include wiHe;
     }
-    &__title {
-        display: grid;
-        align-content: center;
-        @include fontSize(1.8vw, 120%, 700);
+    &:hover {
+      filter: unset;
+      box-shadow: 0 0 30px 2px $goldColor, 0 0 15px 2px $goldColor inset;
     }
-    &__title-info {
-        text-align: end;
+  }
+  &__copyright {
+    grid-area: copyright;
+    @include fontSize(1.2vw, 120%, 500);
+    text-align: center;
+    color: $goldColor;
+  }
+  /*--info-block--*/
+  &__info {
+    grid-area: info;
+    text-align: end;
+  }
+  &__btn-popup {
+    &:hover {
+      cursor: pointer;
+      color: $goldColor;
     }
-    /*---social-block--*/
-    &__social-block {
-        grid-area: nav;
-        display: grid;
-        gap: 30px;
-    }
-    &__logo {
-        @include wiHe($he: max-content);
-        display: grid;
-        justify-content: center;
-        img {
-            @include wiHe(auto, 140px);
-        }
-    }
-    &__social {
-        @include flexSpArCent;
-    }
-    &__link {
-        @include wiHe(3vw, 3vw);
-        min-width: 50px;
-        min-height: 50px;
-        border-radius: 50%;
-        filter: invert(38%) sepia(3.5%) saturate(3125%) hue-rotate(349deg) brightness(110%) contrast(86%);
-        img {
-            @include wiHe;
-        }
-        &:hover {
-            filter: unset;
-            box-shadow: 0 0 30px 2px $goldColor, 0 0 15px 2px $goldColor inset;
-        }
-    }
-    &__copyright {
-        @include fontSize(1.2vw, 120%, 500);
-        text-align: center;
-        color: $goldColor;
-    }
-    /*--info-block--*/
-    &__info {
-        grid-area: info;
-        text-align: end;
-    }
-    &__btn-popup {
-        &:hover {
-            cursor: pointer;
-            color: $goldColor;
-        }
-    }
-    /*--agreement--*/
-    &__agreement {
-        grid-area: agreement;
-        margin-top: 10px;
-        @include fontSize(0.6vw, 120%, 300);
-        color: $grayColor;
-        text-align: center;
-    }
+  }
+  /*--agreement--*/
+  &__agreement {
+    grid-area: agreement;
+    margin-top: 10px;
+    @include fontSize(0.6vw, 120%, 300);
+    color: $grayColor;
+    text-align: center;
+  }
 }
 
 //-------------------------------
@@ -101,55 +99,121 @@
 /*----MEDIA----*/
 
 @media (max-width: 1600px) {
-    .footer {
-        &__container {
-            grid-template-columns: 1fr 2fr 1fr;
-            column-gap: 10px;
-            row-gap: 10px;
-            padding: 50px 0px 25px;
-        }
-        &__contacts,
-        &__info {
-            gap: 10px;
-            p {
-                @include fontSize(20px, 20px, 300);
-            }
-        }
-        &__title {
-            @include fontSize(34px, 34px, 700);
-        }
-        /*---social-block--*/
-        &__social-block {
-            gap: 15px;
-        }
-        &__logo {
-            img {
-                @include wiHe(auto, 100px);
-            }
-        }
-        &__link {
-            @include wiHe(40px, 40px);
-        }
-        &__copyright {
-            @include fontSize(16px, 18px, 500);
-        }
-        /*--info-block--*/
-        /*--agreement--*/
-        &__agreement {
-            margin-top: 0px;
-            @include fontSize(10px, 12px, 200);
-        }
+  .footer {
+    &__container {
+      grid-template-columns: 1fr 2fr 1fr;
+      column-gap: 10px;
     }
+    &__contacts,
+    &__info {
+      gap: 10px;
+      p {
+        @include fontSize(1.6vw, 120%, 400);
+      }
+    }
+    &__title {
+      @include fontSize(2.4vw, 120%, 800);
+    }
+    &__social-block {
+      gap: 15px;
+    }
+    &__logo {
+      img {
+        @include wiHe(auto, 100px);
+      }
+    }
+    &__link {
+      @include wiHe(40px, 40px);
+      min-width: unset;
+      min-height: unset;
+    }
+    &__copyright {
+      @include fontSize(1.3vw, 120%, 500);
+    }
+    &__agreement {
+      @include fontSize(0.65vw, 120%, 300);
+      margin-top: 0px;
+    }
+  }
 }
 
-@media (max-width: 1366px) {}
-
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+  .footer {
+    &__container {
+      grid-template-columns: 1fr 2fr 1fr;
+      column-gap: 5px;
+    }
+    &__contacts,
+    &__info {
+      p {
+        @include fontSize(2vw, 120%, 400);
+      }
+    }
+    &__title {
+      @include fontSize(3vw, 120%, 800);
+    }
+    &__logo {
+      img {
+        @include wiHe(auto, 80px);
+      }
+    }
+    &__link {
+      @include wiHe(35px, 35px);
+    }
+    &__copyright {
+      @include fontSize(1.8vw, 120%, 500);
+    }
+    &__agreement {
+      @include fontSize(1vw, 120%, 300);
+    }
+  }
+}
 
 @media (max-width: 768px) {
-    .footer {
-        overflow: hidden;
+  .footer {
+    &__container {
+      grid-template-areas: ' logo ' 'contact' 'social' 'info' 'copyright' 'agreement';
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, max-content);
+      row-gap: 15px;
+      padding-bottom: 10px !important;
     }
-}@media (max-width: 480px) {}
+    &__contacts,
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      p {
+        text-align: center;
+        width: 45%;
+        @include fontSize(3.8vw, 120%, 400);
+      }
+    }
+    &__title {
+      text-align: center;
+      width: 100%;
+      @include fontSize(4.5vw, 120%, 800);
+    }
+    &__logo {
+      img {
+        @include wiHe(auto, 50px);
+      }
+    }
+    &__link {
+      @include wiHe(35px, 35px);
+    }
+    &__copyright {
+      @include fontSize(3vw, 120%, 500);
+    }
+    &__agreement {
+      @include fontSize(2vw, 120%, 300);
+    }
+  }
+}
 
-@media (max-width: 320px) {}
+@media (max-width: 480px) {
+}
+
+@media (max-width: 320px) {
+}

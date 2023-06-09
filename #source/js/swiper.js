@@ -58,7 +58,7 @@ new Swiper('.work-block__row', {
   slidesPerView: 3, //для значения авто добавляем стили в CSS
   //
   //ОТСТУПЫ МЕЖДУ СЛАЙДАМИ
-  spaceBetween: 30,
+  spaceBetween: 10,
   //
   //КОЛИЧЕСТВО ПРОЛИСТЫВАЕМЫХ СЛАЙДОВ
   slidesPerGroup: 1,
@@ -88,14 +88,14 @@ new Swiper('.work-block__row', {
   //
 
   //--------------АДАПТИВНОСТЬ----------------
-  breakpoints: {
-    150: { slidesPerView: 1, spaceBetween: 20 },
+  /* breakpoints: {
+         150: { slidesPerView: 1, spaceBetween: 20 },
 
-    770: {
-      slidesPerView: 2,
-    },
-    841: { slidesPerView: 3 },
-  },
+         770: {
+           slidesPerView: 2,
+         },
+         841: { slidesPerView: 3 },
+       },*/
 });
 
 /*--------------------------------------------------------------*/

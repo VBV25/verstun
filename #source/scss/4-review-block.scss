@@ -3,7 +3,6 @@
   margin-top: -2px;
   background-color: $whiteColor;
   &__container {
-    @include content-container;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -12,11 +11,6 @@
   &__title {
     width: 100%;
     text-align: center;
-    @include fontSize(3.6vw, 120%, 900);
-  }
-  &__subtitle {
-    @include fontSize(1.6vw, 120%, 600);
-    hyphens: auto;
   }
   &__review {
     @include wiHe(100%, max-content);
@@ -26,42 +20,7 @@
     transition: opacity 1s ease 0s;
   }
   /*----КНОПКА---*/
-  &__btn {
-    @include wiHe(20vw, 5vw);
-    margin: 25px auto 0px;
-    background-color: $blueColor;
-    border: 2px solid $blueColor;
-    .wave-btn {
-      @include wiHe;
-      &:hover {
-        box-shadow: 0 0 10px 1px $goldColor;
-      }
-      &:hover .wave-btn__text {
-        color: $blueColor;
-        @include textShadowWhite;
-      }
-      /*------ТЕКСТ КНОПКИ--------*/
-      &__text {
-        @include fontSize(1.6vw, 120%, 700);
-        color: $whiteColor;
-        text-transform: uppercase;
-      }
-      /*---------ВОЛНЫ-------*/
-      &__waves {
-        @include wiHe(280px, 280px);
-        /**/
-        transition: all 4.3s ease 0s;
-        &:after {
-          background-color: $goldColor;
-          animation: waves 4s infinite linear;
-        }
-        &::before {
-          background-color: $goldColorOpacity;
-          animation: waves 6s infinite linear;
-        }
-      }
-    }
-  }
+  //&__btn {}
 }
 
 .review {
@@ -104,51 +63,52 @@
 
 //---1600---
 @media (max-width: 1600px) {
-  .reviews-block {
-    /*--заголовок*/
-    &__subtitle {
-      @include fontSize(1.8vw, 120%, 600);
-      hyphens: auto;
-    }
-    /*----КНОПКА---*/
-    &__btn {
-      // @include wiHe(300px, 80px);
-      // margin: 20px auto 0px;
-      .wave-btn {
-        /*------ТЕКСТ КНОПКИ--------*/
-        &__text {
-          //@include fontSize(26px, 30px, 700);
-        }
-      }
-    }
-  }
   .review {
-    &__img {
-      @include wiHe(70px, 70px);
-    }
     &__text {
-      @include fontSize(120%, 120%, 500);
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      @include leBo(0%, 2.5%);
-      @include wiHe(30%, 4px);
-      background-color: $goldColor;
+      @include fontSize(1.8vw, 120%, 500);
     }
   }
-}
-
-//---1366---
-@media (max-width: 1366px) {
 }
 
 //------1024---
 @media (max-width: 1024px) {
+  .reviews-block {
+    &__container {
+      padding-top: 0 !important;
+      gap: 15px;
+    }
+  }
+  .review {
+    &__img {
+      @include wiHe(60px, 60px);
+    }
+    &__text {
+      @include fontSize(2.2vw, 120%, 500);
+    }
+    &::after {
+      @include wiHe(30%, 2px);
+    }
+  }
 }
 
 //---768---
 @media (max-width: 768px) {
+  .reviews-block {
+    &__container {
+      gap: 5px;
+    }
+    &__btn {
+      margin-top: 10px !important;
+    }
+  }
+  .review {
+    &__img {
+      @include wiHe(50px, 50px);
+    }
+    &__text {
+      @include fontSize(2.5vw, 120%, 100);
+    }
+  }
 }
 
 //---480---
