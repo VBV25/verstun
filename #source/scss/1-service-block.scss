@@ -1,135 +1,143 @@
 .service-block {
-  position: relative;
-  @include wiHe($he: max-content);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-size: 110% 110%;
-  background-position: center;
-  background-image: url('../img/bg.jpg');
-  &::before {
-    content: '';
-    @include wiHe;
-    position: absolute;
-    @include leTo;
-    background-color: rgba(0, 0, 0, 0.65);
-  }
-  /*--контейнер с контентом--*/
-  &__container {
     position: relative;
-    z-index: 5;
-    @include wiHe(85%, max-content);
-    padding: 150px 0 150px;
-    color: $whiteColor;
-  }
-  /*--заголовок--*/
-  &__title {
-    margin-top: 10px;
-    @include fontSize(4vw, 300%, 900);
-  }
-  /*--подзаголовок--*/
-  &__subtitle {
-    width: max-content;
-    max-width: max-content;
-    margin: 0px 0px 90px;
-    @include fontSize(3.4vw, 170%, 500);
-    letter-spacing: 3px;
-    overflow: hidden;
-    border-right: 4px solid $goldColor;
-    white-space: nowrap;
-    animation: typing 15s steps(30, end) infinite,
-      blink-caret 1.2s step-end infinite;
-  }
-  /* The typing effect */
-  @keyframes typing {
-    0% {
-      width: 0;
-    }
-    20% {
-      width: 100%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: $goldColor;
-    }
-  }
-  //обертка кнопок
-  &__btn-group {
-    @include flexSpBeCent;
-  }
-  /*----КНОПКА---*/
-  &__btn {
-    background-color: $blueColor;
-    border: 2px solid $blueColor;
-    .wave-btn {
-      @include wiHe;
-      &:hover {
-        box-shadow: 0 0 10px 1px $goldColor;
-      }
-      &:hover .wave-btn__text {
-        color: $blueColor;
-        @include textShadowWhite;
-      }
-      /*------ТЕКСТ КНОПКИ--------*/
-      &__text {
-        padding: 2.5vw 5vw;
-        @include fontSize(1.8vw, 120%, 700);
-        color: $whiteColor;
-        text-transform: uppercase;
-      }
-      /*---------ВОЛНЫ-------*/
-      &__waves {
-        @include wiHe(280px, 280px);
-        /**/
-        transition: all 4.3s ease 0s;
-        &:after {
-          background-color: $goldColor;
-          animation: waves 4s infinite linear;
-        }
-        &::before {
-          background-color: $goldColorOpacity;
-          animation: waves 6s infinite linear;
-        }
-      }
-    }
-  }
-  //група ссылок на соц сети
-  &__social-group {
+    @include wiHe($he: max-content);
     display: flex;
-    gap: 60px;
-  }
-  //ссылки на соц сети
-  &__link {
-    @include bgImg;
-    @include wiHe(4vw, 4vw);
-    min-width: 50px;
-    min-height: 50px;
-    border-radius: 50%;
-    color: $whiteColor;
-    &:hover {
-      box-shadow: 0 0 15px 5px $goldColorOpacity;
-      background-color: $goldColorOpacity;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 110% 110%;
+    background-position: center;
+    background-image: url('../img/bg.jpg');
+    &::before {
+        content: '';
+        @include wiHe;
+        position: absolute;
+        @include leTo;
+        background-color: rgba(0, 0, 0, 0.65);
     }
-  }
-  &__wp {
-    background-image: url('../img/wp1.svg');
-  }
-  &__tg {
-    background-image: url('../img/tg.svg');
-  }
-  &__vk {
-    background-image: url('../img/vk.svg');
-  }
+    /*--контейнер с контентом--*/
+    &__container {
+        position: relative;
+        z-index: 5;
+        @include wiHe(85%,
+        max-content);
+        padding: 150px 0 150px;
+        color: $whiteColor;
+    }
+    /*--заголовок--*/
+    &__title {
+        margin-top: 10px;
+        @include fontSize(4vw,
+        300%,
+        900);
+    }
+    /*--подзаголовок--*/
+    &__subtitle {
+        width: max-content;
+        max-width: max-content;
+        margin: 0px 0px 90px;
+        @include fontSize(3.4vw,
+        170%,
+        500);
+        letter-spacing: 3px;
+        overflow: hidden;
+        border-right: 4px solid $goldColor;
+        white-space: nowrap;
+        animation: typing 15s steps(30, end) infinite, blink-caret 1.2s step-end infinite;
+    }
+    /* The typing effect */
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+        20% {
+            width: 100%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: $goldColor;
+        }
+    }
+    //обертка кнопок
+    &__btn-group {
+        @include flexSpBeCent;
+    }
+    /*----КНОПКА---*/
+    &__btn {
+        background-color: $blueColor;
+        border: 2px solid $blueColor;
+        .wave-btn {
+            @include wiHe;
+            &:hover {
+                box-shadow: 0 0 10px 1px $goldColor;
+            }
+            &:hover .wave-btn__text {
+                color: $blueColor;
+                @include textShadowWhite;
+            }
+            /*------ТЕКСТ КНОПКИ--------*/
+            &__text {
+                padding: 2.5vw 5vw;
+                @include fontSize(1.8vw,
+                120%,
+                700);
+                color: $whiteColor;
+                text-transform: uppercase;
+            }
+            /*---------ВОЛНЫ-------*/
+            &__waves {
+                @include wiHe(280px,
+                280px);
+                /**/
+                transition: all 4.3s ease 0s;
+                &:after {
+                    background-color: $goldColor;
+                    animation: waves 4s infinite linear;
+                }
+                &::before {
+                    background-color: $goldColorOpacity;
+                    animation: waves 6s infinite linear;
+                }
+            }
+        }
+    }
+    //група ссылок на соц сети
+    &__social-group {
+        display: flex;
+        gap: 60px;
+    }
+    //ссылки на соц сети
+    &__link {
+        @include bgImg;
+        @include wiHe(4vw,
+        4vw);
+        min-width: 50px;
+        min-height: 50px;
+        border-radius: 50%;
+        color: $whiteColor;
+        &:hover {
+            box-shadow: 0 0 15px 5px $goldColorOpacity;
+            background-color: $goldColorOpacity;
+        }
+    }
+    &__wp {
+        background-image: url('../img/wp1.svg');
+    }
+    &__tg {
+        background-image: url('../img/tg.svg');
+    }
+    &__vk {
+        background-image: url('../img/vk.svg');
+    }
 }
 
 //-------------------------------
@@ -145,98 +153,157 @@
 
 //--------1600-----
 @media (max-width: 1600px) {
-  .service-block {
-    @include wiHe($he: max-content);
-    //----КНОПКА---
-    //група ссылок на соц сети
-    &__social-group {
-      gap: 40px;
+    .service-block {
+        @include wiHe($he: max-content);
+        //----КНОПКА---
+        //група ссылок на соц сети
+        &__social-group {
+            gap: 40px;
+        }
+        //ссылки на соц сети
+        &__link {
+            @include wiHe(50px,
+            50px);
+            min-width: unset;
+            min-height: unset;
+        }
     }
-    //ссылки на соц сети
-    &__link {
-      @include wiHe(50px, 50px);
-      min-width: unset;
-      min-height: unset;
-    }
-  }
 }
 
 //--------1024-----
 @media (max-width: 1024px) {
-  .service-block {
-    //--контейнер с контентом--
-    &__container {
-      @include wiHe(95%, max-content);
-    }
-    //--заголовок--
-    &__title {
-      margin-top: 0px;
-      @include fontSize(4.4vw, 300%, 900);
-    }
-    //--подзаголовок--
-    &__subtitle {
-      margin: 10px 0px 70px;
-      @include fontSize(3.5vw, 170%, 600);
-    }
-    //----КНОПКА---
-    &__btn {
-      .wave-btn {
-        //------ТЕКСТ КНОПКИ--------
-        &__text {
-          padding: 2.3vw 4.6vw;
-          @include fontSize(2.2vw, 120%, 700);
+    .service-block {
+        //--контейнер с контентом--
+        &__container {
+            @include wiHe(95%,
+            max-content);
         }
-      }
+        //--заголовок--
+        &__title {
+            margin-top: 0px;
+            @include fontSize(4.4vw,
+            300%,
+            900);
+        }
+        //--подзаголовок--
+        &__subtitle {
+            margin: 10px 0px 70px;
+            @include fontSize(3.5vw,
+            170%,
+            600);
+        }
+        //----КНОПКА---
+        &__btn {
+            .wave-btn {
+                //------ТЕКСТ КНОПКИ--------
+                &__text {
+                    padding: 2.3vw 4.6vw;
+                    @include fontSize(2.2vw,
+                    120%,
+                    700);
+                }
+            }
+        }
+        //ссылки на соц сети
+        &__link {
+            @include wiHe(40px,
+            40px);
+        }
     }
-    //ссылки на соц сети
-    &__link {
-      @include wiHe(40px, 40px);
-    }
-  }
 }
 
 //---768---
 @media (max-width: 768px) {
-  .service-block {
-    &__container {
-      padding-top: 80px;
-      padding-bottom: 50px !important;
-    }
-    //--заголовок--
-    &__title {
-      @include fontSize(4.6vw, 300%, 900);
-    }
-    //--подзаголовок--
-    &__subtitle {
-      letter-spacing: 1px;
-      margin: 10px 0px 40px;
-      @include fontSize(3.7vw, 170%, 600);
-      border-right: 2px solid $goldColor;
-    }
-    //----КНОПКА---
-    &__btn {
-      .wave-btn {
-        //------ТЕКСТ КНОПКИ--------
-        &__text {
-          padding: 2.3vw 4.6vw;
-          @include fontSize(2.8vw, 120%, 700);
+    .service-block {
+        &__container {
+            padding-top: 80px;
+            padding-bottom: 50px !important;
         }
-      }
+        //--заголовок--
+        &__title {
+            @include fontSize(4.6vw,
+            300%,
+            900);
+        }
+        //--подзаголовок--
+        &__subtitle {
+            letter-spacing: 1px;
+            margin: 10px 0px 40px;
+            @include fontSize(3.7vw,
+            170%,
+            600);
+            border-right: 2px solid $goldColor;
+        }
+        //----КНОПКА---
+        &__btn {
+            .wave-btn {
+                //------ТЕКСТ КНОПКИ--------
+                &__text {
+                    padding: 2.3vw 4.6vw;
+                    @include fontSize(2.8vw,
+                    120%,
+                    700);
+                }
+            }
+        }
+        //ссылки на соц сети
+        &__link {
+            @include wiHe(35px,
+            35px);
+        }
     }
-    //ссылки на соц сети
-    &__link {
-      @include wiHe(35px, 35px);
-    }
-  }
 }
 
 //---480---
 @media (max-width: 480px) {
+    .service-block {
+        background-size: auto 101%;
+        &__container {
+            padding-top: 106px;
+            padding-bottom: 25px !important;
+        }
+        //--заголовок--
+        &__title {
+            margin-top: 10px;
+            @include fontSize(5.6vw,
+            150%,
+            900);
+        }
+        //--подзаголовок--
+        /*
+        &__subtitle {
+            letter-spacing: 1px;
+            margin: 10px 0px 40px;
+            @include fontSize(3.7vw,
+            170%,
+            600);
+            border-right: 2px solid $goldColor;
+        }
+        //----КНОПКА---
+        &__btn {
+            .wave-btn {
+                //------ТЕКСТ КНОПКИ--------
+                &__text {
+                    padding: 2.3vw 4.6vw;
+                    @include fontSize(2.8vw,
+                    120%,
+                    700);
+                }
+            }
+        }*/
+        //ссылки на соц сети
+        &__social-group {
+            gap: 15px;
+        }
+        &__link {
+            @include wiHe(25px,
+            25px);
+        }
+    }
 }
 
 //---320---
-@media (max-width: 320px) {
-}
+@media (max-width: 320px) {}
 
 //
 //

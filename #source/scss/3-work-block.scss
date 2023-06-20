@@ -1,104 +1,104 @@
 .work-block {
-  @include wiHe(100%, max-content);
-  z-index: 30;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding-top: 68px;
-  background-color: $whiteColor;
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    @include leTo;
-    @include wiHe($he: 70%);
-    background-color: $blueColor;
-  }
-  /*--заголовок и текст--*/
-  &__head {
-    @include wiHe(85%, max-content);
-    @include flCent;
-    position: relative;
-    margin: auto;
-  }
-  &__content-text {
-    width: 80%;
-  }
-  &__title {
-    color: $whiteColor;
-  }
-  &__subtitle {
-    margin-top: 40px;
-    color: $whiteColor;
-  }
-  /*--обертка стрелок глереи--*/
-  &__nav {
-    @include wiHe(20%, max-content);
-    @include flCent;
-    gap: 3vw;
-  }
-  /*-----стрелки-галереи-----*/
-  &__arrow {
-    position: static !important;
-    @include flCent;
-    width: max-content;
-    height: max-content !important;
-    margin-top: 0 !important;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-  .swiper-button-prev::after,
-  .work-block__nav .swiper-button-next::after {
-    height: max-content !important;
-    font-size: 4.5vw;
-    color: $goldColor;
-    padding: 5px;
-  }
-  .work-block__nav .swiper-button-prev:hover::after,
-  .work-block__nav .swiper-button-next:hover::after {
-    @include textShadowWhite;
-  }
-  /*------контейнер-с-галереей------*/
-  &__row {
     @include wiHe(100%, max-content);
-    margin-top: 50px;
-    padding-top: 70px;
-    display: block;
     z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    overflow: hidden;
-    min-width: 0;
-  }
-  &__photo {
-    @include flCent;
-    border: 1px solid $goldColor;
-    overflow: hidden;
-    img {
-      @include wiHe;
+    padding-top: 68px;
+    background-color: $whiteColor;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        @include leTo;
+        @include wiHe($he: 70%);
+        background-color: $blueColor;
     }
-  }
-  /*--ПАГИНАЦИЯ--*/
-  .swiper-pagination {
-    position: static;
-    margin: 60px auto 30px;
-    transform: translateX(0%) !important;
-    @include flCent;
-    .swiper-pagination-bullet {
-      @include wiHe(20px, 20px);
-      margin: 0 10px !important;
-      line-height: 30px;
+    /*--заголовок и текст--*/
+    &__head {
+        @include wiHe(85%, max-content);
+        @include flCent;
+        position: relative;
+        margin: auto;
     }
-  }
+    &__content-text {
+        width: 80%;
+    }
+    &__title {
+        color: $whiteColor;
+    }
+    &__subtitle {
+        margin-top: 40px;
+        color: $whiteColor;
+    }
+    /*--обертка стрелок глереи--*/
+    &__nav {
+        @include wiHe(20%, max-content);
+        @include flCent;
+        gap: 3vw;
+    }
+    /*-----стрелки-галереи-----*/
+    &__arrow {
+        position: static !important;
+        @include flCent;
+        width: max-content;
+        height: max-content !important;
+        margin-top: 0 !important;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    .swiper-button-prev::after,
+    .work-block__nav .swiper-button-next::after {
+        height: max-content !important;
+        font-size: 4.5vw;
+        color: $goldColor;
+        padding: 5px;
+    }
+    .work-block__nav .swiper-button-prev:hover::after,
+    .work-block__nav .swiper-button-next:hover::after {
+        @include textShadowWhite;
+    }
+    /*------контейнер-с-галереей------*/
+    &__row {
+        @include wiHe(100%, max-content);
+        margin-top: 50px;
+        padding-top: 70px;
+        display: block;
+        z-index: 30;
+        position: relative;
+        overflow: hidden;
+        min-width: 0;
+    }
+    &__photo {
+        @include flCent;
+        border: 1px solid $goldColor;
+        overflow: hidden;
+        img {
+            @include wiHe;
+        }
+    }
+    /*--ПАГИНАЦИЯ--*/
+    .swiper-pagination {
+        position: static;
+        margin: 60px auto 30px;
+        transform: translateX(0%) !important;
+        @include flCent;
+        .swiper-pagination-bullet {
+            @include wiHe(20px, 20px);
+            margin: 0 10px !important;
+            line-height: 30px;
+        }
+    }
 }
 
 .swiper-pagination-bullet {
-  background-color: $goldColor !important;
-  opacity: 0.5 !important;
+    background-color: $goldColor !important;
+    opacity: 0.5 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: $blueColor !important;
-  opacity: 1 !important;
+    background-color: $blueColor !important;
+    opacity: 1 !important;
 }
 
 //-------------------------------
@@ -113,85 +113,99 @@
 /*----MEDIA----*/
 
 @media (max-width: 1600px) {
-  .work-block {
-    padding-top: 50px;
-    //------контейнер-с-галереей------
-    &__row {
-      margin-top: 0px;
-      padding-top: 50px;
+    .work-block {
+        padding-top: 50px;
+        //------контейнер-с-галереей------
+        &__row {
+            margin-top: 0px;
+            padding-top: 50px;
+        }
+        //--ПАГИНАЦИЯ--
+        .swiper-pagination {
+            margin: 30px auto;
+            .swiper-pagination-bullet {
+                @include wiHe(15px, 15px);
+                margin: 0 10px !important;
+                line-height: 30px;
+            }
+        }
     }
-    //--ПАГИНАЦИЯ--
-    .swiper-pagination {
-      margin: 30px auto;
-      .swiper-pagination-bullet {
-        @include wiHe(15px, 15px);
-        margin: 0 10px !important;
-        line-height: 30px;
-      }
-    }
-  }
 }
 
 //------1024---
 @media (max-width: 1024px) {
-  .work-block {
-    padding-top: 30px;
-    overflow: hidden;
-    &::before {
-      @include wiHe($he: 65%);
+    .work-block {
+        padding-top: 30px;
+        overflow: hidden;
+        &::before {
+            @include wiHe($he: 65%);
+        }
+        &__head {
+            @include wiHe(95%, max-content);
+        }
+        &__subtitle {
+            margin-top: 15px;
+        }
+        //-----стрелки-галереи-----
+        .swiper-button-prev::after,
+        .work-block__nav .swiper-button-next::after {
+            font-size: 5vw;
+        }
+        &__row {
+            @include wiHe(150%, max-content);
+            margin-left: -25%;
+        }
+        &__photo {
+            img {
+                @include wiHe(100%, auto);
+            }
+        }
+        //--ПАГИНАЦИЯ--
+        .swiper-pagination {
+            margin: 30px auto;
+            .swiper-pagination-bullet {
+                @include wiHe(15px, 15px);
+                margin: 0 10px !important;
+                line-height: 30px;
+            }
+        }
     }
-    &__head {
-      @include wiHe(95%, max-content);
-    }
-    &__subtitle {
-      margin-top: 15px;
-    }
-    //-----стрелки-галереи-----
-    .swiper-button-prev::after,
-    .work-block__nav .swiper-button-next::after {
-      font-size: 5vw;
-    }
-    &__row {
-      @include wiHe(150%, max-content);
-      margin-left: -25%;
-    }
-    &__photo {
-      img {
-        @include wiHe(100%, auto);
-      }
-    }
-    //--ПАГИНАЦИЯ--
-    .swiper-pagination {
-      margin: 30px auto;
-      .swiper-pagination-bullet {
-        @include wiHe(15px, 15px);
-        margin: 0 10px !important;
-        line-height: 30px;
-      }
-    }
-  }
 }
 
 //---768---
 @media (max-width: 768px) {
-  .work-block {
-    //-----стрелки-галереи-----
-    .swiper-button-prev::after,
-    .work-block__nav .swiper-button-next::after {
-      font-size: 7vw;
+    .work-block {
+        //-----стрелки-галереи-----
+        .swiper-button-prev::after,
+        .work-block__nav .swiper-button-next::after {
+            font-size: 7vw;
+        }
+        &__row {
+            padding-top: 25px;
+            @include wiHe(150%, max-content);
+            margin-left: -25%;
+        }
     }
-    &__row {
-      padding-top: 25px;
-      @include wiHe(150%, max-content);
-      margin-left: -25%;
-    }
-  }
 }
 
 //---480---
 @media (max-width: 480px) {
+    .work-block {
+        padding: 15px 0px 0px;
+        &__row {
+            padding-top: 15px;
+        }
+        //--ПАГИНАЦИЯ--
+        .swiper-pagination {
+            margin: 15px auto;
+            .swiper-pagination-bullet {
+                @include wiHe(13px, 13px);
+                margin: 0 10px !important;
+                line-height: 20px;
+            }
+        }
+    }
 }
 
 //---320---
-@media (max-width: 320px) {
-}
+@media (max-width: 320px) {}

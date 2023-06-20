@@ -1,57 +1,112 @@
 .policy-popup {
-  z-index: -150;
-  position: fixed;
-  top: 0;
-  left: 0;
-  @include wiHe;
-  @include flCent;
-  background-color: $blackColorOpacity;
-  opacity: 0.5;
-  transition: all 1s ease 0s;
-  &__container {
-    position: relative;
-    top: -200%;
-    @include wiHe(80%, 97%);
-    padding: 40px 35px;
-    background-color: $smokeColor;
-    overflow-y: scroll;
-    transition: all 1s ease 0s;
-  }
-  &__btn-close {
+    z-index: -150;
     position: fixed;
-    margin-left: -6%;
-    @include wiHe(50px, 50px);
-    cursor: pointer;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 48%;
-      @include wiHe(100%, 4px);
-      background-color: $goldColor;
+    top: 0;
+    left: 0;
+    @include wiHe;
+    @include flCent;
+    background-color: $blackColorOpacity;
+    opacity: 0.5;
+    transition: all 1s ease 0s;
+    &__container {
+        position: relative !important;
+        top: -200%;
+        @include wiHe(70%, 97%);
+        padding: 40px 35px;
+        background-color: $smokeColor;
+        overflow-y: scroll;
+        transition: all 1s ease 0s;
     }
-    &::before {
-      rotate: 45deg;
+    &__btn-close {
+        position: fixed;
+        top: 2%;
+        left: 10%;
+        @include wiHe(30px, 30px);
+        cursor: pointer;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 48%;
+            @include wiHe(100%, 4px);
+            background-color: $goldColor;
+        }
+        &::before {
+            rotate: 45deg;
+        }
+        &::after {
+            rotate: -45deg;
+        }
+        &:hover::after,
+        &:hover::before {
+            background-color: $closeColor;
+        }
     }
-    &::after {
-      rotate: -45deg;
+    &__title {
+        margin-bottom: 30px;
+        text-align: center;
+        @include fontSize(3vw, 140%, 900);
     }
-    &:hover::after,
-    &:hover::before {
-      background-color: $closeColor;
+    &__text {
+        @include fontSize(2vw, 105%, 300);
     }
-  }
-  &__title {
-    margin-bottom: 30px;
-    text-align: center;
-    @include fontSize(58px, 76px, 900);
-  }
-  &__text {
-    @include fontSize(32px, 40px, 300);
-  }
 }
 
 .active-popup .policy-popup__container {
-  top: 0% !important;
-  transition: all 0.5s ease 0s;
+    top: 0% !important;
+    transition: all 0.5s ease 0s;
+}
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+/*----MEDIA----*/
+
+//---768---
+@media (max-width: 768px) {
+    .policy-popup {
+        &__container {
+            @include wiHe(90%, 97%);
+            padding: 20px 10px 20px 35px;
+        }
+        &__btn-close {
+            top: 2%;
+            left: 5.5%;
+            @include wiHe(27px, 27px);
+        }
+        &__title {
+            margin-bottom: 20px;
+            @include fontSize(3.8vw, 140%, 900);
+        }
+        &__text {
+            @include fontSize(2.8vw, 105%, 300);
+        }
+    }
+}
+
+//---480---
+@media (max-width: 480px) {
+    .policy-popup {
+        &__container {
+            @include wiHe(97%, 97%);
+            padding: 15px 10px 15px 30px;
+        }
+        &__btn-close {
+            top: 2%;
+            left: 2%;
+            @include wiHe(23px, 23px);
+        }
+        &__title {
+            @include fontSize(5vw, 140%, 900);
+        }
+        &__text {
+            @include fontSize(4vw, 105%, 300);
+        }
+    }
 }

@@ -8,7 +8,9 @@
     /*---*/
     &__container {
         @include wiHe(85%, max-content);
-        @include flexSpBeCent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     &__phone-container {
         max-width: 30vw;
@@ -194,33 +196,67 @@
 //---480---
 @media (max-width: 480px) {
     .header {
-        &__phone-img {
-            display: none;
+        &__container {}
+        &__phone-container {
+            max-width: 95vw;
+            justify-content: start;
+            text-align: center;
         }
         &__phone {
-            @include fontSize(10px, 12px, 800);
+            @include fontSize(9px, 12px, 800);
         }
         &__logo {
             img {
-                @include wiHe(auto, 50px);
+                @include wiHe(auto, 45px);
             }
         }
         /*----КНОПКА---*/
         &__btn {
+            //  order: 2;
+            min-width: max-content;
             .wave-btn {
-                border: 2px solid $whiteColor;
-                &:hover {
-                    border: 2px solid $goldColor;
-                }
                 /*------ТЕКСТ КНОПКИ--------*/
                 &__text {
                     padding: 7px 10px 6px;
-                    @include fontSize(10px, 10px, 600);
+                    @include fontSize(9px, 10px, 600);
                 }
-                /*---------ВОЛНЫ-------*/
-                &__waves {
-                    @include wiHe(180px, 180px);
-                    transition: all 5s ease 0s;
+            }
+        }
+    }
+}
+
+//-370--
+@media (max-width: 370px) {
+    .header {
+        &__container {
+            flex-wrap: wrap;
+            row-gap: 5px;
+        }
+        &__phone-container {
+            order: 3;
+            width: 95vw !important;
+        }
+        &__phone-img {
+            display: block;
+        }
+        &__phone {
+            @include fontSize(11px, 12px, 800);
+        }
+        &__logo {
+            order: 1;
+            img {
+                @include wiHe(auto, 55px);
+            }
+        }
+        /*----КНОПКА---*/
+        &__btn {
+            order: 2;
+            min-width: max-content;
+            .wave-btn {
+                /*------ТЕКСТ КНОПКИ--------*/
+                &__text {
+                    padding: 7px 10px 6px;
+                    @include fontSize(11px, 12px, 600);
                 }
             }
         }

@@ -4,20 +4,20 @@
 
         <!--'name'-->
         <label for="name" class="form-block__name">Имя*:
-            <input type="text" placeholder="Введите имя" id="name" required>
-            <div class="form-block__massage-err">11</div>
+            <input type="text" placeholder="Введите имя" id="name" name="name" required>
+            <div class="form-block__massage-err name-err"></div>
         </label>
         <!--'phone'-->
         <label for="phone" class="form-block__phone">Телефон*:
-            <input type="phone" placeholder="Введите номер телефона" id="phone" required>
-            <div class="form-block__massage-err">11</div>
+            <input type="phone" placeholder="Введите номер телефона" id="phone" name="phone" required>
+            <div class="form-block__massage-err phone-err"></div>
         </label>
         <!--'comment'-->
         <label for="comment" class="form-block__comment">Комментарии*:
             <textarea name="comment" id="comment" cols="30" rows="10" placeholder="
      Введите комметарии
       " required></textarea>
-            <div class="form-block__massage-err">111</div>
+            <div class="form-block__massage-err massage-err"></div>
         </label>
         <!--'чекбокс'-->
         <div class="form-block__checkbox">
@@ -47,8 +47,7 @@
         <!--'text'-->
 
         <h2 class="form-block__title title">Готовы начать проект?</h2>
-        <h3 class="form-block__subtitle subtitle">Хотите превратить свою идею в реальность? Заполните форму, и начнем
-            путь к созданию вашего идеального сайта уже сегодня.</h3>
+        <h3 class="form-block__subtitle subtitle">Хотите превратить свою идею в реальность? Заполните форму, и начнем путь к созданию вашего идеального сайта уже сегодня.</h3>
         <div class="form-block__string string">
             <div class="form-block__marquee" id="marquee">
 

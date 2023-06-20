@@ -1,1 +1,142 @@
-$(document).ready(function(){$("#popup-reserv__phone").mask("+32-9-999-99-99");var a=1,c=1,n=1,t=1;$(".popup-reserv__form").mouseover(function(){var e=$("#popup-reserv__name").val(),o=$("#name").val(),r=/^[a-zA-Z]+$/,l=r.test(e);r.test(o);if(e.length<2)a=1,$("#fail-name").text("At least 2 characters").css({color:"red"});else if(""==e)a=1,$("#fail-name").text("The field is not filled").css({color:"red"});else{if(l)return $("#fail-name").html("Ok").css({color:"green"}),a=0;a=1,$("#fail-name").text("Only latin letters").css({color:"red"})}}),$(".popup-reserv__form").mouseover(function(){var e=$("#popup-reserv__surname").val(),o=/^[a-zA-Z]+$/.test(e);if(e.length<2)c=1,$("#fail-surname").text("At least 2 characters").css({color:"red"});else if(""==e)c=1,$("#fail-surname").text("The field is not filled").css({color:"red"});else{if(o)return $("#fail-surname").html("Ok").css({color:"green"}),c=0;c=1,$("#fail-surname").text("Only latin letters").css({color:"red"})}}),$(".popup-reserv__form").mouseover(function(){var e=$("#popup-reserv__phone").val(),o=/^\+32\-\d{1}-\d{3}-\d{2}-\d{2}$/.test(e);""==e?(n=1,$("#fail-phone").text("The field is not filled").css({color:"red"})):o?($("#fail-phone").html("Ок").css({color:"green"}),n=0):(n=1,$("#fail-phone").text("Incorrect phone").css({color:"red"}))}),$(".popup-reserv__form").mouseover(function(){var e=+$("#popup-reserv__persons").val();/^[0-9]+$/.test(e)?""==e?(t=1,$("#fail-person").text("The field is not filled").css({color:"red"})):($("#fail-person").html("Ok").css({color:"green"}),t=0):(t=1,$("#fail-person").text("Incorrectly completed").css({color:"red"}))}),$("#popup-reserv__btn").on("click",function(){var e=$("#popup-reserv__name").val(),o=$("#popup-reserv__surname").val(),r=$("#popup-reserv__phone").val(),l=$("#popup-reserv__persons").val(),s=$("#popup-reserv__comments").val();return console.log(a),console.log(c),console.log(n),console.log(t),0==a&&0==c&&0==n&&0==t?(console.log("отправлено"),$.ajax({url:"php/ajax-popup.php",type:"POST",cache:!1,data:{nameReserv:e,surnameReserv:o,phoneReserv:r,personsReserv:l,commentReserv:s},dataType:"html",success:function(e){$("#fail-form").html("Sent").css({color:"green"}),$("#popup-reserv__name").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$("#popup-reserv__surname").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$("#popup-reserv__phone").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$("#popup-reserv__persons").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$("#popup-reserv__comments").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$(".popup-reserv__wrapper").removeClass("visible"),$("body").removeClass("lock"),alert("Message Sent")}})):($("#fail-form").html("Not sent!").css({color:"red"}),console.log("Not sent")),!1});var l=1,s=1,p=1;$(".questions__btn").click(function(){var e=$("#name").val(),o=/^[a-zA-Z]+$/.test(e);if(e.length<2)l=1,$("#name").val("At least 2 characters").css({borderColor:"red",color:"red"});else if(""==e)l=1,$("#name").val("The field is not filled").css({borderColor:"red",color:"red"});else{if(o)return $("#name").css({borderColor:"green",color:"green"}),l=0;l=1,$("#name").val("Only latin letters").css({borderColor:"red",color:"red"})}}),$(".questions__btn").click(function(){var e=$("#email").val(),o=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/.test(e);""==e?(s=1,$("#email").val("The field is not filled").css({borderColor:"red",color:"red"})):o?($("#email").css({borderColor:"green",color:"green"}),s=0):(s=1,$("#email").val("Incorrect email").css({borderColor:"red",color:"red"}))}),$(".questions__btn").click(function(){var e=$("#request").val();e.length<2?(p=1,$("#request").val("At least 2 characters").css({borderColor:"red",color:"red"})):""==e?(p=1,$("#request").text("The field is not filled").css({borderColor:"red",color:"red"})):($("#request").css({borderColor:"green",color:"green"}),p=0)}),$(".questions__btn").on("click",function(){var e=$("#name").val(),o=$("#email").val(),r=$("#request").val();return console.log(l),console.log(s),console.log(p),0==l&&0==s&&0==p?(console.log("отправлено"),$.ajax({url:"php/ajax-index.php",type:"POST",cache:!1,data:{nameQuestions:e,emailQuestions:o,requestQuestions:r},dataType:"html",success:function(e){$("#request").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$("#email").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),$("#name").val("").css({borderColor:"$smokeColor",color:"$blackColor"}),alert("Sent")}})):($("questions__btn").css({boxShadow:"0px 0px 10px 1px $goldColor",color:"red"}),console.log("Not sent")),!1})});
+$(document).ready(function() {
+
+    /*------ВАЛИДАЦИЯ-----форма отпраки на странице*/
+
+    var validName = false;
+    var validPhone = false;
+    var validComment = false;
+    var validCheckbox = false;
+
+    /*ПРОВЕРКА НА ПРАВИЛЬНОСТЬ ЗАПОЛНЕНИЯ*/
+    function validFunctionName() {
+        //---имя---
+        var nameInput = $('input[name="name"]');
+        var nameInputValue = $('input[name="name"]').val();
+        var nameErr = $('.name-err');
+        var rvName = /^[а-яА-ЯЁёa-zA-Z]+$/;
+        var nameSymbolValid = rvName.test(nameInputValue);
+        if (nameInputValue.length < 2) {
+            nameErr.text('Не менее 2х символов').css({ color: 'red' });
+            nameInput.css({ borderColor: 'red', backgroundColor: 'rgb(255, 170, 170)', });
+            return (validName = false);
+        } else if (!nameSymbolValid) {
+            nameErr.text('Только буквы').css({ color: 'red' });
+            nameInput.css({ borderColor: 'red', backgroundColor: 'rgb(255, 170, 170)', });
+            return (validName = false);
+        } else {
+            nameErr.text('');
+            nameInput.css({ borderColor: 'green', backgroundColor: '#94b6f9', });
+            return (validName = true);
+        }
+    }
+
+    function validFunctionPhone() {
+        //---телефон---
+        var phoneInput = $('input[name="phone"]');
+        var phoneInputValue = $('input[name="phone"]').val();
+        var phoneErr = $('.phone-err');
+        var rvPhone = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        var phoneSymbolValid = rvPhone.test(phoneInputValue);
+        if (phoneInputValue == '') {
+            phoneErr.text('Поле не заполнено').css({ color: 'red' });
+            phoneInput.css({
+                borderColor: 'red',
+                backgroundColor: 'rgb(255, 170, 170)',
+
+            });
+            return (validPhone = false);
+        } else if (!phoneSymbolValid) {
+            phoneErr.text('Некорректный Телефон').css({ color: 'red' });
+            phoneInput.css({
+                borderColor: 'red',
+                backgroundColor: 'rgb(255, 170, 170)',
+            });
+            return (validPhone = false);
+        } else {
+            phoneErr.text('');
+            phoneInput.css({ borderColor: 'green', backgroundColor: '#94b6f9', });
+            return (validPhone = true);
+        }
+    }
+
+    function validFunctionComment() {
+        //---Комментарии---
+        var commentInput = $('textarea[name="comment"]');
+        var commentInputValue = $('textarea[name="comment"]').val();
+        var commentErr = $('.massage-err');
+        if (commentInputValue == '') {
+            commentErr.text('Поле не заполнено').css({ color: 'red' });
+            commentInput.css({ borderColor: 'red', backgroundColor: 'rgb(255, 170, 170)', });
+            return (validComment = false);
+        } else {
+            commentErr.text('');
+            commentInput.css({ borderColor: 'green', backgroundColor: '#94b6f9', });
+            return (validComment = true);
+        }
+    }
+
+    function validFunctionCheckbox() {
+        var checkboxInput = $('input[name="agreement"]')
+        var checkboxLabel = checkboxInput.next('label')
+        if (checkboxInput.is(':not(:checked)')) {
+            checkboxLabel.addClass('error-checkbox');
+            return (validCheckbox = false);
+        } else {
+            checkboxLabel.removeClass('error-checkbox');
+            return (validCheckbox = true);
+        }
+    }
+
+    //------------------------------------------
+
+    //------ОТПРАВКА ФОРМЫ СО СТРАНИЦЫ
+    $('#form-block__btn').click(function() {
+
+        var nameInputValue = $('input[name="name"]').val();
+        var phoneInputValue = $('input[name="phone"]').val();
+        var commentInputValue = $('textarea[name="comment"]').val();
+        //
+        validFunctionName();
+        validFunctionPhone();
+        validFunctionComment();
+        validFunctionCheckbox();
+        //
+        console.log(validName);
+        console.log(validPhone);
+        console.log(validComment);
+        console.log(validCheckbox);
+
+        if (validName == true &&
+            validPhone == true &&
+            validComment == true &&
+            validCheckbox == true) {
+            $.ajax({
+                url: 'php/ajaxForm.php',
+                type: 'POST',
+                cache: false,
+                data: {
+                    nameInputValue: nameInputValue,
+                    phoneInputValue: phoneInputValue,
+                    commentInputValue: commentInputValue,
+                },
+                dataType: 'html',
+                success: function(data) {
+                    alert('Заявка отправлена!');
+
+                },
+            });
+            console.log('отправлено');
+            $('input[name="name"]').val('');
+            $('input[name="phone"]').val('');
+            $('textarea[name="comment"]').val('');
+            $('input,textarea').attr('style', '');
+            $('#form-block__btn').children('.wave-btn').attr('style', '');
+            return false;
+        } else {
+
+            console.log('Не отправлено');
+            $('#form-block__btn').children('.wave-btn').css({ borderColor: 'red' })
+            return false;
+        }
+    });
+})

@@ -1,53 +1,53 @@
 .reviews-block {
-  width: 100%;
-  margin-top: -2px;
-  background-color: $whiteColor;
-  &__container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  /*--заголовок*/
-  &__title {
     width: 100%;
-    text-align: center;
-  }
-  &__review {
-    @include wiHe(100%, max-content);
-    display: grid;
-    grid-auto-flow: column;
-    opacity: 0;
-    transition: opacity 1s ease 0s;
-  }
-  /*----КНОПКА---*/
-  //&__btn {}
+    margin-top: -2px;
+    background-color: $whiteColor;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    /*--заголовок*/
+    &__title {
+        width: 100%;
+        text-align: center;
+    }
+    &__review {
+        @include wiHe(100%, max-content);
+        display: grid;
+        grid-auto-flow: column;
+        opacity: 0;
+        transition: opacity 1s ease 0s;
+    }
+    /*----КНОПКА---*/
+    //&__btn {}
 }
 
 .review {
-  position: relative;
-  padding: 10px 0px 20px;
-  gap: 20px;
-  &__img {
-    @include wiHe(70px, 70px);
-    @include flCent;
-    border: 2px solid $blueColor;
-    border-radius: 50%;
-    overflow: hidden;
-    img {
-      @include wiHe;
+    position: relative;
+    padding: 10px 0px 20px;
+    gap: 20px;
+    &__img {
+        @include wiHe(70px, 70px);
+        @include flCent;
+        border: 2px solid $blueColor;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            @include wiHe;
+        }
     }
-  }
-  &__text {
-    @include fontSize(1.2vw, 120%, 500);
-    hyphens: auto;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    @include leBo(0%, 2.5%);
-    @include wiHe(30%, 4px);
-    background-color: $goldColor;
-  }
+    &__text {
+        @include fontSize(1.2vw, 120%, 500);
+        hyphens: auto;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        @include leBo(0%, 2.5%);
+        @include wiHe(30%, 4px);
+        background-color: $goldColor;
+    }
 }
 
 //-------------------------------
@@ -63,58 +63,75 @@
 
 //---1600---
 @media (max-width: 1600px) {
-  .review {
-    &__text {
-      @include fontSize(1.8vw, 120%, 500);
+    .review {
+        &__text {
+            @include fontSize(1.8vw, 120%, 500);
+        }
     }
-  }
 }
 
 //------1024---
 @media (max-width: 1024px) {
-  .reviews-block {
-    &__container {
-      padding-top: 0 !important;
-      gap: 15px;
+    .reviews-block {
+        &__container {
+            padding-top: 0 !important;
+            gap: 15px;
+        }
     }
-  }
-  .review {
-    &__img {
-      @include wiHe(60px, 60px);
+    .review {
+        &__img {
+            @include wiHe(60px, 60px);
+        }
+        &__text {
+            @include fontSize(2.2vw, 120%, 500);
+        }
+        &::after {
+            @include wiHe(30%, 2px);
+        }
     }
-    &__text {
-      @include fontSize(2.2vw, 120%, 500);
-    }
-    &::after {
-      @include wiHe(30%, 2px);
-    }
-  }
 }
 
 //---768---
 @media (max-width: 768px) {
-  .reviews-block {
-    &__container {
-      gap: 5px;
+    .reviews-block {
+        &__container {
+            gap: 5px;
+        }
+        &__btn {
+            margin-top: 10px !important;
+        }
     }
-    &__btn {
-      margin-top: 10px !important;
+    .review {
+        &__img {
+            @include wiHe(50px, 50px);
+        }
+        &__text {
+            @include fontSize(2.5vw, 120%, 100);
+        }
     }
-  }
-  .review {
-    &__img {
-      @include wiHe(50px, 50px);
-    }
-    &__text {
-      @include fontSize(2.5vw, 120%, 100);
-    }
-  }
 }
 
 //---480---
 @media (max-width: 480px) {
+    .reviews-block {
+        &__container {
+            gap: 5px;
+        }
+        &__btn {
+            margin-top: 10px !important;
+        }
+    }
+    .review {
+        padding: 10px 0px;
+        gap: 7px;
+        &__img {
+            @include wiHe(40px, 40px);
+        }
+        &__text {
+            @include fontSize(3vw, 120%, 100);
+        }
+    }
 }
 
 //---320---
-@media (max-width: 320px) {
-}
+@media (max-width: 320px) {}
