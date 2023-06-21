@@ -104,7 +104,7 @@
             @include wiHe(50px, 50px);
         }
         &__text {
-            @include fontSize(2.5vw, 120%, 100);
+            @include fontSize(2.5vw, 120%, 300);
         }
     }
 }
@@ -126,7 +126,7 @@
             @include wiHe(40px, 40px);
         }
         &__text {
-            @include fontSize(3vw, 120%, 100);
+            @include fontSize(3vw, 120%, 300);
         }
     }
 }

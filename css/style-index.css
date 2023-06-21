@@ -2018,7 +2018,7 @@ h1 {
     height: 50px; }
   .review__text {
     font-size: 2.5vw;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 120%;
     font-style: normal;
     font-family: "Open Sans", sans-serif; } }
@@ -2036,7 +2036,7 @@ h1 {
       height: 40px; }
     .review__text {
       font-size: 3vw;
-      font-weight: 100;
+      font-weight: 300;
       line-height: 120%;
       font-style: normal;
       font-family: "Open Sans", sans-serif; } }
