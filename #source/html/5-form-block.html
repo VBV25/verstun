@@ -4,25 +4,25 @@
 
         <!--'name'-->
         <label for="name" class="form-block__name">Имя*:
-            <input type="text" placeholder="Введите имя" id="name" name="name" required>
+            <input type="text" placeholder="Введите имя" id="name" name="name" tabindex="1" required>
             <div class="form-block__massage-err name-err"></div>
         </label>
         <!--'phone'-->
         <label for="phone" class="form-block__phone">Телефон*:
-            <input type="phone" placeholder="Введите номер телефона" id="phone" name="phone" required>
+            <input type="tel" placeholder="Введите номер телефона" id="phone" name="phone" tabindex="2" required>
             <div class="form-block__massage-err phone-err"></div>
         </label>
         <!--'comment'-->
         <label for="comment" class="form-block__comment">Комментарии*:
             <textarea name="comment" id="comment" cols="30" rows="10" placeholder="
      Введите комметарии
-      " required></textarea>
+      " tabindex="3" required></textarea>
             <div class="form-block__massage-err massage-err"></div>
         </label>
         <!--'чекбокс'-->
         <div class="form-block__checkbox">
 
-            <input id="formAgreement" checked type="checkbox" name="agreement" class="form-block__checkbox-input">
+            <input id="formAgreement" checked type="checkbox" name="agreement" class="form-block__checkbox-input" tabindex="4">
             <label for="formAgreement" class="form-block__checkbox-label">
                 <span>Я даю свое согласие на обработку персональных данных в соответствии с <span
                         class="btn-popup-policy">Политикoй конфиденциальности</span>* и <span
