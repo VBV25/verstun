@@ -55,89 +55,45 @@ ul li {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  -webkit-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
-  /*------ТЕКСТ КНОПКИ--------*/
-  /*---------ВОЛНЫ-------*/ }
+  /*------ТЕКСТ КНОПКИ--------*/ }
   .wave-btn:hover {
     -webkit-box-shadow: 0 0 40px #b4977b;
-    box-shadow: 0 0 40px #b4977b;
-    /**/
-    -webkit-transition: all 0.8s ease 0.2s;
-    -o-transition: all 0.8s ease 0.2s;
-    transition: all 0.8s ease 0.2s; }
+    box-shadow: 0 0 40px #b4977b; }
   .wave-btn__text {
     position: relative;
     z-index: 1;
     text-align: center;
-    /**/
-    -webkit-transition: all 5s ease 0s;
-    -o-transition: all 5s ease 0s;
-    transition: all 5s ease 0s; }
+    -webkit-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s; }
   .wave-btn__waves {
     width: 100% !important;
     height: 100% !important;
     position: absolute;
-    left: 2vw;
-    top: 10vw;
-    /**/
-    -webkit-transition: all 5s ease 0s;
-    -o-transition: all 5s ease 0s;
-    transition: all 5s ease 0s; }
+    left: 0;
+    top: 0; }
     .wave-btn__waves:after, .wave-btn__waves::before {
       content: '';
       position: absolute;
       top: 0px;
-      width: 44vw;
-      height: 44vw;
-      -webkit-transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
-      transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1); }
+      width: 0%;
+      height: 100%;
+      -webkit-transform: skewX(-30deg);
+      -ms-transform: skewX(-30deg);
+      transform: skewX(-30deg);
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
     .wave-btn__waves:after {
-      left: 42%;
-      border-radius: 44%;
-      -webkit-animation: waves 4s infinite linear;
-      animation: waves 4s infinite linear; }
+      left: -9.5%;
+      background-color: #b4977b; }
     .wave-btn__waves::before {
-      left: 58%;
-      border-radius: 42%;
-      -webkit-animation: waves 6s infinite linear;
-      animation: waves 6s infinite linear; }
+      right: -9.5%;
+      background-color: #b4977b; }
 
-.wave-btn:hover .wave-btn__waves {
-  top: -25vw; }
-
-/*----keyframes HEADER btn-----*/
-@-webkit-keyframes wavesHeader {
-  0% {
-    -webkit-transform: translate3d(-50%, 13%, 0) rotate(0deg) scale(1);
-    transform: translate3d(-50%, 13%, 0) rotate(0deg) scale(1); }
-  100% {
-    -webkit-transform: translate3d(-50%, 13%, 0) rotate(360deg) scale(1);
-    transform: translate3d(-50%, 13%, 0) rotate(360deg) scale(1); } }
-@keyframes wavesHeader {
-  0% {
-    -webkit-transform: translate3d(-50%, 13%, 0) rotate(0deg) scale(1);
-    transform: translate3d(-50%, 13%, 0) rotate(0deg) scale(1); }
-  100% {
-    -webkit-transform: translate3d(-50%, 13%, 0) rotate(360deg) scale(1);
-    transform: translate3d(-50%, 13%, 0) rotate(360deg) scale(1); } }
-
-@-webkit-keyframes waves {
-  0% {
-    -webkit-transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
-    transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1); }
-  100% {
-    -webkit-transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1);
-    transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1); } }
-
-@keyframes waves {
-  0% {
-    -webkit-transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1);
-    transform: translate3d(-50%, 23%, 0) rotate(0deg) scale(1); }
-  100% {
-    -webkit-transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1);
-    transform: translate3d(-50%, 23%, 0) rotate(360deg) scale(1); } }
+.wave-btn:hover .wave-btn__waves::before,
+.wave-btn:hover .wave-btn__waves::after {
+  width: 60%; }
 
 /*--Анимация-выделения-кнопки(напоминалка)--*/
 .line-btn {
@@ -423,8 +379,7 @@ h1 {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    /*------ТЕКСТ КНОПКИ--------*/
-    /*---------ВОЛНЫ-------*/ }
+    /*------ТЕКСТ КНОПКИ--------*/ }
     .btn-blue-middle .wave-btn:hover {
       -webkit-box-shadow: 0 0 10px 1px #b4977b;
       box-shadow: 0 0 10px 1px #b4977b; }
@@ -440,21 +395,6 @@ h1 {
       font-family: "Open Sans", sans-serif;
       color: white;
       text-transform: uppercase; }
-    .btn-blue-middle .wave-btn__waves {
-      width: 280px;
-      height: 280px;
-      /**/
-      -webkit-transition: all 4.3s ease 0s;
-      -o-transition: all 4.3s ease 0s;
-      transition: all 4.3s ease 0s; }
-      .btn-blue-middle .wave-btn__waves:after {
-        background-color: #b4977b;
-        -webkit-animation: waves 4s infinite linear;
-        animation: waves 4s infinite linear; }
-      .btn-blue-middle .wave-btn__waves::before {
-        background-color: rgba(211, 180, 127, 0.566);
-        -webkit-animation: waves 6s infinite linear;
-        animation: waves 6s infinite linear; }
 
 /*----MEDIA----*/
 /*-----общие-стили----*/
@@ -477,18 +417,13 @@ h1 {
   .btn-blue-middle {
     margin: 25px auto 0px; }
     .btn-blue-middle .wave-btn {
-      /*------ТЕКСТ КНОПКИ--------*/
-      /*---------ВОЛНЫ-------*/ }
+      /*------ТЕКСТ КНОПКИ--------*/ }
       .btn-blue-middle .wave-btn__text {
         font-size: 1.8vw;
         font-weight: 700;
         line-height: 120%;
         font-style: normal;
-        font-family: "Open Sans", sans-serif; }
-      .btn-blue-middle .wave-btn__waves {
-        -webkit-transition: all 4.3s ease 0s;
-        -o-transition: all 4.3s ease 0s;
-        transition: all 4.3s ease 0s; } }
+        font-family: "Open Sans", sans-serif; } }
 
 @media (max-width: 1024px) {
   .container {
@@ -659,14 +594,8 @@ h1 {
         font-family: "Open Sans", sans-serif;
         color: white;
         text-transform: uppercase; }
-      .header__btn .wave-btn__waves:after {
-        background-color: white;
-        -webkit-animation: wavesHeader 4s infinite linear;
-        animation: wavesHeader 4s infinite linear; }
-      .header__btn .wave-btn__waves::before {
-        background-color: rgba(255, 255, 255, 0.6);
-        -webkit-animation: wavesHeader 6s infinite linear;
-        animation: wavesHeader 6s infinite linear; }
+      .header__btn .wave-btn__waves:after, .header__btn .wave-btn__waves::before {
+        background-color: white; }
 
 /*----MEDIA----*/
 @media (max-width: 1600px) {
@@ -979,8 +908,7 @@ h1 {
     .service-block__btn .wave-btn {
       width: 100%;
       height: 100%;
-      /*------ТЕКСТ КНОПКИ--------*/
-      /*---------ВОЛНЫ-------*/ }
+      /*------ТЕКСТ КНОПКИ--------*/ }
       .service-block__btn .wave-btn:hover {
         -webkit-box-shadow: 0 0 10px 1px #b4977b;
         box-shadow: 0 0 10px 1px #b4977b; }
@@ -996,21 +924,6 @@ h1 {
         font-family: "Open Sans", sans-serif;
         color: white;
         text-transform: uppercase; }
-      .service-block__btn .wave-btn__waves {
-        width: 280px;
-        height: 280px;
-        /**/
-        -webkit-transition: all 4.3s ease 0s;
-        -o-transition: all 4.3s ease 0s;
-        transition: all 4.3s ease 0s; }
-        .service-block__btn .wave-btn__waves:after {
-          background-color: #b4977b;
-          -webkit-animation: waves 4s infinite linear;
-          animation: waves 4s infinite linear; }
-        .service-block__btn .wave-btn__waves::before {
-          background-color: rgba(211, 180, 127, 0.566);
-          -webkit-animation: waves 6s infinite linear;
-          animation: waves 6s infinite linear; }
   .service-block__social-group {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1115,28 +1028,7 @@ h1 {
 
 @media (max-width: 480px) {
   .service-block {
-    background-size: auto 101%;
-    /*
-        &__subtitle {
-            letter-spacing: 1px;
-            margin: 10px 0px 40px;
-            @include fontSize(3.7vw,
-            170%,
-            600);
-            border-right: 2px solid $goldColor;
-        }
-        //----КНОПКА---
-        &__btn {
-            .wave-btn {
-                //------ТЕКСТ КНОПКИ--------
-                &__text {
-                    padding: 2.3vw 4.6vw;
-                    @include fontSize(2.8vw,
-                    120%,
-                    700);
-                }
-            }
-        }*/ }
+    background-size: auto 101%; }
     .service-block__container {
       padding-top: 106px;
       padding-bottom: 25px !important; }
@@ -1153,52 +1045,6 @@ h1 {
       width: 25px;
       height: 25px; } }
 
-/*
- .service-block {
-    //--контейнер с контентом--
-    &__container {
-      @include wiHe(85%, max-content);
-      padding: 150px 0 50px;
-    }
-    //--заголовок--
-    &__title {
-      margin-top: 50px;
-      @include fontSize(84px, 94px, 900);
-    }
-    //--подзаголовок--
-    &__subtitle {
-      margin: 70px 0px 110px;
-      @include fontSize(66px, 80px, 500);
-    }
-    //обертка кнопок
-    &__btn-group {
-      @include flexSpBeCent;
-    }
-    //----КНОПКА---
-    &__btn {
-      @include wiHe(400px, 130px);
-      .wave-btn {
-        //------ТЕКСТ КНОПКИ------
-        &__text {
-          @include fontSize(30px, 30px, 700);
-        }
-        //---------ВОЛНЫ---
-        &__waves {
-          @include wiHe(280px, 280px);
-          transition: all 4.3s ease 0s;
-        }
-      }
-    }
-    //група ссылок на соц сети
-    &__social-group {
-      gap: 60px;
-    }
-    //ссылки на соц сети
-    &__link {
-      @include wiHe(70px, 70px);
-    }
-  }
-  */
 /*------2-БЛОК----*/
 .advantages-block {
   width: 100%;
@@ -1469,10 +1315,11 @@ h1 {
     width: auto;
     height: 75%; }
   .fast::after, .fast::before {
-    content: '∗';
+    content: '';
     position: absolute;
-    height: 28%;
-    font-size: 550%;
+    width: auto;
+    height: 30px;
+    width: 30px;
     display: -ms-grid;
     display: grid;
     -webkit-box-pack: center;
@@ -1480,15 +1327,18 @@ h1 {
     justify-content: center;
     -ms-flex-line-pack: center;
     align-content: center;
-    color: #3a4574;
-    bottom: 10.4%;
+    bottom: 7.0%;
     left: 50%;
+    background-image: url("../img/wheel.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
     -webkit-animation: wheel 0.6s infinite linear;
     animation: wheel 0.6s infinite linear; }
   .fast::before {
-    margin-left: -108.5px; }
+    margin-left: -102px; }
   .fast::after {
-    margin-left: 42.6px; }
+    margin-left: 48px; }
 
 @-webkit-keyframes wheel {
   0% {
@@ -1702,13 +1552,14 @@ h1 {
   .money {
     margin-left: -28px; }
   .fast::after, .fast::before {
-    font-size: 400%;
-    bottom: 6;
+    width: 25px;
+    height: 25px;
+    bottom: 5%;
     left: 50%; }
   .fast::before {
-    margin-left: -76.4px; }
+    margin-left: -72.8px; }
   .fast::after {
-    margin-left: 29.1px; }
+    margin-left: 32.1px; }
   .line-fast {
     height: 2px;
     width: 20px; }
@@ -1759,12 +1610,13 @@ h1 {
   .money {
     margin-left: -18px; }
   .fast::after, .fast::before {
-    font-size: 250%;
-    bottom: 9%; }
+    width: 15px;
+    height: 15px;
+    bottom: 8%; }
   .fast::before {
-    margin-left: -52.8px; }
+    margin-left: -51px; }
   .fast::after {
-    margin-left: 22px; }
+    margin-left: 24px; }
   .line-fast {
     height: 2px;
     width: 20px; }
@@ -1775,27 +1627,18 @@ h1 {
     height: 60%; } }
 
 @media (max-width: 480px) {
-  .advantages-block {
-    /*
-        &__people-img {
-            margin-top: 0px;
-            img {
-                width: 30%;
-                margin: auto;
-            }
-        }*/ }
-    .advantages-block__container {
-      grid-template-areas: 'title  ' 'card-1' 'card-2' 'card-3' 'card-4' 'img';
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-      -ms-grid-rows: max-content 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px max-content;
-      grid-template-rows: -webkit-max-content 1fr 1fr 1fr 1fr -webkit-max-content;
-      grid-template-rows: max-content 1fr 1fr 1fr 1fr max-content;
-      row-gap: 10px;
-      -webkit-column-gap: unset;
-      column-gap: unset; }
-    .advantages-block__title {
-      margin-bottom: 10px; }
+  .advantages-block__container {
+    grid-template-areas: 'title  ' 'card-1' 'card-2' 'card-3' 'card-4' 'img';
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: max-content 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px max-content;
+    grid-template-rows: -webkit-max-content 1fr 1fr 1fr 1fr -webkit-max-content;
+    grid-template-rows: max-content 1fr 1fr 1fr 1fr max-content;
+    row-gap: 10px;
+    -webkit-column-gap: unset;
+    column-gap: unset; }
+  .advantages-block__title {
+    margin-bottom: 10px; }
   .card-advantages {
     gap: 2px;
     padding: 5px; }
@@ -1814,25 +1657,25 @@ h1 {
       font-family: "Open Sans", sans-serif; }
     .card-advantages__string {
       bottom: -7%; }
-    .advantages-block__title {
+  .advantages-block__title {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1; }
-    .advantages-block__people-img {
+  .advantages-block__people-img {
     -ms-grid-row: 11;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1; }
-    .card-advantages-1 {
+  .card-advantages-1 {
     -ms-grid-row: 3;
     -ms-grid-column: 1; }
-    .card-advantages-2 {
+  .card-advantages-2 {
     -ms-grid-row: 5;
     -ms-grid-column: 1; }
-    .card-advantages-3 {
+  .card-advantages-3 {
     -ms-grid-row: 7;
     -ms-grid-column: 1; }
-    .card-advantages-4 {
+  .card-advantages-4 {
     -ms-grid-row: 9;
     -ms-grid-column: 1; } }
 
@@ -2073,8 +1916,7 @@ h1 {
   width: 100%;
   margin-top: -2px;
   background-color: white;
-  /*--заголовок*/
-  /*----КНОПКА---*/ }
+  /*--заголовок*/ }
   .reviews-block__container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2403,7 +2245,7 @@ h1 {
     -ms-grid-column-span: 3; } }
 
 @media (max-width: 480px){
-    .form-block__title {
+  .form-block__title {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1; } }

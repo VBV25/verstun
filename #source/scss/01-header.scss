@@ -53,13 +53,9 @@
             }
             /*---------ВОЛНЫ-------*/
             &__waves {
-                &:after {
-                    background-color: $whiteColor;
-                    animation: wavesHeader 4s infinite linear;
-                }
+                &:after,
                 &::before {
-                    background-color: $whiteColorOpacity;
-                    animation: wavesHeader 6s infinite linear;
+                    background-color: $whiteColor;
                 }
             }
         }
@@ -196,7 +192,6 @@
 //---480---
 @media (max-width: 480px) {
     .header {
-        &__container {}
         &__phone-container {
             max-width: 95vw;
             justify-content: start;
@@ -262,6 +257,3 @@
         }
     }
 }
-
-//---320---
-@media (max-width: 320px) {}

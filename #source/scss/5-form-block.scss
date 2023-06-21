@@ -87,8 +87,6 @@
     &__checkbox-input:checked+&__checkbox-label::after {
         transform: scale(1);
     }
-    //----КНОПКА---
-    //&__btn {}
     //---ОКНО-СООБЩЕНИЯ-ВАЛИДАЦИИ---
     &__massage-err {
         @include fontSize(20px, 22px, 500);
@@ -343,5 +341,3 @@
         }
     }
 }
-
-@media (max-width: 320px) {}

@@ -187,21 +187,25 @@
     }
     &::after,
     &::before {
-        content: '∗';
+        content: '';
         position: absolute;
-        height: 28%;
-        font-size: 550%;
+        width: auto;
+        height: 30px;
+        width: 30px;
         @include gridCent;
-        color: $blueColor;
-        bottom: 10.4%;
+        bottom: 7.0%;
         left: 50%;
+        background-image: url('../img/wheel.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
         animation: wheel 0.6s infinite linear;
     }
     &::before {
-        margin-left: -108.5px;
+        margin-left: -102px;
     }
     &::after {
-        margin-left: 42.6px;
+        margin-left: 48px;
     }
 }
 
@@ -248,7 +252,8 @@
         z-index: 1;
         left: -100%;
         bottom: -15%;
-        @include wiHe(500%, 15%);
+        @include wiHe(500%,
+        15%);
         overflow: hidden;
     }
     &__marquee {
@@ -280,7 +285,8 @@
     @include wiHe;
     @include flCent;
     img {
-        @include wiHe(auto, 100%);
+        @include wiHe(auto,
+        100%);
     }
     &::after {
         content: '';
@@ -289,7 +295,8 @@
         bottom: 31%;
         left: 50%;
         margin-left: -50px;
-        @include wiHe(100px, 60%);
+        @include wiHe(100px,
+        60%);
         background-color: $whiteColor;
         animation-duration: 7s;
         animation-name: pc;
@@ -331,7 +338,8 @@
         //--заголовок--
         &__title {
             width: 100%;
-            @include leTo(unset, unset);
+            @include leTo(unset,
+            unset);
         }
         //--изображение--
         &__people-img {
@@ -373,10 +381,14 @@
             height: 70px;
         }
         &__title {
-            @include fontSize(3vw, 120%, 700);
+            @include fontSize(3vw,
+            120%,
+            700);
         }
         &__text {
-            @include fontSize(2vw, 120%, 700);
+            @include fontSize(2vw,
+            120%,
+            700);
         }
     }
     //----Изображения в карточках--
@@ -388,15 +400,16 @@
     .fast {
         &::after,
         &::before {
-            font-size: 400%;
-            bottom: 6;
+            width: 25px;
+            height: 25px;
+            bottom: 5%;
             left: 50%;
         }
         &::before {
-            margin-left: -76.4px;
+            margin-left: -72.8px;
         }
         &::after {
-            margin-left: 29.1px;
+            margin-left: 32.1px;
         }
     }
     .line-fast {
@@ -408,7 +421,8 @@
         &::after {
             bottom: 31%;
             margin-left: -35px;
-            @include wiHe(70px, 60%);
+            @include wiHe(70px,
+            60%);
         }
     }
 }
@@ -421,10 +435,14 @@
             height: 50px;
         }
         &__title {
-            @include fontSize(3.5vw, 120%, 700);
+            @include fontSize(3.5vw,
+            120%,
+            700);
         }
         &__text {
-            @include fontSize(2.5vw, 120%, 700);
+            @include fontSize(2.5vw,
+            120%,
+            700);
         }
     }
     //----Изображения в карточках--
@@ -436,14 +454,15 @@
     .fast {
         &::after,
         &::before {
-            font-size: 250%;
-            bottom: 9%;
+            width: 15px;
+            height: 15px;
+            bottom: 8%;
         }
         &::before {
-            margin-left: -52.8px;
+            margin-left: -51px;
         }
         &::after {
-            margin-left: 22px;
+            margin-left: 24px;
         }
     }
     .line-fast {
@@ -455,7 +474,8 @@
         &::after {
             bottom: 31%;
             margin-left: -25px;
-            @include wiHe(50px, 60%);
+            @include wiHe(50px,
+            60%);
         }
     }
 }
@@ -473,25 +493,20 @@
         &__title {
             margin-bottom: 10px;
         }
-        //--изображение--
-        /*
-        &__people-img {
-            margin-top: 0px;
-            img {
-                width: 30%;
-                margin: auto;
-            }
-        }*/
     }
     .card-advantages {
         gap: 2px;
         padding: 5px;
         &__title {
             margin-top: 2px;
-            @include fontSize(4.5vw, 110%, 700);
+            @include fontSize(4.5vw,
+            110%,
+            700);
         }
         &__text {
-            @include fontSize(3vw, 110%, 700);
+            @include fontSize(3vw,
+            110%,
+            700);
         }
         //--дорога--
         &__string {
@@ -499,6 +514,3 @@
         }
     }
 }
-
-//---320---
-@media (max-width: 320px) {}

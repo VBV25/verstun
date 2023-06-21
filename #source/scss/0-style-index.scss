@@ -93,20 +93,6 @@ h1 {
             color: $whiteColor;
             text-transform: uppercase;
         }
-        /*---------ВОЛНЫ-------*/
-        &__waves {
-            @include wiHe(280px, 280px);
-            /**/
-            transition: all 4.3s ease 0s;
-            &:after {
-                background-color: $goldColor;
-                animation: waves 4s infinite linear;
-            }
-            &::before {
-                background-color: $goldColorOpacity;
-                animation: waves 6s infinite linear;
-            }
-        }
     }
 }
 
@@ -139,10 +125,6 @@ h1 {
             /*------ТЕКСТ КНОПКИ--------*/
             &__text {
                 @include fontSize(1.8vw, 120%, 700);
-            }
-            /*---------ВОЛНЫ-------*/
-            &__waves {
-                transition: all 4.3s ease 0s;
             }
         }
     }
@@ -210,9 +192,6 @@ h1 {
         }
     }
 }
-
-//---320---
-@media (max-width: 320px) {}
 
 //-------------------------------
 //-------------------------------
